@@ -28,7 +28,7 @@
    
    <li>git commit: Sepete eklenen dosyaların o anki durumunun fotoğrafını çeker ve kalıcı bir versiyon olarak kaydeder.git commit -m yazıp tırnak içinde "şunu değiştirdim"     gibi bir açıklama mesajıyla yapılır.</li>
    
-   <li>git push: Kendi bilgisayarında kaydettiğin yeni versiyonları, internetteki yedeğine fırlatır ve orayı günceller.</li>
+   <li>git push: Kendi bilgisayarında kaydettiğin yeni versiyonları, internetteki yedeğine fırlatır ve orayı günceller.</li
    
    <li>git pull: Ekip arkadaşlarımız projeye GitHub gibi platformlar üzerinden yeni kodlar yüklediğinde;bu komut, internetteki o yeni değişiklikleri senin bilgisayarına       çeker ve dosyalarını günceller.</li>
    
@@ -51,5 +51,14 @@
  <ul>
   <li>Çözmek için çakışan dosya kod editöründe açılır, Git'in eklediği uyarı işaretleri (<<<<, ====, >>>) silinip kodun kalacak olan son haline manuel olarak karar verilir   ve ardından dosya git add ve git commit yapılarak kaydedilir.</li>
  </ul>
+</details>
+
+
+<details>
+ <summary><b>CI/CD nedir?</b></summary>
+
+ <
+
+ 
 </details>
 
