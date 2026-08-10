@@ -1,7 +1,7 @@
 # Trex Research
 
 <details>
- <summary><b>Git nedir? GitHub nedir?</b></summary>
+ <summary><b>Git Nedir? GitHub Nedir?</b></summary>
  <br>
  <h3>Git Nedir?</h3>
  <ul>
@@ -16,7 +16,7 @@
 
 
 <details>
- <summary><b>Temel Git komutları</b></summary>
+ <summary><b>Temel Git Komutları</b></summary>
  <br>
  
  <ul>
@@ -35,6 +35,21 @@
    <li>git branch: Çalışan sistemi bozmadan denemeler yapmak veya yeni bir özellik kodlamak için açtığın paralel çalışma alanıdır.Ekip üyelerinin projede yaptığı her          değişikliği doğrudan çalışan sistem üzerine eklersek bir çok problem ortaya çıkabilir branch yöntemi bunun önüne geçiyor.</li>
    
    <li>git merge: Bir ekip üyesinin kendi branchında yaptığı değişiklikler bittiğinde ve bu değişikliklerin sorunsuz çalıştığından emin olduğunda, o yeni değişiklikleri       ana projeyle pürüzsüzce birleştirme işlemidir.</li>
+ </ul>
+</details>
+
+<details>
+ <summary><b>Merge Conflict Nedir, Nasıl Çözülür? </b></summary>
+ <br>
+
+ <h3>>Merge Conflict Nedir</h3>
+ <ul>
+  <li>Merge conflict, iki farklı kişinin aynı dosyanın aynı satırında farklı değişiklikler yapması sonucu Git'in bu kodları otomatik olarak birleştirememesi ve kararı size   bırakması durumudur.</li>
+ </ul>
+ 
+ <h3><b> Nasıl Çözülür?</b>b</h3>
+ <ul>
+  <li>Çözmek için çakışan dosya kod editöründe açılır, Git'in eklediği uyarı işaretleri (<<<<, ====, >>>) silinip kodun kalacak olan son haline manuel olarak karar verilir   ve ardından dosya git add ve git commit yapılarak kaydedilir.</li>
  </ul>
 </details>
 
