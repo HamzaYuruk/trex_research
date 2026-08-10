@@ -15,3 +15,26 @@
 </details>
 
 
+<details>
+ <summary><b>Temel Git komutları</b></summary>
+ <br>
+ 
+ <ul>
+   <li>git init: Sıfırdan başlama komutudur. Bilgisayarınızdaki normal bir klasörün içine Git'i kurar ve "artık buradaki dosyaları takip et" der.</li>
+   
+   <li>git clone: GitHub platformu gibi internet üzerinden erişimin olan bir projeyi, tüm geçmiş versiyonlarıyla birlikte bilgisiyarınıza indirir.</li>
+   
+   <li>git add: Değişiklik yaptığın dosyaları sepete koyar. Git'e "Birazdan bu dosyaları kaydedeceğim, bunları aklında tut" demektir.</li>
+   
+   <li>git commit: Sepete eklenen dosyaların o anki durumunun fotoğrafını çeker ve kalıcı bir versiyon olarak kaydeder.git commit -m yazıp tırnak içinde "şunu değiştirdim"     gibi bir açıklama mesajıyla yapılır.</li>
+   
+   <li>git push: Kendi bilgisayarında kaydettiğin yeni versiyonları, internetteki yedeğine fırlatır ve orayı günceller.</li>
+   
+   <li>git pull: Ekip arkadaşlarımız projeye GitHub gibi platformlar üzerinden yeni kodlar yüklediğinde;bu komut, internetteki o yeni değişiklikleri senin bilgisayarına       çeker ve dosyalarını günceller.</li>
+   
+   <li>git branch: Çalışan sistemi bozmadan denemeler yapmak veya yeni bir özellik kodlamak için açtığın paralel çalışma alanıdır.Ekip üyelerinin projede yaptığı her          değişikliği doğrudan çalışan sistem üzerine eklersek bir çok problem ortaya çıkabilir branch yöntemi bunun önüne geçiyor,her ekip üyesi kendi dalında çalışıyor.</li>
+   
+   <li>git merge: Bir ekip üyesinin kendi branchında yaptığı değişiklikler bittiğinde ve bu değişikliklerin sorunsuz çalıştığından emin olduğunda, o yeni değişiklikleri       ana projeyle pürüzsüzce birleştirme işlemidir.</li>
+ </ul>
+</details>
+
