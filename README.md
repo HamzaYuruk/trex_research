@@ -32,7 +32,7 @@
    
    <li>git pull: Ekip arkadaşlarımız projeye GitHub gibi platformlar üzerinden yeni kodlar yüklediğinde;bu komut, internetteki o yeni değişiklikleri senin bilgisayarına       çeker ve dosyalarını günceller.</li>
    
-   <li>git branch: Çalışan sistemi bozmadan denemeler yapmak veya yeni bir özellik kodlamak için açtığın paralel çalışma alanıdır.Ekip üyelerinin projede yaptığı her          değişikliği doğrudan çalışan sistem üzerine eklersek bir çok problem ortaya çıkabilir branch yöntemi bunun önüne geçiyor,her ekip üyesi kendi dalında çalışıyor.</li>
+   <li>git branch: Çalışan sistemi bozmadan denemeler yapmak veya yeni bir özellik kodlamak için açtığın paralel çalışma alanıdır.Ekip üyelerinin projede yaptığı her          değişikliği doğrudan çalışan sistem üzerine eklersek bir çok problem ortaya çıkabilir branch yöntemi bunun önüne geçiyor.</li>
    
    <li>git merge: Bir ekip üyesinin kendi branchında yaptığı değişiklikler bittiğinde ve bu değişikliklerin sorunsuz çalıştığından emin olduğunda, o yeni değişiklikleri       ana projeyle pürüzsüzce birleştirme işlemidir.</li>
  </ul>
