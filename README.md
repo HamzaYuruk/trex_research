@@ -46,6 +46,14 @@
  <ul>
   <li>Merge conflict, iki farklı kişinin aynı dosyanın aynı satırında farklı değişiklikler yapması sonucu Git'in bu kodları otomatik olarak birleştirememesi ve kararı size   bırakması durumudur.</li>
  </ul>
+
+ <h3>Nasıl Önüne Geçilir</h3>
+ <ul>
+   <li>Görevleri net bölüşüp aynı dosyalarda eşzamanlı çalışmaktan kaçının.</li>
+   <li>Kodlarınızı sık sık ve küçük parçalar halinde commit'leyin.</li> 
+   <li>Ana branch'teki güncellemeleri kendi branch'inize düzenli olarak çekin.</li> 
+ </ul>
+
  
  <h3><b> Nasıl Çözülür?</b></h3>
  <ul>
@@ -57,7 +65,7 @@
 <details>
  <summary><b>CI/CD nedir?</b></summary>
 
- <
+ <h3>CI Nedir?</h3>
 
  
 </details>
