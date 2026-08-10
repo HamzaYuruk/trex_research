@@ -3,9 +3,9 @@
 <details>
  <summary><b>Git Nedir? GitHub Nedir?</b></summary>
  <br>
- ### Git Nedir?
+  <h3>Git Nedir?</h3>
  <ul>
-   <li>Git, tamamen kendi bilgisayarınızda çalışan bir versiyon kontrol sistemidir. Bilgisayarınızdaki dosyalarda yaptığınız her değişikliği versiyon versiyon kaydeder, istediğiniz an istediğiniz versiyona dönmenizi sağlar. Git sadece yazılım projeleri için kullanılmaz, bütün işlerinizde kullanabilirsiniz.</li>
+   <li>Git, tamamen kendi bilgisayarınızda çalışan bir versiyon kontrol sistemidir. Bilgisayarınızdaki dosyalarda yaptığınız her değişikliği versiyon versiyon       kaydeder, istediğiniz an istediğiniz versiyona dönmenizi sağlar. Git sadece yazılım projeleri için kullanılmaz, bütün işlerinizde kullanabilirsiniz.</li>
  </ul>
  <br>
  <h3>GitHub Nedir?</h3>
