@@ -8,9 +8,9 @@ Bu repository, genel yazılım geliştirme kavramları, mimari yaklaşımlar ve 
 
  <summary><b>Git nedir? GitHub nedir?</b></summary>
  
- **Git Nedir?**
+ ** Git Nedir? **
 
- * Git, bilgisayarınızdaki dosyalarda yaptığınız her değişikliği versiyon versiyon kaydeder, istediğiniz an istediğiniz versiyona dönmenizi sağlar ve tamamen kendi bilgisayarınızda çalışan bir versiyon kontrol sistemidir.Git sadece yazılım projeleri için kullanılmaz bütün işlerinizde kullanabilirsiniz.
+   * Git, bilgisayarınızdaki dosyalarda yaptığınız her değişikliği versiyon versiyon kaydeder, istediğiniz an istediğiniz versiyona dönmenizi sağlar ve tamamen kendi bilgisayarınızda çalışan bir          versiyon kontrol sistemidir.Git sadece yazılım projeleri için kullanılmaz bütün işlerinizde kullanabilirsiniz.
 
  * GitHub Nedir?
  * 
