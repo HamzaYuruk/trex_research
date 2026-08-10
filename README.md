@@ -42,12 +42,12 @@
  <summary><b>Merge Conflict Nedir, Nasıl Çözülür? </b></summary>
  <br>
 
- <h3>>Merge Conflict Nedir</h3>
+ <h3>Merge Conflict Nedir</h3>
  <ul>
   <li>Merge conflict, iki farklı kişinin aynı dosyanın aynı satırında farklı değişiklikler yapması sonucu Git'in bu kodları otomatik olarak birleştirememesi ve kararı size   bırakması durumudur.</li>
  </ul>
  
- <h3><b> Nasıl Çözülür?</b>b</h3>
+ <h3><b> Nasıl Çözülür?</b></h3>
  <ul>
   <li>Çözmek için çakışan dosya kod editöründe açılır, Git'in eklediği uyarı işaretleri (<<<<, ====, >>>) silinip kodun kalacak olan son haline manuel olarak karar verilir   ve ardından dosya git add ve git commit yapılarak kaydedilir.</li>
  </ul>
