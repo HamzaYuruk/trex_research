@@ -1,4 +1,4 @@
-#Trex Research
+# Trex Research
 
 <details>
  <summary><b>Git nedir? GitHub nedir?</b></summary>
