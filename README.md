@@ -67,7 +67,7 @@
 
  <h3>CI Nedir?</h3>
  <ul>
-   <li>Yeni bir kod gönderildiğinde sistem projeyi kendi kendine ayağa kaldırarak testleri çalıştırır; böylece eklenen kısmın mevcut sistemi bozup bozmadığı         anında kontrol edilir, kod çakışmaları en aza indirilir ve hatalar erkenden yakalanır.</li>
+   <li>Kaynak koda yeni bir kod gönderildiğinde sistem projeyi kendi kendine ayağa kaldırarak testleri çalıştırır; böylece eklenen kısmın mevcut sistemi bozup       bozmadığı anında kontrol edilir, kod çakışmaları en aza indirilir ve hatalar erkenden yakalanır.</li>
  </ul>
 
  <h3>CD Nedir?</h3>
