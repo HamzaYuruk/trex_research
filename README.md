@@ -66,7 +66,78 @@
  <summary><b>CI/CD nedir?</b></summary>
 
  <h3>CI Nedir?</h3>
+ <ul>
+   <li>Yeni bir kod gönderildiğinde sistem projeyi kendi kendine ayağa kaldırarak testleri çalıştırır; böylece eklenen kısmın mevcut sistemi bozup bozmadığı         anında kontrol edilir, kod çakışmaları en aza indirilir ve hatalar erkenden yakalanır.</li>
+ </ul>
 
+ <h3>CD Nedir?</h3>
+ <ul>
+   <li>CI aşamasında başarıyla test edilmiş ve hatasız olduğu onaylanmış bu kodun, kullanıcıların eriştiği canlı sunuculara kesintisiz bir şekilde aktarılması       operasyonudur. Sürekli Teslimat yönteminde kodun canlıya alınması için bir yetkilinin son bir manuel onay vermesi beklenirken, Sürekli Dağıtım                    yönteminde testleri geçen kod hiçbir insan müdahalesi olmadan tamamen otomatik olarak yayına alınır.</li>
+ </ul>
+
+ <h3>Azure DevOps, GitHub Actions İle Pipeline Örnekleri</h3>
+
+ <h2>Pipeline Nedir?</h2>
+ <ul>
+  <il>Pipeline, yukarıda bahsettiğimiz CI ve CD süreçlerinin yol haritasıdır. Sistemin neyi, nasıl ve ne zaman yapacağını adım adım belirlediğimiz talimatlardır.   </il>
+ </ul>
+
+### 1. GitHub Actions Pipeline Örneği
+
+GitHub üzerinde `main` dalına kod gönderildiğinde otomatik çalışan yol haritamız:
+
+```yaml
+name: GitHub CI Yol Haritasi
+
+# Tetikleyici: Main dalına kod gelince çalış
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test-ve-kurulum:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Kodlari İndir
+      uses: actions/checkout@v4
+      
+    - name: Node.js Ortamini Kur
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+        
+    - name: Paketleri Yukle ve Test Et
+      run: |
+        npm install
+        npm run test
+```
+
+### 2. Azure DevOps Pipeline Örneği
+
+Aynı sürecin Microsoft Azure DevOps platformu üzerindeki yol haritası:
+
+```yaml
+name: Azure CI Yol Haritasi
+
+# Tetikleyici: Main dalına kod gelince çalış
+trigger:
+- main
+
+# Çalışacak sanal bilgisayar
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Node.js Ortamini Kur'
+
+- script: |
+    npm install
+    npm run test
+  displayName: 'Paketleri Yukle ve Test Et'
+```
  
 </details>
 
