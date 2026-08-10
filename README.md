@@ -172,3 +172,17 @@ steps:
 
 
 # 2. .NET Ekosistemi 
+
+<details>
+ <summary><b> .NET nedir? Tarihçesi, amacı, neden kullanılır? </b></summary>
+ <br>
+  <h3>.NET nedir?</h3>
+ <ul>
+   <li>.NET, Microsoft tarafından geliştirilen, açık kaynaklı, platformlar arası (cross-platform) ve çok dilli bir yazılım geliştirme platformudur. Tek bir programlama diline bağlı kalmadan (C#, F#, VB.NET gibi dilleri destekler) masaüstü, web, mobil, bulut ve oyun geliştirme gibi çok çeşitli alanlarda uygulama yazılmasına olanak tanır./li>
+ </ul>
+ <br>
+ <h3>GitHub Nedir?</h3>
+ <ul>
+   <li>GitHub, Git kullanarak bilgisayarımızda oluşturduğumuz versiyonları ve dosyaları internet üzerinde yedeklememizi / barındırmamızı sağlayan bir web platformudur. En önemli faydası ekipçe ortak bir proje üzerinde çalışmayı kolaylaştırmasıdır. Ekip üyeleri projelerde yaptıkları değişikleri GitHub'a yükleyebilir, diğer ekip üyelerinin yaptığı değişiklikleri bilgisayarına çekebilir, kimin ne değişiklik yaptığı görülür. Bütün bunlar da ortak bir projede çalışmayı kolaylaştırır.</li>
+ </ul>
+</details>
