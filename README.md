@@ -3,6 +3,16 @@
 Bu repository, genel yazılım geliştirme kavramları, mimari yaklaşımlar ve .NET backend teknolojileri üzerine hazırlanan araştırma notlarını içermektedir.
 
 ## 1. Modern Yazılım Geliştirme Pratikleri
+
+<details>
+
+ <summary><b>Git nedir? GitHub nedir?</b></summary>
+ 
+   sdjsdsjsdjsj
+
+  
+</details>
+## 1. Modern Yazılım Geliştirme Pratikleri
 *### Git ve GitHub Nedir?
 (Kendi yorumların ve açıklamaların...)
 
