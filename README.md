@@ -1,5 +1,7 @@
 # Trex Research
 
+# 1. Modern Yazılım Geliştirme Pratikleri
+
 <details>
  <summary><b>Git Nedir? GitHub Nedir?</b></summary>
  <br>
@@ -144,17 +146,26 @@ steps:
 
 <details>
  <summary><b>Software Development Life Cycle-Yazılım Geliştirme Yaşam Döngüsü </b></summary>
+ 
  SDLC, bir yazılımın sadece basit bir fikirden ibaret olduğu ilk günden başlayıp, müşteriye teslim edilmesine ve yıllar sonraki güncellemelerine kadar geçen tüm   süreçtir.
 
  SDLC Aşamaları:
+ 
  <ul>
-  <li><b>Planlama:</b> Projenin fizibilite çalışmasının yapıldığı, kaynak atamalarının , bütçenin ve risk yönetiminin belirlendiği aşamadır.Kısacası "Biz ne        yapacağız, bütçemiz ne, bu işe değer mi?" sorularının sorulduğu aşamadır.</li>
-  <li><b>Analiz:</b>Müşterinin istekleri doğrultusunda gereksinimler detaylı çıkarılır ve rapora dökülür</li>
-  <li><b>Tasarım:</b> </li>
-  <li><b>Geliştirme:</b> </li>
-  <li><b>Test:</b> </li>
-  <li><b>Deployment:</b> </li>
-  <li><b>Bakım:</b> </li>
+  <li><b>Planlama:</b> Projenin fizibilite çalışmasının yapıldığı, kaynak atamalarının , bütçenin ve risk yönetiminin belirlendiği aşamadır.Kısacası "Biz ne                  yapacağız, bütçemiz ne, bu işe değer mi?" sorularının sorulduğu aşamadır.</li>
+  
+  <li><b>Analiz:</b>Müşterinin istekleri doğrultusunda projenin gereksinimleri detaylı çıkarılır ve rapora dökülür</li>
+  
+  <li><b>Tasarım:</b>Belirlenen gereksinimlere göre sistem mimarisi, veritabanı şemaları, API yapıları ve kullanıcı arayüzü tasarımları kodlama başlamadan önce burada        netleştirilir </li>
+  
+  <li><b>Geliştirme:</b>Tasarlanan sistem mimarisinin koda döküldüğü aşamadır. Frontend ve backend geliştirmeleri bu aşamada yazılır.</li>
+  
+  <li><b>Test:</b>Yazılan kodun Kalite Güvence süreçlerinden geçirildiği aşamadır. Unit test, entegrasyon testleri ve E2E testleri yapılır. Bug'lar tespit edilip             geliştiriciye düzeltmesi için geri raporlanır. </li>
+  
+  <li><b>Deployment:</b>Testleri başarıyla geçen derlenmiş kodun, hedef sunuculara aktarılarak son kullanıcının erişimine açılmasıdır. </li>
+  
+  <li><b>Bakım:</b>Yazılımların geliştirme süreçleri yayınlandıktan sonra bitmiyor;müşterinin yeni istekleri çıkıyor,sistem zaman içinde çeşitli performans                   iyileştirmelerine ihtiyaç duyuyor bu sebeplerden dolayı yazılımın sürekli bakım ihtiyacı oluyor. </li>
+  
  </ul>
  
 </details>
