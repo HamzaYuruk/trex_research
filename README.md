@@ -20,7 +20,7 @@
  <br>
  
  <ul>
-   <li>* git init: * Sıfırdan başlama komutudur. Bilgisayarınızdaki normal bir klasörün içine Git'i kurar ve "artık buradaki dosyaları takip et" der.</li>
+   <li> ** git init: ** Sıfırdan başlama komutudur. Bilgisayarınızdaki normal bir klasörün içine Git'i kurar ve "artık buradaki dosyaları takip et" der.</li>
    
    <li>git clone: GitHub platformu gibi internet üzerinden erişimin olan bir projeyi, tüm geçmiş versiyonlarıyla birlikte bilgisiyarınıza indirir.</li>
    
