@@ -143,5 +143,18 @@ steps:
 
 
 <details>
- <summary><b>Software Development Life Cycle</b></summary>
+ <summary><b>Software Development Life Cycle-Yazılım Geliştirme Yaşam Döngüsü </b></summary>
+ SDLC, bir yazılımın sadece basit bir fikirden ibaret olduğu ilk günden başlayıp, müşteriye teslim edilmesine ve yıllar sonraki güncellemelerine kadar geçen tüm   süreçtir.
+
+ SDLC Aşamaları:
+ <ul>
+  <li><b>Planlama:</b> Projenin fizibilite çalışmasının yapıldığı, kaynak atamalarının , bütçenin ve risk yönetiminin belirlendiği aşamadır.Kısacası "Biz ne        yapacağız, bütçemiz ne, bu işe değer mi?" sorularının sorulduğu aşamadır.</li>
+  <li><b>Analiz:</b>Müşterinin istekleri doğrultusunda gereksinimler detaylı çıkarılır ve rapora dökülür</li>
+  <li><b>Tasarım:</b> </li>
+  <li><b>Geliştirme:</b> </li>
+  <li><b>Test:</b> </li>
+  <li><b>Deployment:</b> </li>
+  <li><b>Bakım:</b> </li>
+ </ul>
+ 
 </details>
