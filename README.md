@@ -412,8 +412,8 @@ fetch('http://localhost:5000/api/notlar/1', {
 
 <table>
   <tr>
-    <th width="50%">JSON (Modern & Hafif)</th>
-    <th width="50%">XML (Eski & Etiket Odaklı)</th>
+    <th width="50%">JSON </th>
+    <th width="50%">XML </th>
   </tr>
   <tr>
     <td>
