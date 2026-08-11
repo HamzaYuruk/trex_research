@@ -298,11 +298,15 @@ steps:
  <h3>HTTP Metodları</h3>
  -Sunucuya bir istek atarken ne yapmak istediğimizi belirten komutlar kullanırız. En yaygın olanları şunlardır:
 
- <b></b>
+ <b>GET:</b>Sunucudan veri istemek için kullanılır.
  
- <b></b>
+ <b>POST:</b>Sunucuya yeni veri göndermek ve kaydettirmek için kullanılır.
  
- <b></b>
+ <b>PUT:</b>Sunucudaki mevcut bir veriyi güncellemek için kullanılır.
+
+ <b>DELETE:</b>Sunucudaki bir veriyi silmek için kullanılır.
+
+ ---
  
  </details>
 
