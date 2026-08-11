@@ -4,15 +4,13 @@
 
 <details>
  <summary><b>Git Nedir? GitHub Nedir?</b></summary>
- <br>
-  <h3>Git Nedir?</h3>
+ <h3>Git Nedir?</h3>
  <ul>
-   <li>Git, tamamen kendi bilgisayarınızda çalışan bir versiyon kontrol sistemidir. Bilgisayarınızdaki dosyalarda yaptığınız her değişikliği versiyon versiyon       kaydeder, istediğiniz an istediğiniz versiyona dönmenizi sağlar. Git sadece yazılım projeleri için kullanılmaz, bütün işlerinizde kullanabilirsiniz.</li>
- </ul>
+   <li>Git, tamamen kendi bilgisayarınızda çalışan bir versiyon kontrol sistemidir. Bilgisayarınızdaki dosyalarda yaptığınız her değişikliği versiyon versiyon       kaydeder, istediğiniz an istediğiniz versiyona dönmenizi sağlar. Git sadece yazılım projeleri için kullanılmaz, bütün işlerinizde kullanabilirsiniz.</li></ul>
  <br>
  <h3>GitHub Nedir?</h3>
  <ul>
-   <li>GitHub, Git kullanarak bilgisayarımızda oluşturduğumuz versiyonları ve dosyaları internet üzerinde yedeklememizi / barındırmamızı sağlayan bir web platformudur. En önemli faydası ekipçe ortak bir proje üzerinde çalışmayı kolaylaştırmasıdır. Ekip üyeleri projelerde yaptıkları değişikleri GitHub'a yükleyebilir, diğer ekip üyelerinin yaptığı değişiklikleri bilgisayarına çekebilir, kimin ne değişiklik yaptığı görülür. Bütün bunlar da ortak bir projede çalışmayı kolaylaştırır.</li>
+ <li>GitHub, Git kullanarak bilgisayarımızda oluşturduğumuz versiyonları ve dosyaları internet üzerinde yedeklememizi / barındırmamızı sağlayan bir web platformudur. En önemli faydası ekipçe ortak bir proje üzerinde çalışmayı kolaylaştırmasıdır. Ekip üyeleri projelerde yaptıkları değişikleri GitHub'a yükleyebilir, diğer ekip üyelerinin yaptığı değişiklikleri bilgisayarına çekebilir, kimin ne değişiklik yaptığı görülür. Bütün bunlar da ortak bir projede çalışmayı kolaylaştırır.</li>
  </ul>
 </details>
 
@@ -269,5 +267,18 @@ steps:
   <b>Composite Api:</b>Tek bir istek atıldığında arka planda birden fazla farklı veri kaynağına veya API'ye aynı anda ulaşıp, gelen dağınık verileri toplayıp derleyerek      kullanıcıya tek bir paket halinde sunan sistemleridir.
 
  </details>
+
+
+ ## REST, SOAP ve GraphQL Karşılaştırması
+
+| Özellik | REST | SOAP | GraphQL |
+| :--- | :--- | :--- | :--- |
+| **Tür / Mimari** | Mimari Tasarım Stili | Katı Kurallı Protokol | Sorgu Dili |
+| **Veri Formatı** | Genellikle JSON | Sadece XML | JSON |
+| **Veri Çekme Esnekliği** | Sabit uç noktalar; istek atılan yerdeki tüm veri gelir. | Sabit yapılı XML zarfları ile katı veri alışverişi. | İhtiyaca göre nokta atışı veri seçimi; sadece istenen alanlar gelir. |
+| **Güvenlik Standardı** | Standart HTTP güvenliği | Gelişmiş yerleşik güvenlik standartları . | Standart HTTP güvenliği |
+| **Avantajları** | Hafif, hızlı, esnek ve öğrenmesi/uygulaması oldukça kolaydır. | Çok güvenlidir, hata yönetimi gelişmiştir, kurumsal standartları tamdır. | Gereksiz veri yükünü ortadan kaldırır. |
+| **Dezavantajları** | Büyük veri yapılarında gereksiz fazla veri taşıyabilir. | XML yapısı ağır, kodlaması zahmetlidir; günümüzde modern web projelerinde pek tercih edilmez. | Önbellekleme mekanizması REST'e göre daha karmaşıktır. |
+| **Kullanım Alanı** | Web, mobil uygulamalar ve genel mikroservisler | Bankacılık, finans ve yüksek güvenlikli kurumsal sistemler | Modern web uygulamaları ve esneklik gerektiren projeler |
 
  
