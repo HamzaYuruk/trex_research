@@ -228,25 +228,25 @@ steps:
 # 3. Backend Geliştirme Temelleri 
 
 <details>
- 
+ ***
  <summary>Backend Nedir?</summary>
  <br>
  -Backend yazılım sistemlerinde kullanıcının görmediği, sunucu tarafında çalışan ve sistemin bütün mantığını, verilerini ve güvenliğini yöneten kısmıdır.Frontend ise        yazılım sistemlerinde kullanıcıların gördüğü, tıkladığı ve doğrudan etkileşim kurduğu kısımdır.Renkler, yazılar, resimler, butonlar ve menüler frontend kısmında yer        alır.Yazılım sistemlerini bir bina gibi düşünecek olursak,binanın dışarıdan görünen yüzü frontend kısmıdır; su, elektrik ve taşıyıcı kolonları backend kısmıdır             diyebiliriz.
- 
+ ***
  </details>
 
 
  
 <details>
- 
+ ***
  <summary>Web Sunucusu Nedir? API Nedir? API Türleri</summary>
  <br>
   <h3>Web Sunucusu Nedir?</h3>
   -Web sunucuları internet sitelerine ait dosyaları depolar ve kullanıcıların tarayıcılarından gelen HTTP/HTTPS isteklerini alarak bu dosyaları onlara                        ulaştırır.Kullanıcının tarayıcısı da bu dosyaları görüntüye çevirip kullanıcıya sunar. 
-
+***
   <h3>API Nedir?</h3>
   -API, farklı yazılım sistemlerinin iletişim kurmasını ve veri alışverişi yapmasını sağlayan bir köprüdür diyebiliriz. Örneğin, "Google ile giriş yap" seçeneğiyle bir       uygulamaya girdiğimizde, girdiğimiz uygulama Google’ın veritabanına doğrudan ulaşıp kullanıcının girdiği bilgilerin doğru olup olmadığını kontrol edemez; çünkü şirketler   veritabanlarını dışarıya açmazlar. Fakat API bu sorunu çözer. Kullanıcının girdiği uygulama Google’a API isteği atar ve sonucu alır.Aynı zamanda API'ler, her şeyi          sıfırdan yazmak yerine mevcut servisleri projenize birkaç satır kodla dâhil edebilme imkânı sunar. Örneğin, geliştirdiğimiz projede harita ihtiyacı olduğunda oturup        sıfırdan harita geliştirmek yerine Google Maps'e API ile bağlanıp bu ihtiyacı kolayca giderebiliyoruz.
-
+***
   <h3>API Türleri</h3>
   -Mimari tarzlarına göre ve kullanım kapsamına göre farklı api türleri vardır.
 
@@ -265,7 +265,7 @@ steps:
   <b>Partner Api:</b>Herkesin erişemediği, yalnızca belirli sözleşmeler, özel izinler aracılığıyla anlaşmalı olunan firmaların  kullanımına tahsis edilen veri paylaşım       kanallarıdır.
 
   <b>Composite Api:</b>Tek bir istek atıldığında arka planda birden fazla farklı veri kaynağına veya API'ye aynı anda ulaşıp, gelen dağınık verileri toplayıp derleyerek      kullanıcıya tek bir paket halinde sunan sistemleridir.
-
+***
  
 
 
@@ -280,7 +280,7 @@ steps:
 | **Avantajları** | Hafif, hızlı, esnek ve öğrenmesi/uygulaması oldukça kolaydır. | Çok güvenlidir, hata yönetimi gelişmiştir, kurumsal standartları tamdır. | Gereksiz veri yükünü ortadan kaldırır. |
 | **Dezavantajları** | Büyük veri yapılarında gereksiz fazla veri taşıyabilir. | XML yapısı ağır, kodlaması zahmetlidir; günümüzde modern web projelerinde pek tercih edilmez. | Önbellekleme mekanizması REST'e göre daha karmaşıktır. |
 | **Kullanım Alanı** | Web, mobil uygulamalar ve genel mikroservisler | Bankacılık, finans ve yüksek güvenlikli kurumsal sistemler | Modern web uygulamaları ve esneklik gerektiren projeler |
-
+***
 </details>
 
 
