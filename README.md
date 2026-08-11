@@ -287,20 +287,16 @@ steps:
  
  <summary>HTTP Nedir? HTTP Metodları Nelerdir</summary>
  <br>
- 
-    ---
+
+ ***
  
  <h3>HTPP Nedir?</h3>
  -HTTP,web tarayıcılarının,yani istemcilerin,ile web sunucuları arasında verilerin nasıl taşınacağını ve iletileceğini belirleyen temel kurallardır.En basit tanımıyla        HTTP, web sitelerinin sayfalarını, görsellerini, videolarını vs. web sunucusundan bilgisayarımıza veya telefonumuza getiren iletişim dilidir.
- 
-    ---
  
  <h3>Nasıl Çalışır?</h3>
  <b>İstek:</b>Tarayıcınıza bir adres yazıp Enter tuşuna bastığınızda, tarayıcınız internet üzerinden ilgili web sitesinin sunucusuna bir HTTP İsteği gönderir.    ("Bana     ana sayfa verilerini gönder" der.)
  
  <b>Yanıt:</b> Sunucu bu isteği alır, işler ve tarayıcınıza bir HTTP yanıtı döner. Bu yanıtın içinde web sitesinin kodları ve durum kodlar bulunur.Daha sonrasında           tarayıcı bu kodları çalıştırarak websitesini gösterir.
- 
-    ---
     
  <h3>HTTP Metodları</h3>
  -Sunucuya bir istek atarken ne yapmak istediğimizi belirten komutlar kullanırız. En yaygın olanları şunlardır:
