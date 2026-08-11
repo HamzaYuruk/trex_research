@@ -293,7 +293,9 @@ steps:
  
  <h3>HTPP Nedir?</h3>
  -HTTP,web tarayıcılarının,yani istemcilerin,ile web sunucuları arasında verilerin nasıl taşınacağını ve iletileceğini belirleyen temel kurallardır.En basit tanımıyla        HTTP, web sitelerinin sayfalarını, görsellerini, videolarını vs. web sunucusundan bilgisayarımıza veya telefonumuza getiren iletişim dilidir.
+ 
  ***
+ 
  <h3>Nasıl Çalışır?</h3>
  <b>İstek:</b>Tarayıcınıza bir adres yazıp Enter tuşuna bastığınızda, tarayıcınız internet üzerinden ilgili web sitesinin sunucusuna bir HTTP İsteği gönderir.    ("Bana     ana sayfa verilerini gönder" der.)
  
