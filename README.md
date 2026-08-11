@@ -316,7 +316,7 @@ steps:
  -Yukarıda belirttiğimiz HTPP metodlarının sunucu ve istemci tarafında örnek kullanımlarını yapacağız:
  ***
 
- ***  SUNUCU HTTP METHODLARI KOD ÖRNEĞİ
+ <h2>SUNUCU HTTP METHODLARI KOD ÖRNEĞİ</h2>
 
  ```csharp
 using Microsoft.AspNetCore.Mvc;
