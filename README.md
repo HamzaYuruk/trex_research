@@ -314,7 +314,7 @@ steps:
 
  <h3>HTPP Metodları Kod Örneği</h3>
  -Yukarıda belirttiğimiz HTPP metodlarının sunucu ve istemci tarafında örnek kullanımlarını yapacağız:
- ***
+ 
 
  <h2>SUNUCU HTTP METHODLARI KOD ÖRNEĞİ</h2>
 
@@ -358,7 +358,35 @@ public class NotlarController : ControllerBase
 }
 ```
 
+<h2>İSTEMCİ HTTP METHODLARI KOD ÖRNEĞİ</h2>
 
+```csharp
+// 1. GET: Sunucuya istek atıp mevcut notları çekerek kullanıcıya (konsola) bastırır
+fetch('http://localhost:5000/api/notlar')
+  .then(cevap => cevap.json())
+  .then(notlarListesi => console.log("Sunucudan gelen notlar:", notlarListesi));
+
+// 2. POST: Sunucuya yeni bir not gönderip listeye eklemesini sağlar
+fetch('http://localhost:5000/api/notlar', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify("Yarın spor yapılacak")
+})
+.then(() => console.log("Not başarıyla eklendi!"));
+
+// 3. PUT: Sunucudaki 0 numaralı notu yeni metinle değiştirip günceller
+fetch('http://localhost:5000/api/notlar/0', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify("Alışveriş listesi güncellendi")
+})
+.then(() => console.log("Not güncellendi!"));
+
+// 4. DELETE: Sunucuya 1 numaralı notun silinmesi için istek atar
+fetch('http://localhost:5000/api/notlar/1', {
+    method: 'DELETE'
+})
+.then(() => console.log("Not silindi!"));
 
  </details>
 
