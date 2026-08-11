@@ -406,12 +406,34 @@ fetch('http://localhost:5000/api/notlar/1', {
   <h3>JSON NEDİR?</h3>
   -JSON, sunucu ile istemci arasında veri alışverişini en sade ve dilden bağımsız şekilde gerçekleştiren modern bir iletişim standardıdır ,      JSON'dan önce verileri taşımak için etiket mantığına dayanan ağır XML formatı kullanılıyordu; her veri parçası için sürekli açılış ve         kapanış etiketleri yazmak zorunda kalmak dosyaları gereksiz yere şişirip ağ trafiğini yavaşlatıyordu. Anahtar-değer prensibine dayanan        yapısıyla bu karmaşaya son veren JSON, sunucu ile istemci arasında hafif bir kargo paketi gibi çalışarak hem geliştiricilerin anında          okuyabileceği sade bir dil sundu hem de bilgisayarların mikro saniyeler içinde işleyebileceği  bir format haline geldi.
 
-    ***
+***
 
  # JSON ve XML Karşılaştırma Örneği
 
-| JSON  | XML  |
-| :--- | :--- |
-| ```json<br>{<br>&nbsp;&nbsp;"ad": "Hamza",<br>&nbsp;&nbsp;"yas": 22,<br>&nbsp;&nbsp;"ogrenciMi": true,<br>&nbsp;&nbsp;"sehir": "Kocaeli"<br>}<br>``` | ```xml<br>&lt;Kullanici&gt;<br>&nbsp;&nbsp;&lt;Ad&gt;Hamza&lt;/Ad&gt;<br>&nbsp;&nbsp;&lt;Yas&gt;22&lt;/Yas&gt;<br>&nbsp;&nbsp;&lt;OgrenciMi&gt;true&lt;/OgrenciMi&gt;<br>&nbsp;&nbsp;&lt;Sehir&gt;Kocaeli&lt;/Sehir&gt;<br>&lt;/Kullanici&gt;<br>``` |
+<table>
+  <tr>
+    <th width="50%">JSON (Modern & Hafif)</th>
+    <th width="50%">XML (Eski & Etiket Odaklı)</th>
+  </tr>
+  <tr>
+    <td>
+<pre><code class="language-json">{
+  "ad": "Hamza",
+  "yas": 22,
+  "ogrenciMi": true,
+  "sehir": "Kocaeli"
+}</code></pre>
+    </td>
+    <td>
+<pre><code class="language-xml">&lt;Kullanici&gt;
+  &lt;Ad&gt;Hamza&lt;/Ad&gt;
+  &lt;Yas&gt;22&lt;/Yas&gt;
+  &lt;OgrenciMi&gt;true&lt;/OgrenciMi&gt;
+  &lt;Sehir&gt;Kocaeli&lt;/Sehir&gt;
+&lt;/Kullanici&gt;</code></pre>
+    </td>
+  </tr>
+</table>
+
  </details>
  
