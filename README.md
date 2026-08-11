@@ -361,6 +361,7 @@ public class NotlarController : ControllerBase
 <h2>İSTEMCİ HTTP METHODLARI KOD ÖRNEĞİ</h2>
 
 ```csharp
+
 // 1. GET: Sunucuya istek atıp mevcut notları çekerek kullanıcıya (konsola) bastırır
 fetch('http://localhost:5000/api/notlar')
   .then(cevap => cevap.json())
@@ -387,6 +388,7 @@ fetch('http://localhost:5000/api/notlar/1', {
     method: 'DELETE'
 })
 .then(() => console.log("Not silindi!"));
+```
 
  </details>
 
