@@ -302,7 +302,7 @@ steps:
 
  ***
  
- <h3>HTPP Nedir?</h3>
+ <h3>HTTP Nedir?</h3>
  -HTTP,web tarayıcılarının,yani istemcilerin,ile web sunucuları arasında verilerin nasıl taşınacağını ve iletileceğini belirleyen temel kurallardır.En basit tanımıyla        HTTP, web sitelerinin sayfalarını, görsellerini, videolarını vs. web sunucusundan bilgisayarımıza veya telefonumuza getiren iletişim dilidir.
  
  ***
@@ -325,7 +325,7 @@ steps:
 
  ---
  
- <h3>HTPP Metodları Kod Örneği</h3>
+ <h3>HTTP Metodları Kod Örneği</h3>
  -Yukarıda belirttiğimiz HTPP metodlarının sunucu ve istemci tarafında örnek kullanımlarını yapacağız:
  
 
