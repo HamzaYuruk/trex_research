@@ -230,7 +230,9 @@ steps:
 <details>
  
  <summary>Backend Nedir?</summary>
+ 
  ---
+
  -Backend yazılım sistemlerinde kullanıcının görmediği, sunucu tarafında çalışan ve sistemin bütün mantığını, verilerini ve güvenliğini yöneten kısmıdır.Frontend ise        yazılım sistemlerinde kullanıcıların gördüğü, tıkladığı ve doğrudan etkileşim kurduğu kısımdır.Renkler, yazılar, resimler, butonlar ve menüler frontend kısmında yer        alır.Yazılım sistemlerini bir bina gibi düşünecek olursak,binanın dışarıdan görünen yüzü frontend kısmıdır; su, elektrik ve taşıyıcı kolonları backend kısmıdır             diyebiliriz.
  ***
  </details>
