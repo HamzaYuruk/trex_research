@@ -476,27 +476,30 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
   
  ---
  
-  MVC üç temel katmandanoluşur:
+  MVC üç temel katmandan oluşur:
 
 <ul>
-  <li><b>1. Model Katmanı:</b> Veritabanı ile doğrudan haberleşen, uygulamanın verilerini barındıran, işleyen ve kurallarına     göre doğrulayan temel veri katmanıdır.</li>
-  <li><b>2. View Katmanı:</b> Kullanıcının ekranda karşılaştığı; HTML, CSS ve JavaScript teknolojileriyle tasarlanan görsel      arayüz katmanıdır. Sadece verinin son kullanıcıya sunulmasından sorumludur.</li>
-  <li><b>3. Controller Katmanı:</b> Kullanıcıdan gelen tüm istekleri ilk karşılayan, Model ile View arasında akış ve veri        transferini sağlayan yönetim katmanıdır.</li>
+  <li><b>1. Model Katmanı:</b> Veritabanı ile doğrudan haberleşen, uygulamanın verilerini barındıran, işleyen ve kurallarına göre doğrulayan temel       veri katmanıdır.</li>
+  <li><b>2. View Katmanı:</b> Kullanıcının ekranda karşılaştığı; HTML, CSS ve JavaScript teknolojileriyle tasarlanan görsel arayüz katmanıdır. Sadece    verinin son kullanıcıya sunulmasından sorumludur.</li>
+  <li><b>3. Controller Katmanı:</b> Kullanıcıdan gelen tüm istekleri ilk karşılayan, Model ile View arasında akış ve veri transferini sağlayan yönetim   katmanıdır.</li>
 </ul>
   
   ---
-  
-  <h3>MVC'nin Avantajları</h3>
-    <ul>
-    <li>Katmanlı yapısı sayesinde kod karmaşasını önler,düzenli bir dosya yapısı sunar.</li>
-    <li>Backend geliştiriciler model ve controller katmanlarında çalışırken frontend geliştiriciler bağımsız bir şekilde view      katmanında çalışabilir bu da ekip çalışmasını kolaylaştırır.</li>
-    <li>Bir yerde yapılan değişiklik diğer katmanları etkilemediğinden projeyi güncellemek çok daha pratiktir.</li>
-    <li>Katmanlar birbirinden bağımsız olduğu için yazılan kodların hatasız çalışıp çalışmadığını test etmek çok daha               kolaydır.</li>
-     </ul>
-  
 
+ ### Örnek Bir Çalışma Akış Şeması
+
+```mermaid
+graph TD;
+    Kullanıcı -->|1. İstek| Controller
+    Controller -->|2. Veri İsteği| Model
+    Model -->|3. Veri Dönüşü| Controller
+    Controller -->|4. Veriyi Aktar| View
+    View -->|5. HTML Çıktısı| Kullanıcı
+    
   ---
-  
+
+  ```
+
  </details>
  
  
