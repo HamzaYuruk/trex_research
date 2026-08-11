@@ -395,5 +395,23 @@ fetch('http://localhost:5000/api/notlar/1', {
 
  <details>
   <summary>RESTful</summary>
+  -REST bir mimari kural bütünüdür; RESTful ise o kuralların sahada eksiksiz bir şekilde uygulanmış halidir. Yani eğer yazdığımız bir API,      REST mimarisinin kurallarına harfiyen uyuyorsa, artık o projeye "RESTful API" diyoruz.REST işin teorisi ve kurallarıdır, RESTful ise o        başarıyla hayata geçirdiğinde sistemin kazandığı uygunluk unvanıdır.
   
  </details>
+
+
+ <details>
+  <summary>JSON Veri Formatı ve Kullanım Amacı</summary>
+
+  <h3>JSON NEDİR?</h3>
+  -JSON, sunucu ile istemci arasında veri alışverişini en sade ve dilden bağımsız şekilde gerçekleştiren modern bir iletişim standardıdır ,      JSON'dan önce verileri taşımak için etiket mantığına dayanan ağır XML formatı kullanılıyordu; her veri parçası için sürekli açılış ve         kapanış etiketleri yazmak zorunda kalmak dosyaları gereksiz yere şişirip ağ trafiğini yavaşlatıyordu. Anahtar-değer prensibine dayanan        yapısıyla bu karmaşaya son veren JSON, sunucu ile istemci arasında hafif bir kargo paketi gibi çalışarak hem geliştiricilerin anında          okuyabileceği sade bir dil sundu hem de bilgisayarların mikro saniyeler içinde işleyebileceği  bir format haline geldi.
+
+    ***
+
+ # JSON ve XML Karşılaştırma Örneği
+
+| JSON  | XML  |
+| :--- | :--- |
+| ```json<br>{<br>&nbsp;&nbsp;"ad": "Hamza",<br>&nbsp;&nbsp;"yas": 22,<br>&nbsp;&nbsp;"ogrenciMi": true,<br>&nbsp;&nbsp;"sehir": "Kocaeli"<br>}<br>``` | ```xml<br>&lt;Kullanici&gt;<br>&nbsp;&nbsp;&lt;Ad&gt;Hamza&lt;/Ad&gt;<br>&nbsp;&nbsp;&lt;Yas&gt;22&lt;/Yas&gt;<br>&nbsp;&nbsp;&lt;OgrenciMi&gt;true&lt;/OgrenciMi&gt;<br>&nbsp;&nbsp;&lt;Sehir&gt;Kocaeli&lt;/Sehir&gt;<br>&lt;/Kullanici&gt;<br>``` |
+ </details>
+ 
