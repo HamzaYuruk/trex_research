@@ -227,4 +227,36 @@ steps:
 </details>
 
 
+# 3. Backend Geliştirme Temelleri 
+
+<details>
+ <summary><b>.NET Framework, .NET Core ve .NET 7/8+ farkları</b></summary>
+ <br>
+ 
+ <h3>.NET Framework</h3>
+ <ul>
+   <li>Microsoft tarafından 2002 yılında piyasaya sürülen ve sadece Windows işletim sistemlerinde çalışan kapalı kaynaklı ilk versiyondur.
+   Bu yapı tamamen Windows tabanlı donanım ve sunuculara bağımlıydı. Zamanla kod tabanı çok büyüdü ve hantallaştı. Bulut sistemlerinin yaygınlaşması ve farklı işletim         sistemlerine olan ihtiyacın artmasıyla birlikte sadece windows işletim sisteminde çalışıyor olması modern web ihtiyaçlarına yanıt vermekte zorlanmaya başladı.</li>
+ </ul>
+ <br>
+ 
+ <h3>.NET Core</h3>
+ <ul>
+   <li>2016 yılında piyasaya sürülen bu sürüm, Microsoft'un kapalı kutu mantığını yıktığı devrim niteliğinde bir adımdır.Framework sürümünün aksine baştan aşağı yeniden       yazılmış, açık kaynak kodlu ve tamamen platform bağımsız bir hale getirilmiştir. Node.js gibi teknolojilerin sunduğu çevikliği ve farklı işletim sistemlerinde çalışma      mantığını benimsemiştir. Artık yazılan bir kod Windows, Linux ve macOS üzerinde sorunsuz çalışabilir hale gelmiştir. Özellikle mikroservis mimarileri ve yüksek             performanslı bulut uygulamaları için optimize edilmiştir.</li>
+ </ul>
+
+ <h3> .NET 7/8+ farkları</h3>
+ <ul>
+   <li>.NET 7 standart destek sürümü olduğu için on sekiz aylık ömrünü tamamlamıştır ancak .NET 8 ve sonrası uzun vadeli destek sunarak özellikle B2B SaaS platformları        gibi kesintisiz çalışması gereken mimariler için güvenilir bir temel oluşturur. .NET 8 ile birlikte gelen gelişmiş performans iyileştirmeleri ve önceden derleme            yetenekleri sayesinde bulut tabanlı uygulamalar çok daha hızlı ayağa kalkar ve daha az sunucu kaynağı tüketir. Ayrıca veritabanı tarafında Entity Framework Core            üzerinden MySQL gibi ilişkisel sistemlerle kurulan bağlantılarda sorgu hızları artırılmış, büyük projelerin arka plan yönetimi çok daha pürüzsüz hale getirilmiştir.</li>
+ </ul>
+ 
+</details>
+
+
+<details>
+ <summary><b>Platformlar arası çalışabilir mi? (Windows, Linux, macOS)</b></summary>
+ <br>
+ Evet, kesinlikle çalışabilir.Yukarıda da belirttiğimiz gibi Modern .NET bütün platformlarda çalışır.Microsoftun .NET Core'u çıkarmasının en temel amacı sadece windows      üzerinde çalışan .NET Frameworkun bu eksikliğini giderip .NET ekosistemini bütün işletim sistemlerinde çalışacak bir yapı haline getirmekti.
+</details>
+
 
