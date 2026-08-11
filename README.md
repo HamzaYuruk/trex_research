@@ -548,5 +548,13 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
    
 
  </details>
- 
+
+
+ <details>
+  <summary>Dependency Injection Nedir, Neden Önemlidir? </summary>
+  
+
+
+  
+ </details>
  
