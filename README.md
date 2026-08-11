@@ -230,33 +230,44 @@ steps:
 # 3. Backend Geliştirme Temelleri 
 
 <details>
- <summary><b>.NET Framework, .NET Core ve .NET 7/8+ farkları</b></summary>
+ 
+ <summary>Backend Nedir?</summary>
  <br>
+ -Backend yazılım sistemlerinde kullanıcının görmediği, sunucu tarafında çalışan ve sistemin bütün mantığını, verilerini ve güvenliğini yöneten kısmıdır.Frontend ise        yazılım sistemlerinde kullanıcıların gördüğü, tıkladığı ve doğrudan etkileşim kurduğu kısımdır.Renkler, yazılar, resimler, butonlar ve menüler frontend kısmında yer        alır.Yazılım sistemlerini bir bina gibi düşünecek olursak,binanın dışarıdan görünen yüzü frontend kısmıdır; su, elektrik ve taşıyıcı kolonları backend kısmıdır             diyebiliriz.
  
- <h3>.NET Framework</h3>
- <ul>
-   <li>Microsoft tarafından 2002 yılında piyasaya sürülen ve sadece Windows işletim sistemlerinde çalışan kapalı kaynaklı ilk versiyondur.
-   Bu yapı tamamen Windows tabanlı donanım ve sunuculara bağımlıydı. Zamanla kod tabanı çok büyüdü ve hantallaştı. Bulut sistemlerinin yaygınlaşması ve farklı işletim         sistemlerine olan ihtiyacın artmasıyla birlikte sadece windows işletim sisteminde çalışıyor olması modern web ihtiyaçlarına yanıt vermekte zorlanmaya başladı.</li>
- </ul>
- <br>
- 
- <h3>.NET Core</h3>
- <ul>
-   <li>2016 yılında piyasaya sürülen bu sürüm, Microsoft'un kapalı kutu mantığını yıktığı devrim niteliğinde bir adımdır.Framework sürümünün aksine baştan aşağı yeniden       yazılmış, açık kaynak kodlu ve tamamen platform bağımsız bir hale getirilmiştir. Node.js gibi teknolojilerin sunduğu çevikliği ve farklı işletim sistemlerinde çalışma      mantığını benimsemiştir. Artık yazılan bir kod Windows, Linux ve macOS üzerinde sorunsuz çalışabilir hale gelmiştir. Özellikle mikroservis mimarileri ve yüksek             performanslı bulut uygulamaları için optimize edilmiştir.</li>
- </ul>
-
- <h3> .NET 7/8+ farkları</h3>
- <ul>
-   <li>.NET 7 standart destek sürümü olduğu için on sekiz aylık ömrünü tamamlamıştır ancak .NET 8 ve sonrası uzun vadeli destek sunarak özellikle B2B SaaS platformları        gibi kesintisiz çalışması gereken mimariler için güvenilir bir temel oluşturur. .NET 8 ile birlikte gelen gelişmiş performans iyileştirmeleri ve önceden derleme            yetenekleri sayesinde bulut tabanlı uygulamalar çok daha hızlı ayağa kalkar ve daha az sunucu kaynağı tüketir. Ayrıca veritabanı tarafında Entity Framework Core            üzerinden MySQL gibi ilişkisel sistemlerle kurulan bağlantılarda sorgu hızları artırılmış, büyük projelerin arka plan yönetimi çok daha pürüzsüz hale getirilmiştir.</li>
- </ul>
- 
-</details>
+ </details>
 
 
+ 
 <details>
- <summary><b>Platformlar arası çalışabilir mi? (Windows, Linux, macOS)</b></summary>
+ 
+ <summary>Web Sunucusu Nedir? API Nedir? API Türleri</summary>
  <br>
- Evet, kesinlikle çalışabilir.Yukarıda da belirttiğimiz gibi Modern .NET bütün platformlarda çalışır.Microsoftun .NET Core'u çıkarmasının en temel amacı sadece windows      üzerinde çalışan .NET Frameworkun bu eksikliğini giderip .NET ekosistemini bütün işletim sistemlerinde çalışacak bir yapı haline getirmekti.
-</details>
+  <h3>Web Sunucusu Nedir?</h3>
+  -Web sunucuları internet sitelerine ait dosyaları depolar ve kullanıcıların tarayıcılarından gelen HTTP/HTTPS isteklerini alarak bu dosyaları onlara                        ulaştırır.Kullanıcının tarayıcısı da bu dosyaları görüntüye çevirip kullanıcıya sunar. 
 
+  <h3>API Nedir?</h3>
+  -API, farklı yazılım sistemlerinin iletişim kurmasını ve veri alışverişi yapmasını sağlayan bir köprüdür diyebiliriz. Örneğin, "Google ile giriş yap" seçeneğiyle bir       uygulamaya girdiğimizde, girdiğimiz uygulama Google’ın veritabanına doğrudan ulaşıp kullanıcının girdiği bilgilerin doğru olup olmadığını kontrol edemez; çünkü şirketler   veritabanlarını dışarıya açmazlar. Fakat API bu sorunu çözer. Kullanıcının girdiği uygulama Google’a API isteği atar ve sonucu alır.Aynı zamanda API'ler, her şeyi          sıfırdan yazmak yerine mevcut servisleri projenize birkaç satır kodla dâhil edebilme imkânı sunar. Örneğin, geliştirdiğimiz projede harita ihtiyacı olduğunda oturup        sıfırdan harita geliştirmek yerine Google Maps'e API ile bağlanıp bu ihtiyacı kolayca giderebiliyoruz.
 
+  <h3>API Türleri</h3>
+  -Mimari tarzlarına göre ve kullanım kapsamına göre farklı api türleri vardır.
+
+  <h4>Mimari Tarzlarına Göre Api Türleri</h4>
+  <b>REST:</b>İnternette gördüğümüz API'lerin çok büyük bir kısmı REST mimarisiyle çalışır.REST mimarisi HTTP protokolünü temel alır.Standart URL'ler üzerinden istek         atılır ve genellikle JSON formatında veri alınır. Stateless bir yapıdadır, yani sunucu her isteği bağımsız olarak değerlendirir.
+  
+  <b>SOAP:</b>REST'ten daha eski, kuralları daha katı olan bir protokoldür.Genellikle veri güvenliğinin kritik olduğu alanlarda tercih edilir.HTTP üzerinden                  çalışabilir,veri alışverişi için sadece XML formatını kullanır. 
+  
+  <b>GraphQL:</b>Facebook tarafından REST API'lerin gereksiz veri çekme sorununu çözmek için geliştirilmiş modern bir sorgu dilidir.Örneğin REST mimarisinde /users           yaptığımız zaman user'in bütün bilgilerini getirir fakat GraphQL bize "Bana sadece kullanıcının yaşını getir." deme imkanı sunuyor bu da gereksiz veri çekme sorununu       önlüyor.
+
+  <h4>Kullanım Kapsamına Göre Api Türleri</h4>
+  <b>Public Api:</b>Şirketlerin, geliştirdikleri servisleri veya verileri tüm dünyadaki yazılımcıların projelerine kolayca entegre edebilmesi için internet üzerinden         herkese açtığı erişilebilir arayüzlerdir.
+  
+  <b>İnternal Api:</b>Bir şirketin dış dünyaya tamamen kapalı olarak, sadece kendi bünyesindeki yazılım ekiplerinin kurum içi sistemlerini, veritabanlarını güvenli bir       şekilde birbirine bağlamak için geliştirdiği özel arayüzlerdir.
+  
+  <b>Partner Api:</b>Herkesin erişemediği, yalnızca belirli sözleşmeler, özel izinler aracılığıyla anlaşmalı olunan firmaların  kullanımına tahsis edilen veri paylaşım       kanallarıdır.
+
+  <b>Composite Api:</b>Tek bir istek atıldığında arka planda birden fazla farklı veri kaynağına veya API'ye aynı anda ulaşıp, gelen dağınık verileri toplayıp derleyerek      kullanıcıya tek bir paket halinde sunan sistemleridir.
+
+ </details>
+
+ 
