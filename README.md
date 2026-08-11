@@ -253,7 +253,7 @@ steps:
   -Mimari tarzlarına göre ve kullanım kapsamına göre farklı api türleri vardır.
 
   <h4>Mimari Tarzlarına Göre Api Türleri</h4>
-  <b>REST:</b>İnternette gördüğümüz API'lerin çok büyük bir kısmı REST mimarisiyle çalışır.REST mimarisi HTTP protokolünü temel alır.Standart URL'ler üzerinden istek         atılır ve genellikle JSON formatında veri alınır. Stateless bir yapıdadır, yani sunucu her isteği bağımsız olarak değerlendirir.
+  <b>REST:</b>İnternette gördüğümüz API'lerin çok büyük bir kısmı REST mimarisiyle çalışır.REST mimarisi HTTP protokolünü temel alır.Standart URL'ler üzerinden     istek atılır ve genellikle JSON formatında veri alınır. Stateless bir yapıdadır, yani sunucu her isteği bağımsız olarak değerlendirir.
   
   <b>SOAP:</b>REST'ten daha eski, kuralları daha katı olan bir protokoldür.Genellikle veri güvenliğinin kritik olduğu alanlarda tercih edilir.HTTP üzerinden                  çalışabilir,veri alışverişi için sadece XML formatını kullanır. 
   
