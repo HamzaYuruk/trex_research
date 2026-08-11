@@ -323,6 +323,8 @@ steps:
 
  <b>DELETE:</b>Sunucudaki bir veriyi silmek için kullanılır.
 
+ ---
+ 
  <h3>HTPP Metodları Kod Örneği</h3>
  -Yukarıda belirttiğimiz HTPP metodlarının sunucu ve istemci tarafında örnek kullanımlarını yapacağız:
  
