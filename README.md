@@ -240,8 +240,6 @@ steps:
 
  
 <details>
-
- ---
  
  <summary>Web Sunucusu Nedir? API Nedir? API Türleri</summary>
 
