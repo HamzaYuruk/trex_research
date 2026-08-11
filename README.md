@@ -314,8 +314,9 @@ steps:
 
  <h3>HTPP Metodları Kod Örneği</h3>
  -Yukarıda belirttiğimiz HTPP metodlarının sunucu ve istemci tarafında örnek kullanımlarını yapacağız:
+ ***
 
- 
+ ***  SUNUCU HTTP METHODLARI KOD ÖRNEĞİ
 
  ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -355,6 +356,9 @@ public class NotlarController : ControllerBase
         notlar.RemoveAt(id);
     }
 }
+```
+
+
 
  </details>
 
