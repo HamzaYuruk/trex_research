@@ -525,14 +525,14 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
     <il>4.Süzgeçlerden onay alan istek,sunucuya ulaşır ve işlenip kullanıcıya geri döner.Eğer onay almazsa, sunucuya ulaşamadan  geri             çevrilir.</il>
   </ul>
 
-  --
+  ---
 
   <h3>Startup.cs ya da Program.cs İçindeki Middleware Sıralaması</h3>
   -Yukarıda HTTP isteklerinin middleware süzgeçlerinden geçtiğini belirtmiştik.İşte bu süzgeçlerin belirli bir sıralaması vardır; bu sıralama   uygulamanın güvenliği, performansı ve doğru çalışması açısından hayati önem taşır.ASP.NET Core uygulamalarında Startup.cs veya Program.cs     dosyalarında bu sıralamaya dikkat edilmelidir. Middleware'ler pipeline mantığıyla çalışır. Gelen bir HTTP isteği bu katmanlardan sırayla      geçer, son noktada işlenir ve yanıt önerken tam tersi sırayla geri çıkar. Doğru sıralama yapılmazsa yetkilendirme açıkları, performans        kayıpları veya işlevsel hatalar ortaya çıkabilir.
 
-
+ <br>
  <b>Önerilen Sıralama</b>
-
+ <br>
      
  | Sıra | Middleware | Açıklama | Neden Bu Sırada Olmalı? |
 | :--- | :--- | :--- | :--- |
