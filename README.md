@@ -434,6 +434,7 @@ fetch('http://localhost:5000/api/notlar/1', {
     </td>
   </tr>
 </table>
+Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla daha sade bir çözüm sunuyor.
 
  </details>
  
