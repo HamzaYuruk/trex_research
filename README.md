@@ -450,4 +450,53 @@ fetch('http://localhost:5000/api/notlar/1', {
 Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla daha sade bir çözüm sunuyor.
 
  </details>
+
+ # 4. ASP.NET 
+
+ <details>
+  <summary>ASP.NET ve ASP.NET Core Nedir?</summary>
+
+  ---
+
+  <h3>ASP.NET ve ASP.NET Core Nedir?</h3>
+  -ASP.NET, .NET ekosisteminin web projeleri geliştirmek için sunduğu hazır araçları, kütüphaneleri ve yapıları barındıran web   framework'üdür; yani .NET'in web dünyasına açılan alt kümesidir. Tıpkı ikinci konu başlığımız olan .NET ekosistemindeki        geleneksel .NET Framework yapısında olduğu gibi, ilk nesil klasik ASP.NET de temelde sadece Windows işletim sistemine ve IIS   sunucusuna bağımlı olarak çalışırken, onun modern ve güçlü evrimi olan ASP.NET Core bu sınırları tamamen ortadan kaldırarak    Windows, Linux ve macOS üzerinde çalışabilen, çok daha yüksek performanslı ve açık kaynaklı yeni nesil bir yaklaşım sunar.
+
+  ---
+
+ </details>
+
+
+  <details>
+  <summary>MVC Nedir, Ne İçin Kullanılır? </summary>
+
+  ---
+
+  <h3>MVC Nedir?</h3>
+  -MVC (Model-View-Controller), bir yazılım projesini üç ayrı temel katmana ayırarak geliştirmeyi sağlayan popüler bir tasarım    kalıbıdır. Bu mimari yaklaşımın temel amacı; uygulamanın verilerini, iş mantığını ve kullanıcı arayüzünü birbirinden kesin     çizgilerle ayırarak kodun çok daha düzenli, sürdürülebilir ve test edilebilir olmasını sağlamaktır.
+  
+ ---
+ 
+  MVC üç temel katmandanoluşur:
+
+<ul>
+  <li><b>1. Model Katmanı:</b> Veritabanı ile doğrudan haberleşen, uygulamanın verilerini barındıran, işleyen ve kurallarına     göre doğrulayan temel veri katmanıdır.</li>
+  <li><b>2. View Katmanı:</b> Kullanıcının ekranda karşılaştığı; HTML, CSS ve JavaScript teknolojileriyle tasarlanan görsel      arayüz katmanıdır. Sadece verinin son kullanıcıya sunulmasından sorumludur.</li>
+  <li><b>3. Controller Katmanı:</b> Kullanıcıdan gelen tüm istekleri ilk karşılayan, Model ile View arasında akış ve veri        transferini sağlayan yönetim katmanıdır.</li>
+</ul>
+  
+  ---
+  
+  <h3>MVC'nin Avantajları</h3>
+    <ul>
+    <li>Katmanlı yapısı sayesinde kod karmaşasını önler,düzenli bir dosya yapısı sunar.</li>
+    <li>Backend geliştiriciler model ve controller katmanlarında çalışırken frontend geliştiriciler bağımsız bir şekilde view      katmanında çalışabilir bu da ekip çalışmasını kolaylaştırır.</li>
+    <li>Bir yerde yapılan değişiklik diğer katmanları etkilemediğinden projeyi güncellemek çok daha pratiktir.</li>
+    <li>Katmanlar birbirinden bağımsız olduğu için yazılan kodların hatasız çalışıp çalışmadığını test etmek çok daha               kolaydır.</li>
+     </ul>
+  
+
+  ---
+  
+ </details>
+ 
  
