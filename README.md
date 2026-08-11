@@ -486,7 +486,7 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
   
   ---
 
- ### Örnek Bir Çalışma Akış Şeması
+ ### MVC Akış Şeması
 
 ```text
     Kullanıcı (Browser)
@@ -504,6 +504,46 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
          ▼
     Kullanıcıya Sonuç Gösterilir
   ```
+
+ </details>
+
+ <details>
+  <summary>Middleware nedir, Nasıl çalışır?</summary>,
+
+  ---
+
+  <h3>Nedir?</h3>
+  -Middleware, web uygulamalarına dışarıdan gelen isteğin, uygulamanın ana kodlarına ulaşmadan önce geçtiği ilk kontrol, gerekli kontrollerin    yapıldığı güvenlik katmanıdır.
+
+  ---
+
+  <h3>Nasıl Çalışır?</h3>
+  <ul>
+    <il>1.Kullanıcı arayüzünde bir işlem yapar,örneğin bir butona tıklar,ve tarayıcı sunucuya bir HTTP İsteği gönderir.</il>
+    <il>2.Sunucuya gelen bu istek,sunucuya girmeden en dış katmanındaki middleware pipeline'a girer.</il>
+    <il>3.İstek middleware süzgeçlerinden geçer, gerekli kontroller yapılır.</il>
+    <il>4.Süzgeçlerden onay alan istek,sunucuya ulaşır ve işlenip kullanıcıya geri döner.Eğer onay almazsa, sunucuya ulaşamadan  geri             çevrilir.</il>
+  </ul>
+
+  --
+
+  <h3>Startup.cs ya da Program.cs İçindeki Middleware Sıralaması</h3>
+  -Yukarıda HTTP isteklerinin middleware süzgeçlerinden geçtiğini belirtmiştik.İşte bu süzgeçlerin belirli bir sıralaması vardır; bu sıralama   uygulamanın güvenliği, performansı ve doğru çalışması açısından hayati önem taşır.ASP.NET Core uygulamalarında Startup.cs veya Program.cs     dosyalarında bu sıralamaya dikkat edilmelidir. Middleware'ler pipeline mantığıyla çalışır. Gelen bir HTTP isteği bu katmanlardan sırayla      geçer, son noktada işlenir ve yanıt önerken tam tersi sırayla geri çıkar. Doğru sıralama yapılmazsa yetkilendirme açıkları, performans        kayıpları veya işlevsel hatalar ortaya çıkabilir.
+
+ <b>Önerilen Sıralama</b>
+     
+ | Sıra | Middleware | Açıklama | Neden Bu Sırada Olmalı? (Kısaca) |
+| :--- | :--- | :--- | :--- |
+| **1** | **Hata Yönetimi (Exception Handling)** | `UseExceptionHandler`<br>`UseDeveloperExceptionPage` | Boru hattının devamında çıkabilecek tüm hataları en dıştan yakalayıp kullanıcıya doğru formatta iletebilmek için. |
+| **2** | **HTTPS Yönlendirme** | `UseHttpsRedirection` | İstekleri gereksiz işlemlere sokmadan, en erken aşamada güvenli protokole (HTTPS) çekmek için. |
+| **3** | **Statik Dosyalar** | `UseStaticFiles` | Resim, CSS, JS gibi statik kaynaklara yetki veya yönlendirme işlemi yapmadan hızlıca yanıt dönerek performans sağlamak için. |
+| **4** | **Routing (Yönlendirme)** | `UseRouting` | İsteğin hangi hedefe gideceğini belirlemek için. (Kimlik/yetki kontrolü yapılmadan önce hedefin bilinmesi şarttır). |
+| **5** | **CORS Politikaları** | `UseCors` | Hedef belirlendikten sonra, farklı domainlerden gelen isteklere izin verilip verilmediğini güvenlikten hemen önce denetlemek için. |
+| **6** | **Authentication (Kimlik Doğrulama)** | `UseAuthentication` | Yetki (Authorization) kontrolü yapabilmek için, önce sisteme gelen kullanıcının "kim olduğunu" doğrulamak gerektiği için. |
+| **7** | **Authorization (Yetkilendirme)** | `UseAuthorization` | Kimliği artık bilinen kullanıcının, ulaşmak istediği hedefe "erişim izni" olup olmadığını son aşamada kontrol etmek için. |
+| **8** | **Session / Özel Katmanlar** | `UseSession` vb. | Kullanıcı oturum verilerini (session) hedefe (endpoint) ulaşmadan hemen önce hazırlamak için. |
+| **9** | **Endpoints (Uç Noktalar)** | `MapControllers()` vb. | Tüm güvenlik ve yönlendirme süzgeçlerinden başarıyla geçen isteğin, artık asıl işleneceği son durak olduğu için. |
+   
 
  </details>
  
