@@ -488,16 +488,21 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
 
  ### Örnek Bir Çalışma Akış Şeması
 
-```mermaid
-graph TD;
-    Kullanıcı -->|1. İstek| Controller
-    Controller -->|2. Veri İsteği| Model
-    Model -->|3. Veri Dönüşü| Controller
-    Controller -->|4. Veriyi Aktar| View
-    View -->|5. HTML Çıktısı| Kullanıcı
-    
-  ---
-
+```text
+    Kullanıcı (Browser)
+         │ 
+         │ 1. İstek Gönderir (Sayfa/Veri İsteği)
+         ▼
+    [ Controller Katmanı ] ────── 2. Veri Talebi ─────► [ Model Katmanı ]
+         │                                                      │
+         │                                                      │ 3. Veritabanından
+         │ ◄───── 4. İşlenen Veri Dönüşü ───────────────────────┘    Veri Çekilir
+         ▼
+    [ View Katmanı ]
+         │ 
+         │ 5. HTML/CSS ile Arayüz Oluşturulur
+         ▼
+    Kullanıcıya Sonuç Gösterilir
   ```
 
  </details>
