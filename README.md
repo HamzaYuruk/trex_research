@@ -312,7 +312,54 @@ steps:
 
  <b>DELETE:</b>Sunucudaki bir veriyi silmek için kullanılır.
 
-   ---
+ <h3>HTPP Metodları Kod Örneği</h3>
+ -Yukarıda belirttiğimiz HTPP metodlarının sunucu ve istemci tarafında örnek kullanımlarını yapacağız:
+
  
+
+ ```csharp
+using Microsoft.AspNetCore.Mvc;
+
+[Route("api/[controller]")]
+[ApiController]
+public class NotlarController : ControllerBase
+{
+    // Sanal bir veritabanı yerine hafızada tutulan liste oluşturduk
+    private static List<string> notlar = new List<string> { "Alışveriş yapılacak", "Kod yazılacak" };
+
+    // 1. GET: Sunucuya httpget isteği gelince bütün notları geri döndürecek
+    [HttpGet]
+    public List<string> GetNotlar()
+    {
+        return notlar;
+    }
+
+    // 2. POST: Sunucuya htpp post isteği ve eklenecek bilgi geldiğinde ,yeni not listeye eklenecek
+    [HttpPost]
+    public void NotEkle([FromBody] string yeniNot)
+    {
+        notlar.Add(yeniNot);
+    }
+
+    // 3. PUT: Sunucuya htppPut ,id ve yeni not geldiğinde o id'deki not güncellenecek
+    [HttpPut("{id}")]
+    public void NotGuncelle(int id, [FromBody] string guncelNot)
+    {
+        notlar[id] = guncelNot;
+    }
+
+    // 4. DELETE: Sunucuya httpDelete ve id numarası geldiğinde o id'deki not silinecek
+    [HttpDelete("{id}")]
+    public void NotSil(int id)
+    {
+        notlar.RemoveAt(id);
+    }
+}
+
  </details>
 
+
+ <details>
+  <summary>RESTful</summary>
+  
+ </details>
