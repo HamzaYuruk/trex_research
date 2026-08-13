@@ -692,7 +692,7 @@ public class Araba
 
     -- Sadece fiyatı 1000'den büyük olan ürünlerin isimlerini çekeriz:
     SELECT Name, Price FROM Products WHERE Price > 1000;
-    
+     ```
    
   </ul>
  
@@ -706,7 +706,7 @@ public class Araba
     -- Products tablosuna yeni bir ürün ekleriz:
      INSERT INTO Products (Name, Price) 
       VALUES ('Laptop', 25000);
-    
+     ```
    
   </ul>
 
@@ -721,7 +721,7 @@ public class Araba
     UPDATE Products 
     SET Price = 22000 
     WHERE Id = 5;
-    
+    ```
    
   </ul>
 
@@ -736,7 +736,7 @@ public class Araba
     -- ID'si 5 olan ürünü veritabanından sileriz:
       DELETE FROM Products 
       WHERE Id = 5;
-    
+    ```
    
   </ul>
 
