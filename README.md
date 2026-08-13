@@ -1050,12 +1050,26 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 ---
 
- -Günümüzün dijital ekosisteminde yazılım projelerinin başarısı, yalnızca doğru çalışan özellikler sunmakla sınırlı değildir; kusursuz bir kullanıcı deneyiminin   en temel yapı taşı performans ve hızdır. Kullanıcıların milisaniyeler içinde yanıt alamadığı, yavaş yüklenen ekranlarla karşılaştığı anlarda sabrı hızla         tükenmekte ve rakip alternatiflere yönelmesi an meselesi olmaktadır.Sadece son kullanıcı tarafında değil, arka plandaki bulut maliyetleri, sunucu kaynak         tüketimi ve sistemin yüksek trafik altındaki kararlılığı açısından da performans optimizasyonu artık lüks değil, olmazsa olmaz kritik bir mühendislik            disiplinidir. .NET projelerinde bu hıza ulaşmak ve kaynakları en verimli şekilde yönetmek için doğru mimari kararları almak gerekir.
+ -Günümüzün dijital ekosisteminde yazılım projelerinin başarısı, yalnızca doğru çalışan özellikler sunmakla sınırlı değildir; kusursuz bir kullanıcı deneyiminin   en temel yapı taşı performans ve hızdır. Kullanıcıların milisaniyeler içinde yanıt alamadığı, yavaş yüklenen ekranlarla karşılaştığı anlarda sabrı hızla         tükenmekte ve rakip alternatiflere yönelmesi an meselesi olmaktadır.Sadece son kullanıcı tarafında değil, arka plandaki bulut maliyetleri, sunucu kaynak         tüketimi ve sistemin yüksek trafik altındaki kararlılığı açısından da performans optimizasyonu artık lüks değil, olmazsa olmaz kritik bir mühendislik            disiplinidir. .NET projelerinde bu hıza ulaşmak ve kaynakları en verimli şekilde yönetmek için doğru mimari kararları almamız gerekir.
 
 ---
 
 <h3>Performans Artırımı İçin Önerilen Teknikler</h3>
 
-### `AsNoTracking`
+### `AsNoTracking` :
+-Entity Framework Core, varsayılan olarak veritabanından bir veri çektiğimiz an arkada görünmez bir dedektif (Change Tracker) görevlendirir. Bu dedektif, "Acaba bu veriyi kod içinde değiştirdin mi?" diye sürekli o nesneyi izler; çünkü hedefi SaveChanges çağrıldığında değişiklikleri veritabanına otomatik yansıtmaktır.Ancak amacımız sadece veriyi okumak, ekrana basmak veya listelemekse, o dedektifin peşinde gezmesi fazladan CPU ve RAM harcayan tam anlamıyla bir kaynak israfıdır. Sorgularımıza `AsNoTracking()` ekleyerek EF Core'a "Bu veriyi çek ama arkasına dedektif dikme, sadece okuyup geçeceğim" komutunu verir; böylece bellek yükünü azaltıp performansı anında yukarı çekeriz.
+
+### `IAsyncEnumerable` :
+-Milyonlarca satırlık devasa veri setleriyle çalışırken `ToListAsync()` patlatıp tüm veriyi tek seferde RAM'e yığmaya kalkarsak sunucu `OutOfMemoryException` yiyip çökebilir. `IAsyncEnumerable<T> `sayesinde veritabanından verileri musluktan damlar gibi parça parça 
+ asenkron bir şekilde çekeriz. Böylece RAM şişmez, veriler geldikçe anlık olarak işleyip tüketiriz.
+
+### `Caching` :
+-Sürekli değişmeyen veya hesaplanması ağır olan verileri her seferinde veritabanına sorup sistemi yormak yerine, bir kere çekip RAM'de saklar, sonraki isteklerde doğrudan RAM'den okuruz.
+
+### `Redis` :
+-Uygulama iç caching tek sunucu için harikadır; ancak sistem büyüyüp birden fazla sunucuya geçtiğimizde her sunucu kendi önbelleğini tutmaya başlar ve veri tutarsızlığı çıkar. Redis tam burada devreye girer; bu önbellek verilerini ortak ve merkezi bir havuzda tutan, tamamen RAM üzerinde çalıştığı için bize inanılmaz bir hız sunan harika bir cache ve veri sunucusudur.
+
+### `Profiling` :
+-Kodun nerede yavaşladığını tahmin etmek yerine veriye dayalı olarak nokta atışı tespit etme sürecidir. Hangi metodun ne kadar CPU harcadığını, hangi sorgunun sistemi kilitlediğini MiniProfiler veya BenchmarkDotNet gibi araçlarla milisaniyesine kadar ölçer, problemi tam yerinden çözeriz.
  
 </details>
