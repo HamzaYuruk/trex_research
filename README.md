@@ -573,9 +573,86 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
 
 
  <details>
-  <summary>Dependency Injection Nedir, Neden Önemlidir? </summary>
-  
+  <summary>Dependency Injection Nedir, Neden Kullanmalıyız? </summary>
 
+  <h3>Nedir?</h3>
+  -Dependency Injection, bir nesnenin çalışmak için ihtiyaç duyduğu diğer nesneleri kendi içinde oluşturması yerine,bu nesnelerin dışarıdan bir          mekanizma tarafından verilmesidir.Aşağıdaki kod örnekleri üzerinden dependy injeciton'u daha iyi anlayalabiliriz.
+
+  ---
+
+  ## Dependency Injection'un Olmadığı Örnek
+
+  ---
+
+  ```Csharp
+public class Araba 
+{
+    // Araba gidiyor ve kendi benzinli motorunu kendisi üretiyor.
+    // Yarın elektrikli motora geçmek istersek arabanın kodunu çöpe atıp baştan yazmamız gerekir.
+    private BenzinliMotor _motor = new BenzinliMotor(); 
+
+    public void Git() 
+    {
+        _motor.Calistir();
+    }
+}
+```
+
+ ---
+
+
+ ## Dependency İnjection Örneği
+
+ ```Charp
+
+// 1. Önce ortak bir motor kuralı tanımlıyoruz 
+public interface IMotor 
+{
+    void Calistir();
+}
+
+// 2. Benzinli Motor bu kurala uyuyor
+public class BenzinliMotor : IMotor 
+{
+    public void Calistir() { Console.WriteLine("Benzinli motor çalıştı."); }
+}
+
+// 3. Elektrikli Motor da bu kurala uyuyor
+public class ElektrikliMotor : IMotor 
+{
+    public void Calistir() { Console.WriteLine("Elektrikli motor sessizce çalıştı."); }
+}
+
+// 4. Asıl Araba Sınıfı
+public class Araba 
+{
+    private readonly IMotor _motor;
+
+    // Araba üretilirken (Constructor) dışarıdan motoru ona veriyoruz,bu işlem injection oluyor.
+    public Araba(IMotor motor) 
+    {
+        _motor = motor; 
+    }
+
+    public void Git() 
+    {
+        _motor.Calistir(); // Elinde hangi motor varsa onu çalıştırır
+    }
+}
+
+```
+
+---
+
+<h3>Neden Kullanmalıyız?</h3>
+
+<ul>
+ <il><b>Esneklik:</b>Kodun bir yerini değiştirdiğimizde diğer yerler patlamaz.</il>
+ <il><b>Bakım Kolaylığı:</b>Proje çok büyüse bile sınıflar birbirine aşırı bağımlı olmadığı için projeyi yönetmesi çok daha kolay olur. </il>
+ <il><b>Test Edilebilirlik:</b>Kodlarımızı test ederken gerçek veritabanını bozmamak için içeriye sahte veritabanları enjekte ederek kolayca test       yazabiliriz.</il>
+</ul>
+
+---
 
   
  </details>
