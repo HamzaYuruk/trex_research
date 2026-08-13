@@ -1064,12 +1064,16 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
  asenkron bir şekilde çekeriz. Böylece RAM şişmez, veriler geldikçe anlık olarak işleyip tüketiriz.
 
 ### `Caching` :
--Sürekli değişmeyen veya hesaplanması ağır olan verileri her seferinde veritabanına sorup sistemi yormak yerine, bir kere çekip RAM'de saklar, sonraki isteklerde doğrudan RAM'den okuruz.
+-Sürekli değişmeyen veya hesaplanması ağır olan, aynı zamanda sık sık ihtiyaç duyduğumuz verileri her seferinde veritabanına sorup sistemi yormak yerine, ilk seferinde çekip RAM'de saklar, sonraki isteklerde doğrudan RAM'den okuruz; böylece RAM'i gereksiz yere şişirmeden hız kazanırız.
 
 ### `Redis` :
 -Uygulama iç caching tek sunucu için harikadır; ancak sistem büyüyüp birden fazla sunucuya geçtiğimizde her sunucu kendi önbelleğini tutmaya başlar ve veri tutarsızlığı çıkar. Redis tam burada devreye girer; bu önbellek verilerini ortak ve merkezi bir havuzda tutan, tamamen RAM üzerinde çalıştığı için bize inanılmaz bir hız sunan harika bir cache ve veri sunucusudur.
 
 ### `Profiling` :
 -Kodun nerede yavaşladığını tahmin etmek yerine veriye dayalı olarak nokta atışı tespit etme sürecidir. Hangi metodun ne kadar CPU harcadığını, hangi sorgunun sistemi kilitlediğini MiniProfiler veya BenchmarkDotNet gibi araçlarla milisaniyesine kadar ölçer, problemi tam yerinden çözeriz.
+
+---
  
 </details>
+
+
