@@ -668,11 +668,18 @@ public class Araba
 <details>
   <summary>SQL nedir?</summary>
 
+  ---
+
   -SQL, ilişkisel veritabanı yönetim sistemlerinde verileri depolamak, yönetmek, güncellemek ve sorgulamak için kullandığımız bir programlama            dilidir. Büyük hacimli verileri düzenli tablolar halinde saklamayı, milyonlarca satır arasından saniyeler içinde bilgi çekmeyi sağlar. MySQL, Oracle   ve Microsoft SQL Server gibi pek çok veritabanı sağlayıcısı tarafından ortak bir standart olarak kullanılır.
 
-  -Dilin kökeni 1970'lerin başında IBM laboratuvarlarına dayanır. Edgar F. Codd'un ilişkisel veritabanı teorisinden ilham alan Donald Chamberlin ve      Raymond Boyce, insan diline yakın bir sorgulama sistemi tasarlamıştır. Başlangıçta SEQUEL adıyla geliştirilen dil, marka çakışmaları nedeniyle         kısaltılarak SQL adını almıştır. 1979 yılında Oracle tarafından ticari olarak piyasaya sürülmüş, 1986'da ANSI ve 1987'de ISO tarafından resmi          standart olarak kabul edilerek günümüzdeki konumuna ulaşmıştır.
+  -Dilin kökeni 1970'lerin başında IBM laboratuvarlarına dayanır. Edgar F. Codd'un ilişkisel veritabanı teorisinden ilham alan Donald Chamberlin ve      Raymond Boyce, insan diline yakın bir sorgulama sistemi tasarlamıştır. Başlangıçta SEQUEL adıyla geliştirilen dil, marka çakışmaları nedeniyle kısaltılarak SQL adını almıştır. 1979 yılında Oracle tarafından ticari olarak piyasaya sürülmüş, 1986'da ANSI ve 1987'de ISO tarafından resmi standart olarak kabul edilerek günümüzdeki konumuna ulaşmıştır.
+
+ ---
 
 <h3>Temel SQL Sorguları</h3>
+
+<br>
+
 <ul>
  <il><b><code>SELECT</code></b>:
  Veritabanındaki tablolardan veri çekmek, listelemek istediğimizde kullanırız.Bütün tabloyu da çekebiliriz, belli bir koşula uyanları da filtreleyebiliriz.
@@ -688,7 +695,7 @@ public class Araba
     
    
   </ul>
-
+ 
    <ul>
  <il><b><code>INSERT</code></b>:
  Veritabanına yeni bir kayıt, yeni bir satır eklemek istediğimizde bunu kullanırız.Tablonun istediğimiz sütunlarına yeni değerleri ekleriz.
