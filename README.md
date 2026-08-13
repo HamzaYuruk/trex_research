@@ -672,9 +672,10 @@ public class Araba
 
   -Dilin kökeni 1970'lerin başında IBM laboratuvarlarına dayanır. Edgar F. Codd'un ilişkisel veritabanı teorisinden ilham alan Donald Chamberlin ve      Raymond Boyce, insan diline yakın bir sorgulama sistemi tasarlamıştır. Başlangıçta SEQUEL adıyla geliştirilen dil, marka çakışmaları nedeniyle         kısaltılarak SQL adını almıştır. 1979 yılında Oracle tarafından ticari olarak piyasaya sürülmüş, 1986'da ANSI ve 1987'de ISO tarafından resmi          standart olarak kabul edilerek günümüzdeki konumuna ulaşmıştır.
 
-  <h3>Temel SQL Sorguları</h3>
-  <ul>
-    <il><b><code>SELECT</code></b>:Veritabanındaki tablolardan veri çekmek, listelemek istediğimizde kullanırız.         Bütün tabloyu da çekebiliriz, belli bir koşula uyanları da filtreleyebiliriz.
+<h3>Temel SQL Sorguları</h3>
+<ul>
+ <il><b><code>SELECT</code></b>:
+ Veritabanındaki tablolardan veri çekmek, listelemek istediğimizde kullanırız.Bütün tabloyu da çekebiliriz, belli bir koşula uyanları da filtreleyebiliriz.
     </il>
     ```SQL 
     
@@ -688,7 +689,8 @@ public class Araba
   </ul>
 
    <ul>
-    <il><b><code>INSERT</code></b>::Veritabanına yeni bir kayıt, yeni bir satır eklemek istediğimizde bunu kullanırız.             Tablonun istediğimiz sütunlarına yeni değerleri ekleriz.
+ <il><b><code>INSERT</code></b>:
+ Veritabanına yeni bir kayıt, yeni bir satır eklemek istediğimizde bunu kullanırız.Tablonun istediğimiz sütunlarına yeni değerleri ekleriz.
     </il>
     ```SQL 
     
@@ -700,7 +702,8 @@ public class Araba
   </ul>
 
    <ul>
-    <il><b><code>UPDATE</code></b>:Veritabanında önceden var olan bir kaydın verisini değiştirmek istediğimizde kullanırız.
+  <il><b><code>UPDATE</code></b>:
+  Veritabanında önceden var olan bir kaydın verisini değiştirmek istediğimizde kullanırız.
     </il>
     ```SQL 
     
@@ -713,7 +716,8 @@ public class Araba
   </ul>
 
    <ul>
-    <il><b><code>DELETE</code></b>::Veritabanındaki bir kaydı tamamen ortadan kaldırmak istediğimizde kullanırız.
+  <il><b><code>DELETE</code></b>:
+  Veritabanındaki bir kaydı tamamen ortadan kaldırmak istediğimizde kullanırız.
     </il>
     ```SQL 
     
