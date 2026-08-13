@@ -1021,7 +1021,7 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 
 <h3>OpenID Nedir?</h3>
--OpenID , OAuth 2.0 protokolünün hemen üzerine inşa edilmiş ayrı bir katmandır. OAuth "Bu uygulama hangi verilere erişebilir?" (yetkilendirme) sorusunu çözerken, OpenID doğrudan "Sisteme giriş yapan bu kullanıcı kim?" sorusunu yanıtlar ve kullanıcının kimliğini güvenle kanıtlar.
+-OpenID , OAuth 2.0 protokolünün hemen üzerine inşa edilmiş ayrı bir katmandır.OpenID "Sisteme giriş yapan bu kullanıcı kim?" sorusunu yanıtlar ve kullanıcının kimliğini kanıtlar.
 
 
 <h3>OpenIddict Nedir?</h3>
@@ -1037,8 +1037,25 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 2.AŞAMA-Yetkilendirme (OAuth 2.0): Ardından Google bize, "Bu e-ticaret sitesi temel profil bilgilerine erişmek istiyor, izin veriyor musun?" diye sorar. "İzin ver" dediğimizde, Google şifremizi siteye asla vermez; bunun yerine sitenin verilerimize sınırlı bir şekilde erişmesini sağlayan bir erişim tokeni verir.
 
-* OpenIddict: Biz bu sistemi .NET üzerinde geliştirirken OAuth ve OpenID kurallarını sıfırdan kodlamakla uğraşmayız; projemize OpenIddict kütüphanesini kurarak tüm bu token ve güvenlik altyapısını hazır olarak yönetiriz.
+-OpenIddict: Biz bu sistemi .NET üzerinde geliştirirken OAuth ve OpenID kurallarını sıfırdan kodlamakla uğraşmayız; projemize OpenIddict kütüphanesini kurarak tüm bu token ve güvenlik altyapısını hazır olarak yönetiriz.
 
 ---
 
+</details>
+
+
+
+<details>
+ <summary>Performans Artımı İçin Ne Yapılabilir? </summary>
+
+---
+
+ -Günümüzün dijital ekosisteminde yazılım projelerinin başarısı, yalnızca doğru çalışan özellikler sunmakla sınırlı değildir; kusursuz bir kullanıcı deneyiminin   en temel yapı taşı performans ve hızdır. Kullanıcıların milisaniyeler içinde yanıt alamadığı, yavaş yüklenen ekranlarla karşılaştığı anlarda sabrı hızla         tükenmekte ve rakip alternatiflere yönelmesi an meselesi olmaktadır.Sadece son kullanıcı tarafında değil, arka plandaki bulut maliyetleri, sunucu kaynak         tüketimi ve sistemin yüksek trafik altındaki kararlılığı açısından da performans optimizasyonu artık lüks değil, olmazsa olmaz kritik bir mühendislik            disiplinidir. .NET projelerinde bu hıza ulaşmak ve kaynakları en verimli şekilde yönetmek için doğru mimari kararları almak gerekir.
+
+---
+
+<h3>Performans Artırımı İçin Önerilen Teknikler</h3>
+
+``AsNoTracking
+ 
 </details>
