@@ -674,7 +674,53 @@ public class Araba
 
   <h3>Temel SQL Sorguları</h3>
   <ul>
-    <il><b><code>SELECT</code></b></il>
+    <il><b><code>SELECT</code></b>:Veritabanındaki tablolardan veri çekmek, listelemek istediğimizde kullanırız.         Bütün tabloyu da çekebiliriz, belli bir koşula uyanları da filtreleyebiliriz.
+    </il>
+    ```SQL 
+    
+    -- Tablodaki bütün ürünleri listeleriz:
+      SELECT * FROM Products;
+
+    -- Sadece fiyatı 1000'den büyük olan ürünlerin isimlerini çekeriz:
+    SELECT Name, Price FROM Products WHERE Price > 1000;
+    
+   
+  </ul>
+
+   <ul>
+    <il><b><code>INSERT</code></b>::Veritabanına yeni bir kayıt, yeni bir satır eklemek istediğimizde bunu kullanırız.             Tablonun istediğimiz sütunlarına yeni değerleri ekleriz.
+    </il>
+    ```SQL 
+    
+    -- Products tablosuna yeni bir ürün ekleriz:
+     INSERT INTO Products (Name, Price) 
+      VALUES ('Laptop', 25000);
+    
+   
+  </ul>
+
+   <ul>
+    <il><b><code>UPDATE</code></b>:Veritabanında önceden var olan bir kaydın verisini değiştirmek istediğimizde kullanırız.
+    </il>
+    ```SQL 
+    
+    -- ID'si 5 olan ürünün fiyatını güncelleriz:
+    UPDATE Products 
+    SET Price = 22000 
+    WHERE Id = 5;
+    
+   
+  </ul>
+
+   <ul>
+    <il><b><code>DELETE</code></b>::Veritabanındaki bir kaydı tamamen ortadan kaldırmak istediğimizde kullanırız.
+    </il>
+    ```SQL 
+    
+    -- ID'si 5 olan ürünü veritabanından sileriz:
+      DELETE FROM Products 
+      WHERE Id = 5;
+    
    
   </ul>
 
