@@ -799,7 +799,8 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 </details>
 
-<details>Code-First ve Database-First Yaklaşımı Nedir?</details>
+<details>
+<summary>Code-First ve Database-First Yaklaşımı Nedir?</summary>
 
 ---
 
@@ -829,3 +830,4 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 ---
 
+</details>
