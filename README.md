@@ -903,6 +903,8 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 <details>
  <summary>Authentication vs Authorization Nedir? </summary>
+ 
+---
 
 -Bu iki kavram yazılım güvenliğinde sık karıştırılır.Authentication (Kimlik Doğrulama) ve Authorization (Yetkilendirme), temel olarak farklı güvenlik adımlarını temsil eder.
 
@@ -930,12 +932,75 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 | **Cevapladığı Soru** | "Sen kimsin?" | "Neye erişim iznin var?"  |
 | **İşlem Sırası** | Her zaman **önce** gerçekleşir. | Kimlik doğrulama gerçekleştikten **sonra** çalışır. |
 | **Günlük Hayat Örneği** | Havalimanı dış hatlar terminaline girerken bilet ve pasaport kontrolünden geçmek. | Uçağa bindiğinizde ekonomi sınıfından kalkıp first class koltuğa oturmaya çalışırken hostesin biletinizi kontrol etmesi. |
-| **Yazılım Örneği** | Mobil uygulamaya telefonunuza gelen SMS onay kodunu  girerek hesabınıza erişmeniz. | Bir e-ticaret panelinde "Kasiyer" rolündeki personelin sadece satış yapabilmesi, ancak "Yönetici" yetkisi olmadığı için indirim oranlarını değiştirememesi. |
- 
- 
- 
- 
+| **Yazılım Örneği** | Bir Netflix hesabına kullanıcı adı ve şifrenizi girerek giriş yapmanız. | Giriş yaptıktan sonra çocuk hesabının sadece çizgi filmleri görebilmesi, yetişkin filmlerini açamaması. |
 
+---
  
 </details>
 
+
+<details>
+ <summary>JWT (JSON Web Token) Nedir, Nasıl Çalışır?</summary>
+
+ ---
+
+ <h3>JWT Nedir?</h3>
+ -JWT (JSON Web Token), istemci ile sunucu arasında sunucuya yük bindirmeden kimlik doğrulamayı sağlayan, kriptografik imzalı standart bir veri yapısıdır.        Sunucu  her kullanıcı için veritabanında oturum tutmak yerine, kullanıcı bilgilerini gizli bir anahtarla imzalayıp istemciye verir; sonraki isteklerde sunucu    veritabanına bakmadan sadece bu imzayı kontrol ederek işlemin geçerliliğini onaylar.Günlük hayattan örnek vermek gerekirse JWT, tıpkı bir otelde bileğinize      takılan akıllı otel bilekliğine benzer. Girişte kimliğinizi bir kez gösterip bileğinize bu mühürlü bilekliği taktırırsınız; tatil boyunca odanıza veya           yemekhaneye girerken tekrar tekrar kimlik göstermez, sadece bilekliğinizi okutarak geçersiniz.
+
+ ---
+
+  <h3>JWT Yapısı</h3>
+
+ -Bir JWT, nokta (.) karakteriyle birbirine bağlanan üç ana bölümden oluşur:
+
+ <ul>
+  <il><b>1.Header:</b> JWT şifrelemesinde kullanılabilecek çeşitli şifreleme ve algoritma yöntemleri bulunur. Token'ın hangi algoritma (örneğin HS256 veya RS256)   ile imzalandığı ve türü bu kısımda açıkça belirtilir; böylece sunucu, token'ı doğrulayacağı zaman onu nasıl çözmesi gerektiğini ilk olarak bu başlığa bakarak     anlar.</il>
+  <il><b>2.Payload:</b> Kullanıcının ID'si, adı veya yetkileri gibi verilerin tutulduğu alandır. Şifrelenmez, sadece okunabilir formatta kodlanır; bu yüzden asla   şifre gibi hassas bilgiler konulmaz.</il>
+  <il><b>3. Signature:</b>Header ve Payload verileri seçilen algoritmayla harmanlanır, sunucudaki gizli anahtar ile işlenerek ortaya benzersiz bir imza çıkar.      Hacker tokendaki herhangi bir veriyi değiştirmeye çalışırsa imza bozulur; sunucu kendi gizli anahtarıyla kontrol ettiğinde uyuşmazlığı anlar ve isteği reddeder.</il>
+  
+ </ul>
+
+ ---
+
+ ### Örnek Bir JWT ve Çözülmüş Hali
+
+| Bölüm | Token İçindeki Hali | Çözülmüş Hali  |
+| :--- | :--- | :--- |
+| **1. Header** | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9` | `{"alg": "HS256", "typ": "JWT"}` |
+| **2. Payload** | `eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFoZXRzIFlpbG1heiIsImlhdCI6MTcxMDAwMDAwMH0` | `{"sub": "1234567890", "name": "Ahmet Yılmaz", "iat": 1710000000}` |
+| **3. Signature** | `SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c` | Header ve Payload'ın gizli anahtarla imzalanmış hali |
+
+---
+
+<h3>Nasıl Çalışır</h3>
+
+ <ul>
+  <il><b>1. Login Talebi:</b> İstemci, kullanıcı adı ve şifre gibi kimlik bilgilerini güvenli bir POST isteğiyle sunucuya iletir.</il>
+  <br>
+  <il><b>2. Token Üretimi:</b> Sunucu gelen bilgileri veritabanından doğrular. Bilgiler doğruysa; kullanıcının ID'si ve yetkilerini içeren bir payload hazırlar,    bunu kendine ait gizli bir anahtarla imzalayarak bir JWT üretir ve istemciye geri döner.</il>
+  <br>
+  <il><b>3. Token'ın Saklanması:</b> İstemci, sunucudan gelen bu token'ı tarayıcı tarafında uygun bir alanda saklar;genellikle LocalStorage, SessionStorage veya    en güvenlisi olan HttpOnly Cookie tercih edilir.</il>
+  <br>
+  <il><b>4. Korumalı İstekler:</b> İstemci, veri istemek için sunucuya tekrar istek atacağı zaman, HTTP isteğinin başına token'ı ekler.</il>
+  <br>
+  <il><b>5. Kriptografik Doğrulama:</b> Sunucu gelen isteği karşıladığında veritabanını hiç sorgulamaz; sadece kendi gizli anahtarını kullanarak token'ın           imzasını ve süresini matematiksel olarak kontrol eder. İmza orijinal çıkarsa işlemin onayını verir, aksi halde isteği anında reddeder.</il>
+ </ul>
+
+ ---
+
+ <h3>Avantajları</h3>
+ <ul>
+  <il>Sunucuda oturum tutma zorunluluğunu ortadan kaldırır, bu sayede sunucu yükü azalır.</il>
+  <br>
+  <il>Sunucu, her istekte veritabanını sorgulamak yerine sadece matematiksel imza kontrolü yapar.</il>
+  <br>
+  <il>Node.js, Python, Java veya farklı mobil/web teknolojileri arasında sorunsuz şekilde çalışır.</il>
+  <br>
+  <il>Boyutu küçüktür; HTTP başlıklarında çok hızlı bir şekilde taşınabilir.</il>
+  <br>
+  <il>Bir kez üretilen token, gizli anahtarı bilen tüm alt servisler tarafından ortak bir şekilde doğrulanıp kullanılabilir.</il>
+ </ul>
+
+  ---
+
+</details>
