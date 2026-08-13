@@ -575,6 +575,8 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
  <details>
   <summary>Dependency Injection Nedir, Neden Kullanmalıyız? </summary>
 
+  ---
+  
   <h3>Nedir?</h3>
   -Dependency Injection, bir nesnenin çalışmak için ihtiyaç duyduğu diğer nesneleri kendi içinde oluşturması yerine,bu nesnelerin dışarıdan bir          mekanizma tarafından verilmesidir.Aşağıdaki kod örnekleri üzerinden dependy injeciton'u daha iyi anlayalabiliriz.
 
@@ -647,9 +649,13 @@ public class Araba
 <h3>Neden Kullanmalıyız?</h3>
 
 <ul>
+ 
  <il><b>Esneklik:</b>Kodun bir yerini değiştirdiğimizde diğer yerler patlamaz.</il>
+ 
  <il><b>Bakım Kolaylığı:</b>Proje çok büyüse bile sınıflar birbirine aşırı bağımlı olmadığı için projeyi yönetmesi çok daha kolay olur. </il>
- <il><b>Test Edilebilirlik:</b>Kodlarımızı test ederken gerçek veritabanını bozmamak için içeriye sahte veritabanları enjekte ederek kolayca test       yazabiliriz.</il>
+ 
+ <il><b>Test Edilebilirlik:</b>Kodlarımızı test ederken gerçek veritabanını bozmamak için içeriye sahte veritabanları enjekte ederek kolayca   test yazabiliriz.</il>
+ 
 </ul>
 
 ---
