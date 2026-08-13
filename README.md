@@ -650,11 +650,11 @@ public class Araba
 
 <ul>
  
- <il><b>Esneklik:</b>Kodun bir yerini değiştirdiğimizde diğer yerler patlamaz.</il>
+ <il><b>Esneklik:</b> Kodun bir yerini değiştirdiğimizde diğer yerler patlamaz.</il>
  
- <il><b>Bakım Kolaylığı:</b>Proje çok büyüse bile sınıflar birbirine aşırı bağımlı olmadığı için projeyi yönetmesi çok daha kolay olur. </il>
+ <il><b>Bakım Kolaylığı:</b> Proje çok büyüse bile sınıflar birbirine aşırı bağımlı olmadığı için projeyi yönetmesi çok daha kolay olur. </il>
  
- <il><b>Test Edilebilirlik:</b>Kodlarımızı test ederken gerçek veritabanını bozmamak için içeriye sahte veritabanları enjekte ederek kolayca   test yazabiliriz.</il>
+ <il><b>Test Edilebilirlik:</b> Kodlarımızı test ederken gerçek veritabanını bozmamak için içeriye sahte veritabanları enjekte ederek kolayca   test yazabiliriz.</il>
  
 </ul>
 
@@ -662,4 +662,7 @@ public class Araba
 
   
  </details>
+
+ # 5.Veritabanı ve ORM
+
  
