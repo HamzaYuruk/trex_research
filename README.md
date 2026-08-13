@@ -25,15 +25,15 @@
    <li><code>git clone</code>: GitHub platformu gibi internet üzerinden erişimin olan bir projeyi, tüm geçmiş versiyonlarıyla birlikte           bilgisiyarınıza indirir.</li>
    <br>
    <li><code>git add</code>: Değişiklik yaptığın dosyaları sepete koyar. Git'e "Birazdan bu dosyaları kaydedeceğim, bunları aklında tut"         demektir.</li>
-   
+   <br>
    <li><code>git commit</code>: Sepete eklenen dosyaların o anki durumunun fotoğrafını çeker ve kalıcı bir versiyon olarak kaydeder.git          commit -m yazıp tırnak içinde "şunu değiştirdim" gibi bir açıklama mesajıyla yapılır.</li>
-   
+   <br>
    <li><code>git push</code>: Kendi bilgisayarında kaydettiğin yeni versiyonları, internetteki yedeğine fırlatır ve orayı günceller.</li
-   
+   <br>
    <li><code>git pull</code>: Ekip arkadaşlarımız projeye GitHub gibi platformlar üzerinden yeni kodlar yüklediğinde;bu komut, internetteki o    yeni değişiklikleri    senin bilgisayarına çeker ve dosyalarını günceller.</li>
-   
+   <br>
    <li><code>git branch</code>: Çalışan sistemi bozmadan denemeler yapmak veya yeni bir özellik kodlamak için açtığın paralel çalışma            alanıdır.Ekip üyelerinin projede yaptığı her değişikliği doğrudan çalışan sistem üzerine eklersek bir çok problem ortaya çıkabilir            branch yöntemi bunun önüne geçiyor.</li>
-   
+   <br>
    <li><code>git merge</code>: Bir ekip üyesinin kendi branchında yaptığı değişiklikler bittiğinde ve bu değişikliklerin sorunsuz                çalıştığından emin olduğunda, o yeni değişiklikleri ana projeyle pürüzsüzce birleştirme işlemidir.</li>
  </ul>
 </details>
