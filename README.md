@@ -518,6 +518,8 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
     Kullanıcıya Sonuç Gösterilir
   ```
 
+ ---
+
  </details>
 
  <details>
@@ -541,11 +543,14 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
   ---
 
   <h3>Startup.cs ya da Program.cs İçindeki Middleware Sıralaması</h3>
-  -Yukarıda HTTP isteklerinin middleware süzgeçlerinden geçtiğini belirtmiştik.İşte bu süzgeçlerin belirli bir sıralaması vardır; bu sıralama   uygulamanın güvenliği, performansı ve doğru çalışması açısından hayati önem taşır.ASP.NET Core uygulamalarında Startup.cs veya Program.cs     dosyalarında bu sıralamaya dikkat edilmelidir. Middleware'ler pipeline mantığıyla çalışır. Gelen bir HTTP isteği bu katmanlardan sırayla      geçer, son noktada işlenir ve yanıt önerken tam tersi sırayla geri çıkar. Doğru sıralama yapılmazsa yetkilendirme açıkları, performans        kayıpları veya işlevsel hatalar ortaya çıkabilir.
+  
+  -Yukarıda HTTP isteklerinin middleware süzgeçlerinden geçtiğini belirtmiştik.İşte bu süzgeçlerin belirli bir sıralaması vardır; bu sıralama            uygulamanın güvenliği, performansı ve doğru çalışması açısından hayati önem taşır.ASP.NET Core uygulamalarında Startup.cs veya Program.cs              dosyalarında bu sıralamaya dikkat edilmelidir. Middleware'ler pipeline mantığıyla çalışır. Gelen bir HTTP isteği bu katmanlardan sırayla geçer,        son noktada işlenir ve yanıt önerken tam tersi sırayla geri çıkar. Doğru sıralama yapılmazsa yetkilendirme açıkları, performans kayıpları veya         işlevsel hatalar ortaya çıkabilir.
 
- <br>
- <b>Önerilen Sıralama</b>
- <br>
+  <br>
+  
+  <b>Önerilen Sıralama</b>
+  
+  <br>
      
  | Sıra | Middleware | Açıklama | Neden Bu Sırada Olmalı? |
 | :--- | :--- | :--- | :--- |
@@ -559,6 +564,7 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
 | **8** | **Session / Özel Katmanlar** | `UseSession` vb. | Kullanıcı oturum verilerini  hedefe ulaşmadan hemen önce hazırlamak için. |
 | **9** | **Endpoints (Uç Noktalar)** | `MapControllers()` vb. | Tüm güvenlik ve yönlendirme süzgeçlerinden başarıyla geçen isteğin, artık asıl işleneceği son durak olduğu için. |
    
+---
 
  </details>
 
