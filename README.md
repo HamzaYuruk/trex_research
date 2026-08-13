@@ -698,3 +698,23 @@ public class Araba
  
 </details>
  
+<details>
+ <summary>ORM nedir? Entity Framework Core nedir? </summary>
+
+ ---
+
+ <h3>ORM Nedir?</h3>
+ -Normalde veritabanında bir tablo oluşturmak veya veri eklemek için uzun uzun SQL komutları yazmamız gerekir ve ufak bir yazım hatası her şeyi bozar.  ORM tam burada devreye girip aradaki tercüman gibi çalışır; SQL kodlarıyla uğraşmak yerine kendi programlama dilimizle (C#, Java vb.) sanki normal     nesnelerle çalışıyormuş gibi işlemler yaparız. Örneğin veritabanına yeni bir veri kaydetmek için karmaşık SQL cümleleri yazmak yerine, ORM'in bize     sunduğu basit metodları kullanırız. Bu sayede hem kodumuz çok daha temiz ve okunur olur hem de SQL hatalarıyla vakit kaybetmeyiz.
+
+ ---
+
+ ## SQL vs ORM Örneği
+ Aşağıda sql ve orm farkını daha iyi anlayabileceğimiz bir örnek görüyoruz:
+
+| İşlem                 | Kod Örneği                                                         | Mantık                                                                     |
+|:----------------------|:-----------------------------------------------------------------------------------|:---------------------------------------------------------------------------|
+| Tablo Oluşturma (SQL) | CREATE TABLE Users (Id INT PRIMARY KEY, Name NVARCHAR(50));                        | Veritabanı diliyle doğrudan şema tanımlanır.                               |
+| Tablo Oluşturma (ORM) | public class User { public int Id { get; set; } public string Name { get; set; } } | Programlama dilinde class tanımlanır, ORM bunu tabloya dönüştürür. |
+
+---
+</details>
