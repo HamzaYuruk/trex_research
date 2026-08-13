@@ -21,9 +21,9 @@
  
  <ul>
    <li><code>git init</code>: Sıfırdan başlama komutudur. Bilgisayarınızdaki normal bir klasörün içine Git'i kurar ve "artık buradaki            dosyaları takip et" der.</li>
-   
+   <br>
    <li><code>git clone</code>: GitHub platformu gibi internet üzerinden erişimin olan bir projeyi, tüm geçmiş versiyonlarıyla birlikte           bilgisiyarınıza indirir.</li>
-   
+   <br>
    <li><code>git add</code>: Değişiklik yaptığın dosyaları sepete koyar. Git'e "Birazdan bu dosyaları kaydedeceğim, bunları aklında tut"         demektir.</li>
    
    <li><code>git commit</code>: Sepete eklenen dosyaların o anki durumunun fotoğrafını çeker ve kalıcı bir versiyon olarak kaydeder.git          commit -m yazıp tırnak içinde "şunu değiştirdim" gibi bir açıklama mesajıyla yapılır.</li>
