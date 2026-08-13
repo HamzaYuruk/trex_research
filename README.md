@@ -665,4 +665,36 @@ public class Araba
 
  # 5.Veritabanı ve ORM
 
+<details>
+  <summary>SQL nedir?</summary>
+
+  -SQL, ilişkisel veritabanı yönetim sistemlerinde verileri depolamak, yönetmek, güncellemek ve sorgulamak için kullandığımız bir programlama            dilidir. Büyük hacimli verileri düzenli tablolar halinde saklamayı, milyonlarca satır arasından saniyeler içinde bilgi çekmeyi sağlar. MySQL, Oracle   ve Microsoft SQL Server gibi pek çok veritabanı sağlayıcısı tarafından ortak bir standart olarak kullanılır.
+
+  -Dilin kökeni 1970'lerin başında IBM laboratuvarlarına dayanır. Edgar F. Codd'un ilişkisel veritabanı teorisinden ilham alan Donald Chamberlin ve      Raymond Boyce, insan diline yakın bir sorgulama sistemi tasarlamıştır. Başlangıçta SEQUEL adıyla geliştirilen dil, marka çakışmaları nedeniyle         kısaltılarak SQL adını almıştır. 1979 yılında Oracle tarafından ticari olarak piyasaya sürülmüş, 1986'da ANSI ve 1987'de ISO tarafından resmi          standart olarak kabul edilerek günümüzdeki konumuna ulaşmıştır.
+
+</details>
+
+<details>
+ <summary>İlişkisel ve İlişkisel Olmayan Veri Tabanları Arasındaki Farklar</summary>
+ 
+ ---
+ 
+ -İlişkisel veritabanları, verileri önceden kurallarını belirlediğimiz belirli satır ve sütunlardan oluşan tablolarda saklar; bu tablolara sadece       belirlediğimiz bu kurallara uyan yeni veriler ekleyebiliriz. Yüksek veri tutarlılığı gerektiren sistemler için idealdir. 
+
+ -İlişkisel olmayan veritabanları ise belge veya anahtar-değer gibi esnek yapılar kullanarak şema zorunluluğu sunmaz. Yani istediğimiz her veriyi,       katı bir kurala bağlı kalmadan esnek bir şekilde ekleyebiliriz. Bu yaklaşım, özellikle büyük hacimli verilerin hızla işlenmesi gereken modern web      uygulamaları ve dinamik ürün katalogları gibi alanlarda büyük kolaylık sağlar.
+
+ ---
+
+| Özellik             | İlişkisel (SQL)                        | İlişkisel Olmayan (NoSQL)             |
+|:--------------------|:---------------------------------------|:--------------------------------------|
+| Veri Yapısı         | Satır ve sütunlu tablolar.             | Belge, key-value veya grafik.         |
+| Şema Esnekliği      | Katı ve tanımlı kurallar.              | Esnek ve dinamik şema.                |
+| Ölçekleme           | Genellikle dikey (tek sunucu).         | Genellikle yatay (dağıtık).           |
+| Veri Tutarlılığı    | Yüksek .                  | Esnek.                |
+| Örnek Veritabanları | MySQL, PostgreSQL, Oracle.             | MongoDB, Redis, Cassandra.            |
+| İdeal Kullanım      | Finans ve tutarlılık odaklı sistemler. | Büyük veri ve hız odaklı uygulamalar. |
+
+---
+ 
+</details>
  
