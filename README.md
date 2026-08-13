@@ -717,4 +717,42 @@ public class Araba
 | Tablo Oluşturma (ORM) | public class User { public int Id { get; set; } public string Name { get; set; } } | Programlama dilinde class tanımlanır, ORM bunu tabloya dönüştürür. |
 
 ---
+
+<h3>Entity Framework Core Nedir?</h3>
+-Entity Framework, yukarıda bahsettiğimiz ORM yaklaşımının Microsoft tarafından .NET dünyası için geliştirilmiş en güçlü ve popüler uygulamasıdır. Temel olarak nesne tabanlı kodlarınız ile veritabanı arasındaki iletişimi yöneten bu framework, geliştiricileri ham SQL sorguları yazma yükünden kurtararak iş mantığına odaklanmalarını sağlar. Onu diğer ORM araçlarından ayıran en önemli özelliklerin başında, veritabanı ile C# arasında kusursuz bir uyum sağlayan LINQ entegrasyonu gelir; bu sayede veritabanı sorgularını sanki uygulama içindeki basit bir listeyi sorguluyormuşsunuz gibi rahatlıkla yazabilirsiniz. Bunun yanı sıra, "Migration" adı verilen sistemle veritabanı şemanızda yaptığınız kod tabanlı değişiklikleri otomatik olarak veritabanına yansıtabilir ve "Change Tracking" özelliği sayesinde üzerinde işlem yaptığınız verilerin sadece değişen kısımlarını tek bir komutla kaydedebilirsiniz. Kısacası Entity Framework, veritabanı yönetimini otomatize eden, kodunuzu hem daha okunabilir hem de daha güvenli hale getiren, esnek ve gelişmiş bir yazılım katmanıdır.
+
+---
+
+</details>
+
+
+<details>
+ <summary> DbContext Nedir, Nasıl Kullanılır? </summary>
+
+ ---
+
+ <h3>Nedir?</h3>
+ -DbContext, Entity Framework çatısı altında veritabanı ile uygulama arasındaki tüm trafiği yöneten tek yetkili merkezdir. Uygulamanın veritabanına      bağlanması, tabloları tanıması ve veri üzerinde yapacağın tüm değişiklikleri veritabanına bildirmesi tamamen bu sınıfın    sorumluluğundadır.
+
+ ---
+
+ <h3>Nasıl Kullanılır?</h3>
+
+ ## 1 . Veri Ekleme
+```Csharp
+var yeniUrun = new Product { Name = "Laptop", Price = 25000 };
+db.Products.Add(yeniUrun); //yeni ürünü database'e Add komutu ile ekler 
+db.SaveChanges(); //eklediğimiz ürünü  SaveChanges veritabanına kayıt eder.
+```
+
+## 2.Veri Silme
+
+```Csharp
+var urun = db.Products.Find(5); / id 'si 5 olan ürünü bul
+    db.Products.Remove(urun); // Remove komutu ürünü veritabanından siler.
+    db.SaveChanges(); // SaveChanges komutu ile yaptığımız bu değişikliği kaydederiz.
+```
+
+---
+
 </details>
