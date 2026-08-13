@@ -992,18 +992,52 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
  <h3>Avantajları</h3>
  
   
- Sunucuda oturum tutma zorunluluğunu ortadan kaldırır, bu sayede sunucu yükü azalır.
+ -Sunucuda oturum tutma zorunluluğunu ortadan kaldırır, bu sayede sunucu yükü azalır.
   
- Sunucu, her istekte veritabanını sorgulamak yerine sadece matematiksel imza kontrolü yapar.
+ -Sunucu, her istekte veritabanını sorgulamak yerine sadece matematiksel imza kontrolü yapar.
   
- Node.js, Python, Java veya farklı mobil/web teknolojileri arasında sorunsuz şekilde çalışır.
+ -Node.js, Python, Java veya farklı mobil/web teknolojileri arasında sorunsuz şekilde çalışır.
   
- Boyutu küçüktür; HTTP başlıklarında çok hızlı bir şekilde taşınabilir.
+ -Boyutu küçüktür; HTTP başlıklarında çok hızlı bir şekilde taşınabilir.
  
- Bir kez üretilen token, gizli anahtarı bilen tüm alt servisler tarafından ortak bir şekilde doğrulanıp kullanılabilir.
+ -Bir kez üretilen token, gizli anahtarı bilen tüm alt servisler tarafından ortak bir şekilde doğrulanıp kullanılabilir.
   
  
 
   ---
+
+</details>
+<summary>OAuth, OAuth2.0, OpenIddict, OpenID Nedir?</summary>
+
+---
+
+<h3>OAuth Nedir?</h3>
+-OAuth, bir uygulamanın şifrenizi paylaşmanıza gerek kalmadan, başka bir servis üzerindeki verilerinize güvenli bir şekilde erişmesini sağlayan yetkilendirme standardıdır. Örneğin, Spotify'a "Google ile bağlan" dediğinizde şifrenizi Spotify görmez, ancak OAuth sayesinde Google, Spotify'a temel verilerinize erişmesi için güvenli ve sınırlı bir token verir.
+
+
+<h3>OAuth2.0</h3>
+-OAuth 2.0, ilk versiyonun eksiklerini kapatarak günümüzün modern web, mobil ve API dünyasına uyarlanmış, günümüzde tüm sosyal medya girişlerinin ve güvenli veri paylaşım protokollerinin temelini oluşturan endüstri standardıdır.
+
+
+<h3>OpenID Nedir?</h3>
+-OpenID , OAuth 2.0 protokolünün hemen üzerine inşa edilmiş ayrı bir katmandır. OAuth "Bu uygulama hangi verilere erişebilir?" (yetkilendirme) sorusunu çözerken, OpenID doğrudan "Sisteme giriş yapan bu kullanıcı kim?" sorusunu yanıtlar ve kullanıcının kimliğini güvenle kanıtlar.
+
+
+<h3>OpenIddict Nedir?</h3>
+-OAuth 2.0 ve OpenID Connect protokolleri uyulması gereken birer protokoldür. Bu kuralları sıfırdan .NET'te kodlamak ve sunucu altyapısını kurmak büyük bir zahmettir. OpenIddict, bu protokolleri tek tek yazmakla uğraşmamak için .NET projelerine kurduğumuz hazır çerçevedir.
+
+---
+
+<h3>Örnek Senaryo</h3>
+
+-Bir e-ticaret sitesine ilk kez kayıt olduğumuzu ve "Google ile Giriş Yap" butonunu kullandığımızı hayal edelim:
+
+1.AŞAMA-Kimlik Doğrulama (OpenID Connect):Butona tıkladığımızda site bizi Google'a yönlendirir. Google'da oturum açtığımızda Google, "Bu kişi gerçekten Ahmet, e-postası ahmet@gmail.com" diyerek kimliğimizi doğrular ve bir kimlik belgesi üretir.Eğer bu kimlik belgesi olmasaydı, e-ticaret sitesi sürekli Google'a dönüp "Bu kişi gerçekten kim?" diye sormak zorunda kalırdı. Bu belge, bu soruyu tek seferde ve güvenli bir şekilde kapatır.
+
+2.AŞAMA-Yetkilendirme (OAuth 2.0): Ardından Google bize, "Bu e-ticaret sitesi temel profil bilgilerine erişmek istiyor, izin veriyor musun?" diye sorar. "İzin ver" dediğimizde, Google şifremizi siteye asla vermez; bunun yerine sitenin verilerimize sınırlı bir şekilde erişmesini sağlayan bir erişim tokeni verir.
+
+* OpenIddict: Biz bu sistemi .NET üzerinde geliştirirken OAuth ve OpenID kurallarını sıfırdan kodlamakla uğraşmayız; projemize OpenIddict kütüphanesini kurarak tüm bu token ve güvenlik altyapısını hazır olarak yönetiriz.
+
+---
 
 </details>
