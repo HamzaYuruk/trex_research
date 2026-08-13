@@ -792,8 +792,40 @@ db.SaveChanges(); // db sınıfının SaveChanges komutu ile yaptığımız bu d
 | Sadece Ürün İsimlerini Almak               | db.Products.Select(p => p.Name).ToList();        | SELECT Name FROM Products;                 |
 | ID'si 5 Olan Tek Bir Kaydı Bulmak          | db.Products.FirstOrDefault(p => p.Id == 5);      | SELECT TOP 1 * FROM Products WHERE Id = 5; |
 
-
-LINQ kullanırken yazdığımız C# metotları, Entity Framework aracılığıyla veritabanının konuşabildiği saf SQL diline çevrilir. Bu sayede hem sorgu hatalarından kaçınırız hem de kodumuz çok daha okunabilir ve yönetilebilir hale gelir.
 ---
- 
+LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla yukarıdaki tabloda örnek verdiğimiz gibi veritabanının konuşabildiği saf SQL diline çevrilir. Bu sayede hem sorgu hatalarından kaçınırız hem de kodumuz çok daha okunabilir ve yönetilebilir hale gelir.
+
+---
+
 </details>
+
+<details>Code-First ve Database-First Yaklaşımı Nedir?</details>
+
+---
+
+-Entity Framework Core kullanırken veritabanı ile uygulama kodumuzu nasıl senkronize edeceğimize karar veren iki ana yaklaşım vardır.
+
+---
+
+<h3>1. Code-First Yaklaşım</h3>
+-Veritabanında hiçbir tablo oluşturmadan işe başlarız. Önce C# tarafında sınıflarını ve aralarındaki ilişkiyi yazarız. Entity Framework, yazdığımız bu kodlara bakarak veritabanındaki tabloları senin yerine otomatik olarak oluşturur.
+
+---
+
+<h3>2. Database-First Yaklaşım</h3>
+-Önce veritabanını tasarlarız. Ardından Entity Framework'e "Git bu veritabanını oku ve veritabanına karşılık gelen C# sınıflarını otomatik üret" denir.Sistem, veritabanındaki tablolara bakarak bizim için C# sınıflarını otomatik olarak kod dosyası şeklinde oluşturur.
+
+---
+
+<h3>Code-First vs Database-First Karşılaştırması</h3>
+
+| Özellik | Code-First| Database-First  |
+|:---|:---|:---|
+| **Temel Olayı** | Önce C# kodunu yazarız, veritabanı ona bakarak **otomatik oluşur**. | Önce veritabanı hazırdır, kodu ona bakarak **otomatik üretir**. |
+| **Süreç Akışı** | C# Sınıfları -> Migration -> Veritabanı | Veritabanı -> Scaffolding -> C# Sınıfları |
+| **Avantajları** | Kod üstünden tam kontrol, hızlı geliştirme, tip güvenliği. | Hazır veritabanına cuk diye oturur, SQL tarafı sağlam başlar. |
+| **Dezavantajları** | Karmaşık özel DB ayarlarında bazen manuel müdahale ister. | DB şeması değiştiğinde sınıfları baştan taratmak gerekebilir, kod üstünde esneklik azdır. |
+| **Hangi Yaklaşımı Seçmeliyiz? ** | Sıfırdan bir proje kuruyorsak, bütün kontrolü koda vermek istiyorsak **kesinlikle Code-First seçmeliyiz.** | Elimizde zaten yılların kurumsal, hazır veritabanı varsa veya dışarıdan hazır DB verildiyse **Database-First seçmeliyiz.** |
+
+---
+
