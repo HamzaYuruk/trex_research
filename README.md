@@ -975,34 +975,33 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 <h3>Nasıl Çalışır</h3>
 
- <ul>
-  <il><b>1. Login Talebi:</b> İstemci, kullanıcı adı ve şifre gibi kimlik bilgilerini güvenli bir POST isteğiyle sunucuya iletir.</il>
-  <br>
-  <il><b>2. Token Üretimi:</b> Sunucu gelen bilgileri veritabanından doğrular. Bilgiler doğruysa; kullanıcının ID'si ve yetkilerini içeren bir payload hazırlar,    bunu kendine ait gizli bir anahtarla imzalayarak bir JWT üretir ve istemciye geri döner.</il>
-  <br>
-  <il><b>3. Token'ın Saklanması:</b> İstemci, sunucudan gelen bu token'ı tarayıcı tarafında uygun bir alanda saklar;genellikle LocalStorage, SessionStorage veya    en güvenlisi olan HttpOnly Cookie tercih edilir.</il>
-  <br>
-  <il><b>4. Korumalı İstekler:</b> İstemci, veri istemek için sunucuya tekrar istek atacağı zaman, HTTP isteğinin başına token'ı ekler.</il>
-  <br>
-  <il><b>5. Kriptografik Doğrulama:</b> Sunucu gelen isteği karşıladığında veritabanını hiç sorgulamaz; sadece kendi gizli anahtarını kullanarak token'ın           imzasını ve süresini matematiksel olarak kontrol eder. İmza orijinal çıkarsa işlemin onayını verir, aksi halde isteği anında reddeder.</il>
- </ul>
+1. Login Talebi: İstemci, kullanıcı adı ve şifre gibi kimlik bilgilerini güvenli bir POST isteğiyle sunucuya iletir.
+  
+2. Token Üretimi: Sunucu gelen bilgileri veritabanından doğrular. Bilgiler doğruysa; kullanıcının ID'si ve yetkilerini içeren bir payload hazırlar,bunu          kendine ait gizli bir anahtarla imzalayarak bir JWT üretir ve istemciye geri döner.
+  
+3. Token'ın Saklanması: İstemci, sunucudan gelen bu token'ı tarayıcı tarafında uygun bir alanda saklar;genellikle LocalStorage, SessionStorage veya    en        güvenlisi olan HttpOnly Cookie tercih edilir. 
+  
+4. Korumalı İstekler: İstemci, veri istemek için sunucuya tekrar istek atacağı zaman, HTTP isteğinin başına token'ı ekler.
+
+5. Kriptografik Doğrulama:Sunucu gelen isteği karşıladığında veritabanını hiç sorgulamaz; sadece kendi gizli anahtarını kullanarak token'ın imzasını ve          süresini matematiksel olarak kontrol eder. İmza orijinal çıkarsa işlemin onayını verir, aksi halde isteği anında reddeder.
+ 
 
  ---
 
  <h3>Avantajları</h3>
- <ul>
-  <br>
-  <il>Sunucuda oturum tutma zorunluluğunu ortadan kaldırır, bu sayede sunucu yükü azalır.</il>
-  <br>
-  <il>Sunucu, her istekte veritabanını sorgulamak yerine sadece matematiksel imza kontrolü yapar.</il>
-  <br>
-  <il>Node.js, Python, Java veya farklı mobil/web teknolojileri arasında sorunsuz şekilde çalışır.</il>
-  <br>
-  <il>Boyutu küçüktür; HTTP başlıklarında çok hızlı bir şekilde taşınabilir.</il>
-  <br>
-  <il>Bir kez üretilen token, gizli anahtarı bilen tüm alt servisler tarafından ortak bir şekilde doğrulanıp kullanılabilir.</il>
-  <br>
- </ul>
+ 
+  
+ Sunucuda oturum tutma zorunluluğunu ortadan kaldırır, bu sayede sunucu yükü azalır.
+  
+ Sunucu, her istekte veritabanını sorgulamak yerine sadece matematiksel imza kontrolü yapar.
+  
+ Node.js, Python, Java veya farklı mobil/web teknolojileri arasında sorunsuz şekilde çalışır.
+  
+ Boyutu küçüktür; HTTP başlıklarında çok hızlı bir şekilde taşınabilir.
+ 
+ Bir kez üretilen token, gizli anahtarı bilen tüm alt servisler tarafından ortak bir şekilde doğrulanıp kullanılabilir.
+  
+ 
 
   ---
 
