@@ -741,18 +741,59 @@ public class Araba
  ## 1 . Veri Ekleme
 ```Csharp
 var yeniUrun = new Product { Name = "Laptop", Price = 25000 };
-db.Products.Add(yeniUrun); //yeni ürünü database'e Add komutu ile ekler 
-db.SaveChanges(); //eklediğimiz ürünü  SaveChanges veritabanına kayıt eder.
+db.Products.Add(yeniUrun); //yeni ürünü database'e db sınıfının Add komutu ile ekledik 
+db.SaveChanges(); //yaptığımız bu değişikliği db sınıfının SaveChanges komutu ile veritabanına kayıt ettik.
 ```
 
 ## 2.Veri Silme
 
 ```Csharp
-var urun = db.Products.Find(5); / id 'si 5 olan ürünü bul
-    db.Products.Remove(urun); // Remove komutu ürünü veritabanından siler.
-    db.SaveChanges(); // SaveChanges komutu ile yaptığımız bu değişikliği kaydederiz.
+var urun = db.Products.Find(5); / id 'si 5 olan ürünü bulduk
+db.Products.Remove(urun); // db sınıfının Remove komutu ürünü veritabanından sildik.
+db.SaveChanges(); // db sınıfının SaveChanges komutu ile yaptığımız bu değişikliği kaydettik.
 ```
 
 ---
 
+</details>
+
+
+<details>
+ <summary>LINQ nedir? En Çok Kullanılan LINQ İfadeleri</summary>
+
+ ---
+
+ <h3>LINQ Nedir?</h3>
+ 
+ -LINQ (Language Integrated Query), .NET ekosisteminde verilerle çalışmayı standart hale getiren ve programlama dilinin içine doğrudan         sorgulama yeteneği ekleyen güçlü bir mimaridir.Klasik yöntemlerde verilerle çalışırken farklı diller kullanmak zorunda kalırız. LINQ ise bu   karmaşayı ortadan kaldırır. Tür bağımsız olarak; ister bir SQL veritabanından, ister bir bellekteki listeden, ister bir XML dosyasından veri  çekiyor olalım, hep aynı C# sözdizimini kullanmamızı sağlar.
+
+ ---
+
+ <h3>En Çok Kullanılan LINQ İfadeleri</h3>
+
+ <ul>
+   <li><code>Where()</code>: Belirli bir koşula uyan verileri seçmek için kullanılır.</li>
+   <li><code>Select()</code>: Verilen bir listedeki nesnelerin sadece belirli özelliklerini seçmek veya dönüştürmek için kullanılır</li>
+   <li><code>OrderBy()</code>: Verileri belirli bir özelliğe göre küçükten büyüğe  veya büyükten küçüğe sıralar.</li>
+   <li><code>FirstOrDefault()</code>: Şarta uyan ilk elemanı getirir, eğer bulamazsa varsayılan boş değeri döndürür.</li>
+   <li><code>ToList()</code>: Yazılan LINQ sorgusunu hemen çalıştırır ve sonuçları bir C# listesine  çevirir.</li>
+   <li><code>Count()</code>: Koşula uyan veya listedeki toplam eleman sayısını verir.</li>
+ </ul>
+
+ ---
+
+<h3>LINQ Örnekleri ve Karşılık Gelen SQL Açıklamaları </h3>
+
+| İşlem                  | LINQ                            | SQL               |
+|:-------------------------------------------|:-------------------------------------------------|:-------------------------------------------|
+| Tüm Ürünleri Çekmek                        | db.Products.ToList();                            | SELECT * FROM Products;                    |
+| Fiyatı 1000'den Büyük Olanları Filtrelemek | db.Products.Where(p => p.Price > 1000).ToList(); | SELECT * FROM Products WHERE Price > 1000; |
+| Ürünleri Fiyata Göre Sıralamak             | db.Products.OrderBy(p => p.Price).ToList();      | SELECT * FROM Products ORDER BY Price;     |
+| Sadece Ürün İsimlerini Almak               | db.Products.Select(p => p.Name).ToList();        | SELECT Name FROM Products;                 |
+| ID'si 5 Olan Tek Bir Kaydı Bulmak          | db.Products.FirstOrDefault(p => p.Id == 5);      | SELECT TOP 1 * FROM Products WHERE Id = 5; |
+
+
+LINQ kullanırken yazdığımız C# metotları, Entity Framework aracılığıyla veritabanının konuşabildiği saf SQL diline çevrilir. Bu sayede hem sorgu hatalarından kaçınırız hem de kodumuz çok daha okunabilir ve yönetilebilir hale gelir.
+---
+ 
 </details>
