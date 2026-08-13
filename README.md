@@ -672,6 +672,12 @@ public class Araba
 
   -Dilin kökeni 1970'lerin başında IBM laboratuvarlarına dayanır. Edgar F. Codd'un ilişkisel veritabanı teorisinden ilham alan Donald Chamberlin ve      Raymond Boyce, insan diline yakın bir sorgulama sistemi tasarlamıştır. Başlangıçta SEQUEL adıyla geliştirilen dil, marka çakışmaları nedeniyle         kısaltılarak SQL adını almıştır. 1979 yılında Oracle tarafından ticari olarak piyasaya sürülmüş, 1986'da ANSI ve 1987'de ISO tarafından resmi          standart olarak kabul edilerek günümüzdeki konumuna ulaşmıştır.
 
+  <h3>Temel SQL Sorguları</h3>
+  <ul>
+    <il><b><code>SELECT</code></b></il>
+   
+  </ul>
+
 </details>
 
 <details>
@@ -806,7 +812,6 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 -Entity Framework Core kullanırken veritabanı ile uygulama kodumuzu nasıl senkronize edeceğimize karar veren iki ana yaklaşım vardır.
 
----
 
 <h3>1. Code-First Yaklaşım</h3>
 -Veritabanında hiçbir tablo oluşturmadan işe başlarız. Önce C# tarafında sınıflarını ve aralarındaki ilişkiyi yazarız. Entity Framework, yazdığımız bu kodlara bakarak veritabanındaki tabloları senin yerine otomatik olarak oluşturur.
@@ -831,3 +836,5 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 ---
 
 </details>
+
+
