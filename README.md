@@ -945,7 +945,8 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
  ---
 
  <h3>JWT Nedir?</h3>
- -JWT (JSON Web Token), istemci ile sunucu arasında sunucuya yük bindirmeden kimlik doğrulamayı sağlayan, kriptografik imzalı standart bir veri yapısıdır.        Sunucu  her kullanıcı için veritabanında oturum tutmak yerine, kullanıcı bilgilerini gizli bir anahtarla imzalayıp istemciye verir; sonraki isteklerde sunucu    veritabanına bakmadan sadece bu imzayı kontrol ederek işlemin geçerliliğini onaylar.Günlük hayattan örnek vermek gerekirse JWT, tıpkı bir otelde bileğinize      takılan akıllı otel bilekliğine benzer. Girişte kimliğinizi bir kez gösterip bileğinize bu mühürlü bilekliği taktırırsınız; tatil boyunca odanıza veya           yemekhaneye girerken tekrar tekrar kimlik göstermez, sadece bilekliğinizi okutarak geçersiniz.
+ 
+ -JWT (JSON Web Token), istemci ile sunucu arasında sunucuya yük bindirmeden kimlik doğrulamayı sağlayan, kriptografik imzalı standart bir veri yapısıdır.        Sunucu her kullanıcı için veritabanında oturum tutmak yerine, kullanıcı bilgilerini gizli bir anahtarla imzalayıp istemciye verir; sonraki isteklerde sunucu     veritabanına bakmadan sadece bu imzayı kontrol ederek işlemin geçerliliğini onaylar. Günlük hayattan örnek vermek gerekirse JWT, tıpkı bir otelde bileğinize     takılan akıllı otel bilekliğine benzer. Girişte kimliğinizi bir kez gösterip bileğinize bu mühürlü bilekliği taktırırsınız; tatil boyunca odanıza veya           yemekhaneye girerken tekrar tekrar kimlik göstermez, sadece bilekliğinizi okutarak geçersiniz. Yazılımsal olarak da; bir siteye giriş yaptığınızda sunucu        tarayıcınıza bu token'ı verir. Siz sayfalar arası gezinirken veya sepete ürün eklerken, tarayıcınız arka planda bu token'ı sunucuya göstererek sürekli yeniden   şifre girmenizi engeller.
 
  ---
 
@@ -957,7 +958,7 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
  
  2.Payload: Kullanıcının ID'si, adı veya yetkileri gibi verilerin tutulduğu alandır. Şifrelenmez, sadece okunabilir formatta kodlanır; bu yüzden asla şifre       gibi hassas bilgiler konulmaz.
  
- 3. Signature:Header ve Payload verileri seçilen algoritmayla harmanlanır, sunucudaki gizli anahtar ile işlenerek ortaya benzersiz bir imza çıkar.Hacker          tokendaki herhangi bir veriyi değiştirmeye çalışırsa imza bozulur; sunucu kendi gizli anahtarıyla kontrol ettiğinde uyuşmazlığı anlar ve isteği reddeder.
+3. Signature:Header ve Payload verileri seçilen algoritmayla harmanlanır, sunucudaki gizli anahtar ile işlenerek ortaya benzersiz bir imza çıkar.Hackertokendaki herhangi bir veriyi değiştirmeye çalışırsa imza bozulur; sunucu kendi gizli anahtarıyla kontrol ettiğinde uyuşmazlığı anlar ve isteği reddeder.
   
  </ul>
 
