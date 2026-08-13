@@ -522,7 +522,8 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
 
  </details>
 
- <details>
+
+  <details>
   <summary>Middleware nedir, Nasıl çalışır?</summary>,
 
   ---
@@ -549,6 +550,8 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
   <br>
   
   <b>Önerilen Sıralama</b>
+
+  ---
   
   <br>
      
