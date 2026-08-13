@@ -1007,6 +1007,7 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
   ---
 
 </details>
+<details>
 <summary>OAuth, OAuth2.0, OpenIddict, OpenID Nedir?</summary>
 
 ---
