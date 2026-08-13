@@ -28,7 +28,7 @@
    <br>
    <li><code>git commit</code>: Sepete eklenen dosyaların o anki durumunun fotoğrafını çeker ve kalıcı bir versiyon olarak kaydeder.git          commit -m yazıp tırnak içinde "şunu değiştirdim" gibi bir açıklama mesajıyla yapılır.</li>
    <br>
-   <li><code>git push</code>: Kendi bilgisayarında kaydettiğin yeni versiyonları, internetteki yedeğine fırlatır ve orayı günceller.</li
+   <li><code>git push</code>: Kendi bilgisayarında kaydettiğin yeni versiyonları, internetteki yedeğine fırlatır ve orayı günceller.</li>
    <br>
    <li><code>git pull</code>: Ekip arkadaşlarımız projeye GitHub gibi platformlar üzerinden yeni kodlar yüklediğinde;bu komut, internetteki o    yeni değişiklikleri    senin bilgisayarına çeker ve dosyalarını günceller.</li>
    <br>
