@@ -1056,6 +1056,6 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 <h3>Performans Artırımı İçin Önerilen Teknikler</h3>
 
-``AsNoTracking
+```AsNoTracking
  
 </details>
