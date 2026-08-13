@@ -899,4 +899,43 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 </details>
 
+# 6.Güvenlik ve Performans
+
+<details>
+ <summary>Authentication vs Authorization Nedir? </summary>
+
+-Bu iki kavram yazılım güvenliğinde sık karıştırılır.Authentication (Kimlik Doğrulama) ve Authorization (Yetkilendirme), temel olarak farklı güvenlik adımlarını temsil eder.
+
+ ---
+
+ <h3>Authentication Nedir?</h3>
+ -Kimlik doğrulama (Authentication), sisteme erişmek isteyen bir kişinin iddia ettiği kişi olup olmadığını kanıtlama sürecidir. Günlük hayattan bir örnek vermek   gerekirse, bir binaya girerken güvenliğe kimliğinizi göstermeniz kimlik doğrulama işlemidir. Dijital dünyada ise kullanıcı adı ve şifre girmek, parmak izi        okutmak veya telefona gelen SMS kodunu yazmak bu sürece karşılık gelir. Sistem, girilen bilgilerin veritabanındaki kayıtlarla eşleşip eşleşmediğini kontrol       ederek kullanıcının gerçekliğinden emin olur ve "Sen gerçekten iddia ettiğin kişisin" onayını verir.
+ 
+---
+
+ <h3>Authorization Nedir?</h3>
+ -Yetkilendirme (Authorization) ise kimliği başarıyla doğrulanmış bir kullanıcının sistem içerisinde hangi alanlara erişebileceğini, hangi dosyaları okuyup        değiştirebileceğini veya hangi işlemleri yapabileceğini belirleyen süreçtir. Konser alanına biletinizi gösterip girdikten sonra sadece normal izleyici alanında   mı duracağınıza, yoksa sahne arkası veya VIP bölüme geçip geçemeyeceğinize karar verilmesi yetkilendirmedir. Yazılım dünyasında da bir kullanıcının sisteme üye   olarak giriş yaptıktan sonra kendi profilini düzenleyebilmesi ancak sistem yöneticilerine özel admin paneline girememesi tamamen yetkilendirme mekanizmasının     bir sonucudur.
+
+ ---
+ 
+ ### Özetle kimlik doğrulama sizin kapıdan içeri girmenizi sağlarken, yetkilendirme içeride hangi odalara girebileceğinizi belirler.
+
+ --- 
+
+ <h3>Authentication vs Authorization</h3>
+
+| Özellik | Authentication |Authorization |
+| :--- | :--- | :--- |
+| **Temel Tanım** | Kullanıcının kim olduğunu kanıtlama ve doğrulama sürecidir. | Doğrulanmış kullanıcının hangi kaynaklara erişebileceğini belirleme sürecidir. |
+| **Cevapladığı Soru** | "Sen kimsin?" | "Neye erişim iznin var?"  |
+| **İşlem Sırası** | Her zaman **önce** gerçekleşir. | Kimlik doğrulama gerçekleştikten **sonra** çalışır. |
+| **Günlük Hayat Örneği** | Havalimanı dış hatlar terminaline girerken bilet ve pasaport kontrolünden geçmek. | Uçağa bindiğinizde ekonomi sınıfından kalkıp first class koltuğa oturmaya çalışırken hostesin biletinizi kontrol etmesi. |
+| **Yazılım Örneği** | Mobil uygulamaya telefonunuza gelen SMS onay kodunu  girerek hesabınıza erişmeniz. | Bir e-ticaret panelinde "Kasiyer" rolündeki personelin sadece satış yapabilmesi, ancak "Yönetici" yetkisi olmadığı için indirim oranlarını değiştirememesi. |
+ 
+ 
+ 
+ 
+
+ 
+</details>
 
