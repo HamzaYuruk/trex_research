@@ -949,14 +949,15 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
  ---
 
-  <h3>JWT Yapısı</h3>
+ <h3>JWT Yapısı</h3>
 
  -Bir JWT, nokta (.) karakteriyle birbirine bağlanan üç ana bölümden oluşur:
 
- <ul>
-  <il><b>1.Header:</b> JWT şifrelemesinde kullanılabilecek çeşitli şifreleme ve algoritma yöntemleri bulunur. Token'ın hangi algoritma (örneğin HS256 veya RS256)   ile imzalandığı ve türü bu kısımda açıkça belirtilir; böylece sunucu, token'ı doğrulayacağı zaman onu nasıl çözmesi gerektiğini ilk olarak bu başlığa bakarak     anlar.</il>
-  <il><b>2.Payload:</b> Kullanıcının ID'si, adı veya yetkileri gibi verilerin tutulduğu alandır. Şifrelenmez, sadece okunabilir formatta kodlanır; bu yüzden asla   şifre gibi hassas bilgiler konulmaz.</il>
-  <il><b>3. Signature:</b>Header ve Payload verileri seçilen algoritmayla harmanlanır, sunucudaki gizli anahtar ile işlenerek ortaya benzersiz bir imza çıkar.      Hacker tokendaki herhangi bir veriyi değiştirmeye çalışırsa imza bozulur; sunucu kendi gizli anahtarıyla kontrol ettiğinde uyuşmazlığı anlar ve isteği reddeder.</il>
+ 1.Header: JWT şifrelemesinde kullanılabilecek çeşitli şifreleme ve algoritma yöntemleri bulunur. Token'ın hangi algoritma (örneğin HS256 veya RS256) ile         imzalandığı ve türü bu kısımda açıkça belirtilir; böylece sunucu, token'ı doğrulayacağı zaman onu nasıl çözmesi gerektiğini ilk olarak bu başlığa bakarak        anlar.
+ 
+ 2.Payload: Kullanıcının ID'si, adı veya yetkileri gibi verilerin tutulduğu alandır. Şifrelenmez, sadece okunabilir formatta kodlanır; bu yüzden asla şifre       gibi hassas bilgiler konulmaz.
+ 
+ 3. Signature:Header ve Payload verileri seçilen algoritmayla harmanlanır, sunucudaki gizli anahtar ile işlenerek ortaya benzersiz bir imza çıkar.Hacker          tokendaki herhangi bir veriyi değiştirmeye çalışırsa imza bozulur; sunucu kendi gizli anahtarıyla kontrol ettiğinde uyuşmazlığı anlar ve isteği reddeder.
   
  </ul>
 
@@ -990,6 +991,7 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
  <h3>Avantajları</h3>
  <ul>
+  <br>
   <il>Sunucuda oturum tutma zorunluluğunu ortadan kaldırır, bu sayede sunucu yükü azalır.</il>
   <br>
   <il>Sunucu, her istekte veritabanını sorgulamak yerine sadece matematiksel imza kontrolü yapar.</il>
@@ -999,6 +1001,7 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
   <il>Boyutu küçüktür; HTTP başlıklarında çok hızlı bir şekilde taşınabilir.</il>
   <br>
   <il>Bir kez üretilen token, gizli anahtarı bilen tüm alt servisler tarafından ortak bir şekilde doğrulanıp kullanılabilir.</il>
+  <br>
  </ul>
 
   ---
