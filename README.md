@@ -1193,3 +1193,148 @@ builder.Services.ConfigureApplicationCookie(options =>
 </details>
 
 
+# 7.Logging ve Hata Yönetimi 
+
+<details>
+ <summary>Neden Loglama Yapılır? Log Seviyesi Nedir?</summary>
+
+ ---
+ 
+-Loglama, bir sistemin çalışma anında gerçekleştirdiği olayları, durum değişikliklerini, hataları ve kullanıcı etkileşimlerini zaman         damgasıyla birlikte kayıt altına alma işlemidir.
+
+---
+
+
+<h3>Neden Loglama Yapılır?</h3>
+
+-Canlı ortamda kod debug edilemez. Hatanın ne zaman, nerede ve neden çıktığını anlamak için loglara bakılır.
+ 
+-Sistemin nerede yavaşladığını, hangi sorguların geciktiğini ve kaynak tüketimini izlemek için tutulur.
+
+-Hangi kullanıcının ne zaman, hangi veriye eriştiğini veya yetkisiz denemeleri belgelemek için saklanır.
+
+-Kullanıcıların sistemde nasıl ilerlediğini ve iş süreçlerinin aksamadan işleyip işlemediğini görmek için kullanılır.
+ 
+---
+
+<h3>Log Seviyesi Nedir?</h3>
+
+-Her olayın önemi aynı değildir; log seviyesi, mesajları önem derecesine göre etiketleyerek hem diskin gereksiz yere dolmasını önler hem de  geliştiricinin sadece kritik hatalara hızlıca odaklanmasını sağlar.
+
+<h4>Log Seviyeleri</h4>
+
+| Seviye | Öncelik | Ne Zaman Kullanılır? | Örnek |
+| :--- | :--- | :--- | :--- |
+| **TRACE** | En Düşük | Kod akışının en ince ayrıntılarıdır. | `Fonksiyona parametre: [x=5] ile girildi.` |
+| **DEBUG** | Düşük | Geliştirme/test aşamasında değişken değerlerini ve iç durumu izlemek için. | `Kullanıcı ID: 42 cache'de bulunamadı.` |
+| **INFO** | Orta | Sistemin normal ve beklenen işleyişine dair genel durum bildirimleri. | `Kullanıcı başarıyla giriş yaptı.` |
+| **WARN** | Yüksek | Sistem çalışıyor ama potansiyel tehlike veya beklenmedik durum var. | `Bellek kullanımı %85 sınırına ulaştı.` |
+| **ERROR** | Çok Yüksek | Bir işlem başarısız oldu veya hata verdi ama sistem genel olarak ayakta. | `Ödeme servisi yanıt vermedi, işlem iptal.` |
+| **FATAL** | En Yüksek | Sistemin tamamen çökmesine neden olan kritik felaket durumu. | `Veritabanı bağlantısı koptu, uygulama durduruldu.` |
+
+---
+
+</details>
+
+<details>
+ <summary>ASP.NET Core'da Logging Altyapısı </summary>
+
+-ASP.NET Core, harici bir kütüphaneye gerek kalmadan çalışan güçlü bir yerleşik loglama altyapısına sahiptir.
+
+<h3>Temel Çalışma Mantığı</h3>
+
+* **`ILogger<T>`:** Koddaki olayları loglamak için Dependency Injection  ile sınıflara çağrılan ana arayüzdür.
+
+* **Structured Logging :** Logları string birleştirmek (`$""`) yerine parametrik `{Parametre}` şablonuyla yazar. Böylece loglar JSON nesnesi olarak tutulur ve aramalarda kolayca filtrelenir.
+  
+* **`appsettings.json`:** Kod derlenmeden hangi seviyedeki logların tutulacağı ayarlanır.
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning",
+      "Microsoft.EntityFrameworkCore.Database.Command": "Information"
+    }
+  }
+}
+```
+</details>
+
+<details>
+ <summary>Global Exception Handling Nedir? Nasıl Yapılır? </summary>
+
+---
+
+<h3>Global Exception Handling Nedir?</h3>
+
+-Projedeki her controller veya servis metodunun içine tek tek `try-catch` blokları yazmak hem kod kalabalığı yaratır hem de gözden kaçan bir hata anında uygulamanın dış dünyaya kontrolsüz, güvensiz teknik hata sayfaları fırlatmasına neden olur. Global Exception Handling, uygulamanın en dış katmanına merkezi bir güvenlik ağı kurma yaklaşımıdır. Sistemde nerede ve ne zaman bir hata fırlatılırsa fırlatılsın, bu merkezi ağ hatayı havada yakalar, uygulamanın çökmesini engeller ve kullanıcıya standart, temiz bir hata yanıtı döner. Böylece iş mantığı içeren kodlar gereksiz hata bloklarından arınır ve hata yönetimi tek bir standart üzerinden yürütülür.
+
+---
+
+-ASP.NET Core tarafında bu mimariyi hayata geçirirken iki temel bileşenden yararlanırız: 
+
+<h3>1. UseExceptionHandler</h3>
+
+-ASP.NET Core'un hazır middleware bileşenidir ve Global Exception Handling'in  yakalama görevini üstlenir. HTTP istek hattında meydana gelen ve yakalanmamış tüm exceptionsları otomatik olarak yakalar. Görevi, hatanın kullanıcıya doğrudan yansımasını önlemek, HTTP durum kodunu  ayarlamak ve kullanıcıya sistemin iç yapısını  ifşa etmeyen güvenli, sade bir JSON formatında yanıt üretmektir.
+
+<h3>2. ILogger</h3>
+
+-ASP.NET Core'un hazır loglama arayüzüdür ve Global Exception Handling sürecinde hatanın arka plandaki kaydını tutma görevini üstlenir. 
+`UseExceptionHandler` hatayı yakaladığında, kullanıcıya gösterilmeyen kritik teknik detaylar  `ILogger` aracılığıyla `ERROR` veya `CRITICAL` seviyesinde log dosyalarına veya merkezi log sunucularına yazılır. Bu sayede yazılımcı, kullanıcıya hiçbir teknik detay hissettirmeden sistemde neyin, nerede patladığını eksiksiz şekilde analiz edebilir.
+
+---
+
+Aşağıdaki kod örneğinde, hem `UseExceptionHandler` ile hatayı merkezi olarak yakalayıp kullanıcıya temiz yanıt dönmeyi hem de `ILogger` ile hatanın tüm detaylarını arka plana kaydetmeyi tek bir noktada sağladık.
+
+```csharp
+using Microsoft.AspNetCore.Diagnostics;
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
+
+var app = builder.Build();
+
+// GLOBAL EXCEPTION HANDLER (Merkezi Yakalama ve Loglama)
+app.UseExceptionHandler(errorApp =>
+{
+    errorApp.Run(async context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        context.Response.ContentType = "application/json";
+
+        var exceptionFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+        var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+
+        if (exceptionFeature != null)
+        {
+            var exception = exceptionFeature.Error;
+            var path = exceptionFeature.Path;
+
+            // 1. ILogger: Hatanın tüm teknik detayını arka planda logla
+            logger.LogError(exception, "Kritik Sistem Hatası! Yol: {Path} | Mesaj: {Message}", path, exception.Message);
+
+            // 2. UseExceptionHandler: Kullanıcıya kod detayı vermeden güvenli mesaj dön
+            var response = new
+            {
+                Status = 500,
+                Message = "Sunucu tarafında beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyiniz."
+            };
+
+            await context.Response.WriteAsJsonAsync(response);
+        }
+    });
+});
+
+app.MapControllers();
+app.Run();
+```
+
+---
+
+</details>
+
+
+
+
