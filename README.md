@@ -1316,6 +1316,9 @@ builder.Services.ConfigureApplicationCookie(options =>
   }
 }
 ```
+
+---
+
 </details>
 
 <details>
