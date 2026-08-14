@@ -4,20 +4,26 @@
 
 <details>
  <summary><b>Git Nedir? GitHub Nedir?</b></summary>
+
+ ---
+ 
  <h3>Git Nedir?</h3>
- <ul>
-   <li>Git, tamamen kendi bilgisayarınızda çalışan bir versiyon kontrol sistemidir. Bilgisayarınızdaki dosyalarda yaptığınız her değişikliği versiyon versiyon       kaydeder, istediğiniz an istediğiniz versiyona dönmenizi sağlar. Git sadece yazılım projeleri için kullanılmaz, bütün işlerinizde kullanabilirsiniz.</li></ul>
- <br>
+ 
+ -Git, tamamen kendi bilgisayarınızda çalışan bir versiyon kontrol sistemidir. Bilgisayarınızdaki dosyalarda yaptığınız her değişikliği versiyon versiyon kaydeder, istediğiniz an istediğiniz versiyona dönmenizi sağlar. Git sadece yazılım projeleri için kullanılmaz, bütün işlerinizde kullanabilirsiniz.
+
+ ---
+ 
  <h3>GitHub Nedir?</h3>
- <ul>
- <li>GitHub, Git kullanarak bilgisayarımızda oluşturduğumuz versiyonları ve dosyaları internet üzerinde yedeklememizi / barındırmamızı sağlayan bir web platformudur. En önemli faydası ekipçe ortak bir proje üzerinde çalışmayı kolaylaştırmasıdır. Ekip üyeleri projelerde yaptıkları değişikleri GitHub'a yükleyebilir, diğer ekip üyelerinin yaptığı değişiklikleri bilgisayarına çekebilir, kimin ne değişiklik yaptığı görülür. Bütün bunlar da ortak bir projede çalışmayı kolaylaştırır.</li>
- </ul>
+ 
+ -GitHub, Git kullanarak bilgisayarımızda oluşturduğumuz versiyonları ve dosyaları internet üzerinde yedeklememizi / barındırmamızı sağlayan bir web platformudur. En önemli faydası ekipçe ortak bir proje üzerinde çalışmayı kolaylaştırmasıdır. Ekip üyeleri projelerde yaptıkları değişikleri GitHub'a yükleyebilir, diğer ekip üyelerinin yaptığı değişiklikleri bilgisayarına çekebilir, kimin ne değişiklik yaptığı görülür. Bütün bunlar da ortak bir projede çalışmayı kolaylaştırır.
+ 
 </details>
 
 
 <details>
  <summary><b>Temel Git Komutları</b></summary>
- <br>
+
+ ---
  
  <ul>
    <li><code>git init</code>: Sıfırdan başlama komutudur. Bilgisayarınızdaki normal bir klasörün içine Git'i kurar ve "artık buradaki            dosyaları takip et" der.</li>
@@ -1341,7 +1347,9 @@ app.Run();
 <details>
  <summary>SOLID prensipleri</summary>
 
- -SOLID; yazılım mimarisini daha esnek, anlaşılır, test edilebilir ve değişime açık tutmak amacıyla Robert C. Martin tarafından derlenen beş  temel nesne yönelimli tasarım ilkesidir.
+---
+
+-SOLID; yazılım mimarisini daha esnek, anlaşılır, test edilebilir ve değişime açık tutmak amacıyla Robert C. Martin tarafından derlenen beş  temel nesne yönelimli tasarım ilkesidir.
 
 ---
 
@@ -1396,4 +1404,49 @@ app.Run();
 
 ---
 
+</details>
+
+
+
+<details>
+ <summary>Design Patterns</summary>
+
+ ---
+
+ <h3>Nedir?</h3>
+ 
+ -Design Patterns (Tasarım Kalıpları),yazılım geliştirirken sıkça karşılaşılan mimari sorunlara yıllar içinde bulunmuş, kendini kanıtlamış ve standartlaşmış çözüm taslaklarıdır. Hazır bir kütüphane veya kod bloğu değil; kodun daha esnek, okunabilir ve yönetilebilir olmasını sağlayan mantıksal rehberlerdir. Proje büyüdükçe kodun dağılmasını önler ve ekip içinde ortak bir mühendislik dili oluşturur.
+
+---
+
+### 1. Singleton Pattern (Tekillik Kalıbı)
+
+-Bir sınıfın uygulama yaşam döngüsü boyunca yalnızca tek bir örneğinin oluşturulmasını garanti eder ve bu örneğe global bir erişim noktası sağlar. Sistem kaynaklarının gereksiz yere birden fazla kez tüketilmesini önler.
+
+**Örnek**
+  * ❌ *Hatalı:* Uygulama içinde veritabanı bağlantısı veya loglama ihtiyacı olan her servisin kendi içinde `new DatabaseConnection()` diyerek yüzlerce ayrı bağlantı açması ve sistemi kilitlemesi.
+  * ✅ *Doğru:* `DatabaseConnection` sınıfının kurucusunu (constructor) `private` yapıp, yalnızca `getInstance()` metodu üzerinden tek bir ortak bağlantı havuzunu tüm uygulamaya kullandırmak.
+
+---
+
+## 2. Repository Pattern (Depo / Veri Erişim Kalıbı)
+
+* **Kategori:** Yapısal / Mimari (Structural / Architectural)
+* **Açıklama:** Veri tabanı veya harici veri kaynaklarına erişim mantığını, iş mantığından (Business Logic) tamamen soyutlayan kalıptır. Kodun veri kaynağının türünden (SQL, NoSQL, REST API vb.) bağımsız çalışmasını sağlar.
+* **Örnek Senaryo:**
+  * ❌ *Hatalı:* `UserService` veya Controller katmanında doğrudan SQL sorguları yazıp (`SELECT * FROM users`), veritabanı ORM'ine veya tablolarına doğrudan bağlanmak.
+  * ✅ *Doğru:* Bir `IUserRepository` arayüzü tanımlayıp `getById()`, `save()`, `delete()` gibi metotlar üzerinden veri işlemlerini yönetmek; böylece veritabanı teknolojisi değiştiğinde iş mantığına dokunmamak ve mock nesnelerle kolayca birim testi yazabilmek.
+
+---
+
+## 3. Factory Pattern (Fabrika Kalıbı)
+
+* **Kategori:** Yaratımsal (Creational)
+* **Açıklama:** Nesne oluşturma mantığını istemciden (client) gizleyerek, hangi nesnenin üretileceğini çalışma anındaki parametrelere veya koşullara göre belirleyen bir fabrika metoduna devretme yöntemidir.
+* **Örnek Senaryo:**
+  * ❌ *Hatalı:* Sipariş onaylandığında `if (type === "SMS") new SmsNotification(); else if (type === "Email") new EmailNotification();` şeklinde `new` anahtar kelimesiyle somut sınıfları doğrudan kodun içine gömmek.
+  * ✅ *Doğru:* Bir `NotificationFactory` sınıfı oluşturup `createNotification(type)` metodu çağırmak; istemcinin arka plandaki nesne yaratım detaylarını bilmeden yalnızca ortak `INotification` arayüzünü kullanmasını sağlamak.
+
+---
+ 
 </details>
