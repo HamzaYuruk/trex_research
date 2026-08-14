@@ -1119,7 +1119,7 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 ---
 
-1. Model Validation 
+<h4>1. Model Validation</h3> 
 
 -Gelen verinin tip, uzunluk ve format kurallarına uygunluğunu denetler; hatalı veriyi doğrudan reddeder.
 
@@ -1137,7 +1137,7 @@ public class RegisterDto
 ```
 ---
 
-2.Input Sanitization
+<h4>2.Input Sanitization</h3>
 
 -Kullanıcının gönderdiği HTML içeriklerdeki zararlı JavaScript etiketlerini temizler.
 
@@ -1150,7 +1150,7 @@ string cleanHtml = sanitizer.Sanitize(rawInputHtml);
 ```
 ---
 
-3.SQL Injection Koruması
+<h4>3.SQL Injection Koruması</h3>
 
 -LINQ sorguları veriyi otomatik parametreleştirir, ham SQL birleştirmesinden doğan riskleri önler.
 
@@ -1161,7 +1161,7 @@ var user = await _context.Users
 ```
 ---
 
-4.CSRF Koruması
+<h4>4.CSRF Koruması</h3>
 
 -Kullanıcının oturumu üzerinden üçüncü parti sitelerden sahte istek atılmasını engeller.
 
@@ -1176,7 +1176,7 @@ public IActionResult UpdatePassword(ChangePasswordDto dto)
 ````
 ---
 
-Kimlik & Oturum Güvenliği
+<h4>5.Kimlik & Oturum Güvenliği</h3>
 
 -Çerezleri JavaScript erişimine kapatır ve hatalı girişlerde hesabı kilitler.
 
