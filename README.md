@@ -1,5 +1,7 @@
 # Trex Research
 
+.NET Backend Geliştirme – Temel Bilgi ve Kavramlar 
+
 # 1. Modern Yazılım Geliştirme Pratikleri
 
 <details>
