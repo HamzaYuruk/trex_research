@@ -1117,6 +1117,8 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 -Bu güvenlik açıklarını ASP.NET Core tarafında engellemek için kullanılan temel yöntemler şunlardır:
 
+---
+
 1. Model Validation 
 
 -Gelen verinin tip, uzunluk ve format kurallarına uygunluğunu denetler; hatalı veriyi doğrudan reddeder.
@@ -1133,6 +1135,7 @@ public class RegisterDto
     public string Email { get; set; } = string.Empty;
 }
 ```
+---
 
 2.Input Sanitization
 
@@ -1145,6 +1148,7 @@ var sanitizer = new HtmlSanitizer();
 // Zararlı script silinir, sadece güvenli metin kalır
 string cleanHtml = sanitizer.Sanitize(rawInputHtml);
 ```
+---
 
 3.SQL Injection Koruması
 
@@ -1155,7 +1159,7 @@ string cleanHtml = sanitizer.Sanitize(rawInputHtml);
 var user = await _context.Users
     .FirstOrDefaultAsync(u => u.Email == inputEmail);
 ```
-
+---
 
 4.CSRF Koruması
 
@@ -1170,6 +1174,7 @@ public IActionResult UpdatePassword(ChangePasswordDto dto)
     return Ok();
 }
 ````
+---
 
 Kimlik & Oturum Güvenliği
 
@@ -1183,6 +1188,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.Lockout.MaxFailedAccessAttempts = 5; // 5 hatalı denemede kilitle
 });
 ```
+---
 
 </details>
 
