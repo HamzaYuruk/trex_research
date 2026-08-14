@@ -1353,7 +1353,7 @@ app.Run();
 
 ---
 
-1. Single Responsibility Principle — Tek Sorumluluk Prensibi
+### 1. Single Responsibility Principle — Tek Sorumluluk Prensibi
 
 -Bir sınıfın değişmek için yalnızca tek bir nedeni ve odaklandığı tek bir sorumluluğu olmalıdır. Bir sınıfa hem veri tabanı işlemini hem de e-posta gönderimini yüklemek hata riskini artırır.
 
@@ -1363,7 +1363,7 @@ app.Run();
 
 ---
 
- 2. Open/Closed Principle  — Açık / Kapalı Prensibi
+ ### 2. Open/Closed Principle  — Açık / Kapalı Prensibi
 
 -Yazılım varlıkları yeni özellikler eklenmesine açık, ancak var olan çalışan kaynak kodunun değiştirilmesine kapalı olmalıdır.
 
@@ -1374,7 +1374,7 @@ app.Run();
 
 ---
 
-3. Liskov Substitution Principle — Liskov İkame Prensibi
+### 3. Liskov Substitution Principle — Liskov İkame Prensibi
 
 -Alt sınıflar, miras aldıkları üst sınıfların yerine geçebilmeli ve programın beklenen davranışını bozmamalıdır.
 
@@ -1384,7 +1384,7 @@ app.Run();
 
 ---
 
-4. Interface Segregation Principle — Arayüz Ayrımı Prensibi
+### 4. Interface Segregation Principle — Arayüz Ayrımı Prensibi
 
 -Sınıflar, kullanmadıkları ve ihtiyaç duymadıkları metotları barındıran hantal arayüzleri uygulamaya zorlanmamalıdır.
 
@@ -1394,7 +1394,7 @@ app.Run();
 
 ---
 
-5. Dependency Inversion Principle  — Bağımlılıkların Tersi Prensibi
+### 5. Dependency Inversion Principle  — Bağımlılıkların Tersi Prensibi
 
 -Yüksek seviyeli modüller alt seviyeli somut modüllere değil; her iki katman da soyutlamalara bağımlı olmalıdır.
 
@@ -1429,24 +1429,92 @@ app.Run();
 
 ---
 
-## 2. Repository Pattern (Depo / Veri Erişim Kalıbı)
+### 2. Repository Pattern (Depo / Veri Erişim Kalıbı)
 
-* **Kategori:** Yapısal / Mimari (Structural / Architectural)
-* **Açıklama:** Veri tabanı veya harici veri kaynaklarına erişim mantığını, iş mantığından (Business Logic) tamamen soyutlayan kalıptır. Kodun veri kaynağının türünden (SQL, NoSQL, REST API vb.) bağımsız çalışmasını sağlar.
-* **Örnek Senaryo:**
+-Veri tabanı veya harici veri kaynaklarına erişim mantığını, iş mantığından tamamen soyutlayan kalıptır. Kodun veri kaynağının türünden  bağımsız çalışmasını sağlar.
+
+**Örnek Senaryo:**
   * ❌ *Hatalı:* `UserService` veya Controller katmanında doğrudan SQL sorguları yazıp (`SELECT * FROM users`), veritabanı ORM'ine veya tablolarına doğrudan bağlanmak.
   * ✅ *Doğru:* Bir `IUserRepository` arayüzü tanımlayıp `getById()`, `save()`, `delete()` gibi metotlar üzerinden veri işlemlerini yönetmek; böylece veritabanı teknolojisi değiştiğinde iş mantığına dokunmamak ve mock nesnelerle kolayca birim testi yazabilmek.
 
 ---
 
-## 3. Factory Pattern (Fabrika Kalıbı)
+### 3. Factory Pattern (Fabrika Kalıbı)
 
-* **Kategori:** Yaratımsal (Creational)
-* **Açıklama:** Nesne oluşturma mantığını istemciden (client) gizleyerek, hangi nesnenin üretileceğini çalışma anındaki parametrelere veya koşullara göre belirleyen bir fabrika metoduna devretme yöntemidir.
-* **Örnek Senaryo:**
+-Nesne oluşturma mantığını istemciden  gizleyerek, hangi nesnenin üretileceğini çalışma anındaki parametrelere veya koşullara göre belirleyen bir fabrika metoduna devretme yöntemidir.
+
+**Örnek Senaryo:**
   * ❌ *Hatalı:* Sipariş onaylandığında `if (type === "SMS") new SmsNotification(); else if (type === "Email") new EmailNotification();` şeklinde `new` anahtar kelimesiyle somut sınıfları doğrudan kodun içine gömmek.
   * ✅ *Doğru:* Bir `NotificationFactory` sınıfı oluşturup `createNotification(type)` metodu çağırmak; istemcinin arka plandaki nesne yaratım detaylarını bilmeden yalnızca ortak `INotification` arayüzünü kullanmasını sağlamak.
 
 ---
  
+</details>
+
+
+
+<details>
+  <summary>Clean Code Nedir, Neden Önemlidir? </summary>
+
+  ---
+
+  <h3>Nedir ve Neden Önemlidir?</h3>
+
+  -Clean Code , yalnızca bilgisayarın çalıştırabildiği değil; diğer geliştiricilerin de kolayca okuyabildiği, anlayabildiği ve bakımını        yapabildiği kod yazma standardıdır. Yazılım geliştirmede bir kod satırı bir kez yazılırken projenin ömrü boyunca defalarca okunup            güncellendiği için temiz kod; hata oranını düşürür, ekibin koda adaptasyonunu hızlandırır ve sistemin zamanla yönetilemez bir spagetti       koda dönüşmesini engeller.
+
+---
+
+<h3>CLEAN CODE Prensipleri</h3>
+
+
+### 1. Anlamlı ve Açıklayıcı İsimlendirme (Meaningful Names)
+
+-Değişkenler, fonksiyonlar ve sınıflar ne işe yaradığını ve amacını başka bir açıklamaya gerek bırakmadan açıkça belirtmelidir. Kısaltmalardan ve belirsiz adlandırmalardan kaçınılmalıdır.
+
+**Örnek*
+* ❌ *Hatalı:* `const d = 86400;` veya `function check(u) { ... }`
+* ✅ *Doğru:* `const SECONDS_IN_A_DAY = 86400;` veya `function isUserActive(user) { ... }`
+
+  ---
+
+### 2. Küçük ve Tek İş Yapan Fonksiyonlar (Functions Do One Thing)
+
+-Bir fonksiyon yalnızca tek bir görevi yerine getirmeli, yan etki (side-effect) üretmemeli ve mümkün olduğunca kısa tutulmalıdır. Birden fazla işi aynı anda yapan fonksiyonlar bölünmelidir.
+
+**Örnek:**
+* ❌ *Hatalı:* `processOrderAndSendEmailAndLog()` gibi hem siparişi onaylayan hem mail atan hem de log tutan 100 satırlık dev bir fonksiyon.
+* ✅ *Doğru:* Sipariş doğrulama, stok düşme ve bildirim adımlarının ayrı küçük fonksiyonlara ayrılması ve ana fonksiyonun sadece bu adımları çağırması.
+
+  ---
+
+### 3. Kod Tekrarından Kaçınma (DRY — Don't Repeat Yourself)
+
+-Aynı iş mantığı veya kod parçası sistemin farklı yerlerinde kopyalanıp yapıştırılmamalıdır. Tekrar eden yapılar ortak bir fonksiyona veya modüle taşınmalıdır.
+
+**Örnek:**
+* ❌ *Hatalı:* Üç farklı controller içinde aynı telefon numarası doğrulama regex'ini ve mantığını tekrar tekrar yazmak.
+* ✅ *Doğru:* Doğrulama mantığını `validatePhoneNumber()` gibi ortak bir yardımcı fonksiyona alıp ihtiyaç duyulan her yerden bunu çağırmak.
+
+  ---
+
+### 4. Kendi Kendini Açıklayan Kod (Self-Documenting Code)
+
+-Kodun ne yaptığını anlatmak için her satıra yorum (comment) yazmak yerine, kodun yapısı ve fonksiyon isimleri o kadar net olmalıdır ki fazladan yoruma gerek kalmamalıdır. Yorumlar sadece "neden" yapıldığını açıklamak için kullanılmalıdır.
+
+**Örnek:**
+* ❌ *Hatalı:* `if (user.age >= 18 && user.hasLicense && !user.isSuspended) // Ehliyet alabilir mi kontrolü`
+* ✅ *Doğru:* `if (canUserDrive(user))` şeklinde mantığı anlamlı bir fonksiyona/değişkene paketlemek.
+
+  ---
+
+### 5. Sadelik ve İhtiyaç Dışı Koddan Kaçınma (KISS & YAGNI)
+
+-Gereksiz karmaşıklıktan ve *"İleride lazım olur belki"* mantığıyla henüz ihtiyaç duyulmayan mimarileri veya özellikleri koda eklemekten kaçınılmalıdır.
+
+**Örnek:**
+* ❌ *Hatalı:* Basit bir CRUD işlemi için henüz talep yokken aşırı karmaşık mikroservis veya event-driven mimarileri koda dahil etmek.
+* ✅ *Doğru:* Mevcut ihtiyacı en sade ve temiz şekilde çözen yapıyı kurup, sistem gerçekten gerektirdiğinde mimariyi büyütmek.
+
+  ---
+
 </details>
