@@ -1518,3 +1518,75 @@ app.Run();
   ---
 
 </details>
+
+
+
+<details>
+  <summary>Yazılım Mimari Desenleri</summary>
+
+  ---
+
+  <h3>Nedir ve Neden Önemlidir?</h3>
+
+-Yazılım mimari desenleri; bir sistemin bileşenlerinin nasıl organize edileceğini, birbirleriyle nasıl haberleşeceğini ve iş mantığı ile teknik altyapının nasıl ayrılacağını belirleyen üst düzey yapısal standartlardır. Doğru mimariyi seçmek; projenin ölçeklenebilirliğini, bakım kolaylığını, test edilebilirliğini ve ekiplerin birbirine bağımlı kalmadan geliştirme yapabilmesini sağlar.
+
+  ---
+
+  ### 1. Layered Architecture 
+
+ -Uygulamayı Sunum , İş Mantığı ve Veri Erişimi gibi yatay katmanlara ayıran geleneksel mimaridir. Her katman yalnızca bir altındaki          katmanla konuşur.
+
+  * **Tercih Edileceği Senaryo:** Hızlıca ayağa kaldırılması gereken, orta veya küçük ölçekli projeler, standart CRUD uygulamaları ve karmaşık iş kuralları barındırmayan sistemler.
+  * ❌ *Hatalı Kullanım:* Çok karmaşık iş kuralları olan veya farklı istemcilere (mobil, web, IoT) sürekli yeni arayüzler açılan dev kurumsal sistemler.
+
+  ---
+
+  ### 2. Clean Architecture
+
+-İş mantığını merkeze koyan; veri tabanı, framework ve kullanıcı arayüzü gibi detayları en dış katmanda tutarak bağımlılıkları dıştan içe doğru kuran mimaridir.
+
+  * **Tercih Edileceği Senaryo:** İş kurallarının yoğun ve kritik olduğu, uzun vadeli kurumsal projeler, veri tabanı veya dış kütüphane        değişimlerine açık yapılar ve kapsamlı test  gerektiren sistemler.
+  * ❌ *Hatalı Kullanım:* 2 haftalık bir prototip/MVP uygulamasında aşırı katman yaratarak projeyi gereksiz yere boğmak.
+
+  ---
+
+  ### 3. Hexagonal Architecture 
+
+ -Uygulamanın çekirdek iş mantığını dış dünyadan tamamen soyutlar. Dış dünyayla bağlantıyı Port'lar ve Adapter'lar üzerinden tak-çıkar         mantığıyla sağlar.
+
+  **Tercih Edileceği Senaryo:** Sistemin birden fazla giriş noktasına veya birden fazla veri kaynağına kolayca takılıp çıkarılabilir           olmasının hedeflendiği yapılar.
+  * ❌ *Hatalı Kullanım:* Dış dünya ile entegrasyonu sabit, değişmeyecek tekil ve basit uygulamalar.
+
+  ---
+
+  ### 4. Microservices Architecture 
+
+  -Uygulamayı tek bir monolitik blok yerine; kendi veri tabanına ve iş alanına  sahip, birbirinden bağımsız dağıtılabilen ve API üzerinden     haberleşen küçük servisler bütünü olarak tasarlar.
+
+  * **Tercih Edileceği Senaryo:** Farklı ekiplerin bağımsız geliştirme/dağıtım yapması gereken, yüksek trafikli, bazı modüllerinin bağımsız ölçeklenmesi  şart olan büyük ölçekli sistemler.
+  * ❌ *Hatalı Kullanım:* Küçük bir ekip ve düşük trafikli bir projede mikroservis kurup dağıtık sistem karmaşıklığı ve network gecikmeleriyle boğuşmak.
+
+  ---
+
+  ### 5. Event-Driven Architecture 
+
+  -Bileşenlerin doğrudan birbirini çağırmak yerine sistemde gerçekleşen olayları  bir mesaj kuyruğuna fırlattığı ve dinleyicilerin  bu olayları asenkron olarak yakalayıp işlediği mimaridir.
+
+  * **Tercih Edileceği Senaryo:** Gerçek zamanlı veri akışı , yüksek trafik altında anlık cevaba ihtiyaç duymayan arka plan işlemleri.
+  * ❌ *Hatalı Kullanım:* Tüm adımların anlık ve sıralı doğrulanması gereken, basit veri akışına sahip uygulamalar.
+
+  ---
+
+### Yazılım Mimarileri Karşılaştırma ve Karar Tablosu
+
+| Mimari | Ne Zaman Seçilmeli?| Öne Çıkan Artısı | Dikkat Edilmesi Gereken Yönü | Karmaşıklık / Ölçek |
+| :--- | :--- | :--- | :--- | :---: |
+| **Layered (Katmanlı)** | Küçük/orta ölçekli CRUD projeleri ve hızlı MVP geliştirme süreçleri. | Kurulumu hızlı, öğrenmesi ve geliştirmesi son derece kolaydır. | Proje büyüdükçe katmanlar birbirine karışabilir, monolit hantallaşır. | Düşük / Düşük |
+| **Clean Architecture** | İş kurallarının karmaşık olduğu, uzun ömürlü kurumsal projeler. | İş mantığı framework ve veri tabanından tamamen bağımsızdır; test yazması çok kolaydır. | Dosya ve katman sayısı fazladır; başlangıç mimari maliyeti yüksektir. | Orta-Yüksek / Orta-Yüksek |
+| **Hexagonal (Ports & Adapters)** | Birden fazla giriş noktası (REST, CLI, gRPC) veya tak-çıkar veri kaynağı olan sistemler. | Dış bağımlılıklar sisteme dokunmadan kolayca değiştirilebilir. | Çok sayıda interface ve adapter yönetimi gerektirir; basit işler için fazla gelebilir. | Orta / Orta |
+| **Microservices** | Farklı ekiplerin bağımsız geliştirdiği, parça parça ölçeklenmesi gereken yüksek trafikli dev sistemler. | Her servis bağımsız teknolojiyle geliştirilir, deploy edilir ve ölçeklenir. | Dağıtık sistem karmaşıklığı, network gecikmeleri ve yüksek DevOps/altyapı maliyeti yaratır. | Çok Yüksek / Çok Yüksek |
+| **Event-Driven** | Gerçek zamanlı veri akışı (streaming) ve asenkron arka plan işlemleri (fatura, bildirim vb.). | Servisler birbirini bloklamadan anında tepki verir, yüksek trafik altında akıcıdır. | Olayların akışını izlemek, hata ayıklamak ve veri tutarlılığını sağlamak zordur. | Yüksek / Çok Yüksek |
+
+  ---
+
+</details>
