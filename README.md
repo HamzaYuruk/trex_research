@@ -1077,3 +1077,114 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 </details>
 
 
+
+<details>
+
+ ---
+ 
+<summary>OWASP TOP 10</summary>
+
+-OWASP (Open Web Application Security Project), web güvenliğini geliştirmeye odaklanmış uluslararası ve bağımsız bir siber güvenlik topluluğudur. Yazılımlarda en sık rastlanan zafiyetleri ve saldırı tiplerini analiz ederek geliştiriciler için bir rehber sunar. Bu kapsamda periyodik olarak yayımladıkları OWASP Top 10 listesi, web uygulamalarındaki en kritik 10 güvenlik riskini ortaya koyan ve sektörde temel kabul edilen en bilinen çalışmadır.
+
+---
+
+<h3>En Yaygın Güvenlik Açıkları ve Tanımları</h3>
+
+* **SQL Injection (SQLi):** Kullanıcıdan alınan girdilerin filtrelenmeden doğrudan SQL sorgusuna eklenmesi sonucu, saldırganın veritabanında yetkisiz sorgu çalıştırması veya verileri çalmasıdır.
+* **Cross-Site Scripting (XSS):** Web sayfasına kötü amaçlı JavaScript kodları enjekte edilmesi ve bu sayfayı açan diğer kullanıcıların oturum bilgilerinin ele geçirilmesidir.
+* **Cross-Site Request Forgery: Giriş yapmış bir kullanıcının tarayıcısı üzerinden, kullanıcının haberi olmadan yetkisiz istekler  gönderilmesidir.
+* **Broken Authentication :** Zayıf şifre politikaları veya oturum yönetimi hataları yüzünden kullanıcı hesaplarının saldırganlarca kolayca ele geçirilmesidir.
+
+---
+
+<h3>OWASP Top 10 Güvenlik Açıkları</h3>
+
+| # | Güvenlik Açığı | Açıklama | Tipik Risk / Örnek |
+| :--- | :--- | :--- | :--- |
+| **01** | **Broken Access Control** | Kullanıcının yetkisi dışındaki sayfalara, verilere veya işlemlere erişebilmesidir. | URL'deki `user_id=5` değerini `6` yaparak başkasının profilini/faturasını görüntüleme. |
+| **02** | **Cryptographic Failures**  | Hassas verilerin  şifrelenmeden veya zayıf algoritmalarla aktarılmasıdır. | Kullanıcı şifrelerinin veritabanında düz metin saklanması veya HTTPS kullanılmaması. |
+| **03** | **Injection**  | Güvenilmeyen kullanıcı girdilerinin doğrudan veritabanı veya komut satırı sorgularına dahil edilmesidir. | Giriş formuna `' OR 1=1 --` yazılarak şifresiz admin girişi yapılması. |
+| **04** | **Insecure Design**  | Güvenlik risklerinin kodlama aşamasında değil, mimari ve iş mantığı tasarımında göz ardı edilmesidir. | Şifre sıfırlama için tek bir tahmin edilebilir güvenlik sorusu kullanılması. |
+| **05** | **Security Misconfiguration**  | Sunucu veya framework üzerindeki varsayılan ayarların, açık portların veya hata sayfalarının güvensiz bırakılmasıdır. | Canlı ortamda 'debug mode' açık unutulup hata anında veritabanı yollarının ekranda görünmesi. |
+| **06** | **Vulnerable & Outdated Components**  | Projede bilinen güvenlik açığı (CVE) bulunan eski kütüphane veya paketlerin kullanılmasıdır. | Güvenlik yaması almamış eski bir NuGet/npm paketinin saldırganlarca istismar edilmesi. |
+| **07** | **Identification & Authentication Failures**  | Giriş sistemlerinin, oturum yönetiminin ve şifre politikalarının zayıf uygulanmasıdır. | Giriş ekranında deneme sınırı  olmaması nedeniyle şifrenin kaba kuvvetle kırılması. |
+| **08** | **Software & Data Integrity Failures**  | Kod, eklenti veya veri güncellemelerinin kaynağının ve bütünlüğünün doğrulanmadan yüklenmesidir. | Doğrulanmamış bir CDN'den zararlı JavaScript çekilmesi. |
+| **09** | **Security Logging & Monitoring Failures** | Güvenlik olaylarının  kaydedilmemesi ve saldırıların geç fark edilmesidir. | Bir sisteme sızıldığında log tutulmadığı için saldırının aylar sonra fark edilmesi. |
+| **10** | **Server-Side Request Forgery ** | Saldırganın, sunucuya dışarıdan beklenmeyen veya iç ağdaki  adreslere istek attırmasıdır. | Bir web sitesinin "URL'den resim yükle" özelliğini kullanarak sunucunun iç IP adreslerinin taranması. |
+
+---
+
+<h3>ASP.NET Core ile Alınabilecek Önlemler</h3>
+
+-Bu güvenlik açıklarını ASP.NET Core tarafında engellemek için kullanılan temel yöntemler şunlardır:
+
+1. Model Validation 
+
+-Gelen verinin tip, uzunluk ve format kurallarına uygunluğunu denetler; hatalı veriyi doğrudan reddeder.
+
+```csharp
+public class RegisterDto
+{
+    [Required(ErrorMessage = "Kullanıcı adı zorunludur.")]
+    [StringLength(50, MinimumLength = 3)]
+    public string Username { get; set; } = string.Empty;
+
+    [Required]
+    [EmailAddress(ErrorMessage = "Geçerli bir e-posta giriniz.")]
+    public string Email { get; set; } = string.Empty;
+}
+```
+
+2.Input Sanitization
+
+-Kullanıcının gönderdiği HTML içeriklerdeki zararlı JavaScript etiketlerini temizler.
+
+```csharp
+// Paket: Ganss.Xss.HtmlSanitizer
+var sanitizer = new HtmlSanitizer();
+
+// Zararlı script silinir, sadece güvenli metin kalır
+string cleanHtml = sanitizer.Sanitize(rawInputHtml);
+```
+
+3.SQL Injection Koruması
+
+-LINQ sorguları veriyi otomatik parametreleştirir, ham SQL birleştirmesinden doğan riskleri önler.
+
+```Csharp
+// GÜVENLİ: Otomatik parametrik sorgu
+var user = await _context.Users
+    .FirstOrDefaultAsync(u => u.Email == inputEmail);
+```
+
+
+4.CSRF Koruması
+
+-Kullanıcının oturumu üzerinden üçüncü parti sitelerden sahte istek atılmasını engeller.
+
+```Csharp
+[HttpPost]
+[ValidateAntiForgeryToken]
+public IActionResult UpdatePassword(ChangePasswordDto dto)
+{
+    // İşlem başarılı
+    return Ok();
+}
+````
+
+Kimlik & Oturum Güvenliği
+
+-Çerezleri JavaScript erişimine kapatır ve hatalı girişlerde hesabı kilitler.
+
+```Csharp
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;              // JS erişimini kapatır (XSS önlemi)
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Yalnızca HTTPS
+    options.Lockout.MaxFailedAccessAttempts = 5; // 5 hatalı denemede kilitle
+});
+```
+
+</details>
+
+
