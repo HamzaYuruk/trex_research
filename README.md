@@ -1079,11 +1079,10 @@ LINQ kullanırken yazdığımız C# metotları,Entity Framework aracılığıyla
 
 
 <details>
-
+<summary>OWASP TOP 10</summary>
+ 
  ---
  
-<summary>OWASP TOP 10</summary>
-
 -OWASP (Open Web Application Security Project), web güvenliğini geliştirmeye odaklanmış uluslararası ve bağımsız bir siber güvenlik topluluğudur. Yazılımlarda en sık rastlanan zafiyetleri ve saldırı tiplerini analiz ederek geliştiriciler için bir rehber sunar. Bu kapsamda periyodik olarak yayımladıkları OWASP Top 10 listesi, web uygulamalarındaki en kritik 10 güvenlik riskini ortaya koyan ve sektörde temel kabul edilen en bilinen çalışmadır.
 
 ---
