@@ -1336,5 +1336,64 @@ app.Run();
 </details>
 
 
+#  8. Yazılım Geliştirme Prensipleri
 
+<details>
+ <summary>SOLID prensipleri</summary>
 
+ -SOLID; yazılım mimarisini daha esnek, anlaşılır, test edilebilir ve değişime açık tutmak amacıyla Robert C. Martin tarafından derlenen beş  temel nesne yönelimli tasarım ilkesidir.
+
+---
+
+1. Single Responsibility Principle — Tek Sorumluluk Prensibi
+
+-Bir sınıfın değişmek için yalnızca tek bir nedeni ve odaklandığı tek bir sorumluluğu olmalıdır. Bir sınıfa hem veri tabanı işlemini hem de e-posta gönderimini yüklemek hata riskini artırır.
+
+**Örnek :**
+  * ❌ *Hatalı:* `UserService` sınıfının hem kullanıcıyı kaydetmesi hem de hoş geldin e-postası göndermesi.
+  * ✅ *Doğru:* `UserRepository` sınıfının sadece kayıt işine, `EmailService` sınıfının sadece bildirim işine bakması; `UserService`'in bu    iki servisi koordine etmesi.
+
+---
+
+ 2. Open/Closed Principle  — Açık / Kapalı Prensibi
+
+-Yazılım varlıkları yeni özellikler eklenmesine açık, ancak var olan çalışan kaynak kodunun değiştirilmesine kapalı olmalıdır.
+
+ **Örnek**
+ 
+  * ❌ *Hatalı:* Yeni bir ödeme yöntemi geldiğinde `PaymentService` içindeki `if-else` bloklarını açıp değiştirmek.
+  * ✅ *Doğru:* Bir `PaymentMethod` arayüzü tanımlayıp; `CreditCardPayment`, `PayPalPayment` ve `CryptoPayment` sınıflarını bu arayüzden türeterek sisteme dokunmadan yeni yöntemler eklemek.
+
+---
+
+3. Liskov Substitution Principle — Liskov İkame Prensibi
+
+-Alt sınıflar, miras aldıkları üst sınıfların yerine geçebilmeli ve programın beklenen davranışını bozmamalıdır.
+
+**Örnek**
+  * ❌ *Hatalı:* `Bird` sınıfına `fly()` metodu koyup, uçamayan `Ostrich` (Devekuşu) sınıfında bu metottan hata fırlatmak.
+  * ✅ *Doğru:* `Bird` üst sınıfını genel bırakıp, yalnızca uçabilen kuşlar için `FlyingBird` arayüzü/sınıfı tanımlamak.
+
+---
+
+4. Interface Segregation Principle — Arayüz Ayrımı Prensibi
+
+-Sınıflar, kullanmadıkları ve ihtiyaç duymadıkları metotları barındıran hantal arayüzleri uygulamaya zorlanmamalıdır.
+
+**Örnek :**
+  * ❌ *Hatalı:* `SmartDevice` arayüzüne `print()`, `scan()`, `fax()` koyup, sadece çıktı alan basit bir yazıcıyı tarayıcı ve faks metotlarını boş bırakmaya zorlamak.
+  * ✅ *Doğru:* Arayüzü `Printer`, `Scanner` ve `Fax` olarak bölmek; yazıcının sadece `Printer` arayüzünü uygulamasını sağlamak.
+
+---
+
+5. Dependency Inversion Principle  — Bağımlılıkların Tersi Prensibi
+
+-Yüksek seviyeli modüller alt seviyeli somut modüllere değil; her iki katman da soyutlamalara bağımlı olmalıdır.
+
+ **Örnek Senaryo:**
+  * ❌ *Hatalı:* `OrderService` sınıfının içinde `new MySQLDatabase()` yazarak doğrudan MySQL'e göbekten bağlanması.
+  * ✅ *Doğru:* Bir `Database` arayüzü tanımlayıp, `OrderService`'e bu arayüzü dışarıdan dependency Injection ile vermek; böylece             istenildiğinde Mongo veya PostgreSQL'e kod değiştirmeden geçebilmek.
+
+---
+
+</details>
