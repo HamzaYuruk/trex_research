@@ -792,7 +792,7 @@ public class Araba
       WHERE Id = 5;
     ```
    
-  </ul>
+  ---
 
 </details>
 
@@ -1292,6 +1292,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 <details>
  <summary>ASP.NET Core'da Logging Altyapısı </summary>
+
+ ---
 
 -ASP.NET Core, harici bir kütüphaneye gerek kalmadan çalışan güçlü bir yerleşik loglama altyapısına sahiptir.
 
