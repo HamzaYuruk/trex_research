@@ -178,27 +178,37 @@ steps:
  <summary><b>Software Development Life Cycle-Yazılım Geliştirme Yaşam Döngüsü </b></summary>
 
  ---
+
+ <h3>SDLC Nedir?</h3>
  
  -SDLC, bir yazılımın sadece basit bir fikirden ibaret olduğu ilk günden başlayıp, müşteriye teslim edilmesine ve yıllar sonraki güncellemelerine kadar geçen tüm süreçtir.
+
+ ---
 
  ## SDLC Aşamaları:
  
  ### 1.Planlama:
- Projenin fizibilite çalışmasının yapıldığı, kaynak atamalarının , bütçenin ve risk yönetiminin belirlendiği aşamadır.Kısacası "Biz ne        yapacağız, bütçemiz ne, bu işe değer mi?" sorularının sorulduğu aşamadır.</li>
+ -Projenin fizibilite çalışmasının yapıldığı, kaynak atamalarının , bütçenin ve risk yönetiminin belirlendiği aşamadır.Kısacası "Biz ne        yapacağız, bütçemiz ne, bu işe değer mi?" sorularının sorulduğu aşamadır.</li>
   
-  <li><b>Analiz:</b>Müşterinin istekleri doğrultusunda projenin gereksinimleri detaylı çıkarılır ve rapora dökülür</li>
+ ### 2.Analiz:
+ -Müşterinin istekleri doğrultusunda projenin gereksinimleri detaylı çıkarılır ve rapora dökülür.
   
-  <li><b>Tasarım:</b>Belirlenen gereksinimlere göre sistem mimarisi, veritabanı şemaları, API yapıları ve kullanıcı arayüzü tasarımları kodlama başlamadan önce burada        netleştirilir </li>
+ ### 3.Tasarım:
+ -Belirlenen gereksinimlere göre sistem mimarisi, veritabanı şemaları, API yapıları ve kullanıcı arayüzü tasarımları kodlama başlamadan        önce burada netleştirilir. 
   
-  <li><b>Geliştirme:</b>Tasarlanan sistem mimarisinin koda döküldüğü aşamadır. Frontend ve backend geliştirmeleri bu aşamada yazılır.</li>
+ ### 4.Geliştirme:
+ -Tasarlanan sistem mimarisinin koda döküldüğü aşamadır. Frontend ve backend geliştirmeleri bu aşamada yazılır.
   
-  <li><b>Test:</b>Yazılan kodun Kalite Güvence süreçlerinden geçirildiği aşamadır. Unit test, entegrasyon testleri ve E2E testleri yapılır. Bug'lar tespit edilip             geliştiriciye düzeltmesi için geri raporlanır. </li>
+ ### 5.Test:
+ -Yazılan kodun Kalite Güvence süreçlerinden geçirildiği aşamadır. Unit test, entegrasyon testleri ve E2E testleri yapılır. Bug'lar tespit     edilip geliştiriciye düzeltmesi için geri raporlanır. 
   
-  <li><b>Deployment:</b>Testleri başarıyla geçen derlenmiş kodun, hedef sunuculara aktarılarak son kullanıcının erişimine açılmasıdır. </li>
+ ### 6.Deployment:
+ -Testleri başarıyla geçen derlenmiş kodun, hedef sunuculara aktarılarak son kullanıcının erişimine açılmasıdır. 
   
-  <li><b>Bakım:</b>Yazılımların geliştirme süreçleri yayınlandıktan sonra bitmiyor;müşterinin yeni istekleri çıkıyor,sistem zaman içinde çeşitli performans                   iyileştirmelerine ihtiyaç duyuyor bu sebeplerden dolayı yazılımın sürekli bakım ihtiyacı oluyor. </li>
+ ### 7.Bakım:
+ -Yazılımların geliştirme süreçleri yayınlandıktan sonra bitmiyor;müşterinin yeni istekleri çıkıyor,sistem zaman içinde çeşitli performans     iyileştirmelerine ihtiyaç duyuyor bu sebeplerden dolayı yazılımın sürekli bakım ihtiyacı oluyor.
   
- </ul>
+---
  
 </details>
 
@@ -207,55 +217,66 @@ steps:
 
 <details>
  <summary><b> .NET nedir? Tarihçesi, amacı, neden kullanılır? </b></summary>
- <br>
+
+ ---
  
  <h3>.NET nedir?</h3>
- <ul>
-   <li>.NET,bir dil değildir Microsoft tarafından geliştirilen, açık kaynaklı, platformlar arası ve çok dilli bir yazılım geliştirme platformudur.Masaüstü, web, mobil,        bulut ve oyun geliştirme gibi çok çeşitli alanlarda uygulama yazılmasına olanak tanır.</li>
- </ul>
- <br>
+ 
+ -.NET,bir dil değildir Microsoft tarafından geliştirilen, açık kaynaklı, platformlar arası ve çok dilli bir yazılım geliştirme platformudur.Masaüstü, web, mobil,bulut ve oyun geliştirme gibi çok çeşitli alanlarda uygulama yazılmasına olanak tanır.
+
+ ---
  
  <h3>Neden Kullanılır ve Amacı Nedir?</h3>
- <ul>
-   <li>.NET altyapısının temel amacı, yazılımcıların sıfırdan kod yazmak yerine hazır kütüphaneler ve standartlaşmış araçlar kullanarak çok daha hızlı, güvenli ve verimli     bir şekilde projeler üretmesini sağlamaktır. Bu platform, güvenlik ve bellek yönetimi gibi arka plan işlemlerini otomatik olarak hallederek geliştiricinin hızını çok       ciddi oranda arttırır. Ayrıca web, masaüstü veya mobil gibi tamamen farklı alanlar için aynı temel bilgi birikimiyle yazılım geliştirilebilmesine imkan verir.</li>
- </ul>
+ 
+ -.NET altyapısının temel amacı, yazılımcıların sıfırdan kod yazmak yerine hazır kütüphaneler ve standartlaşmış araçlar kullanarak çok daha hızlı, güvenli ve verimli     bir şekilde projeler üretmesini sağlamaktır. Bu platform, güvenlik ve bellek yönetimi gibi arka plan işlemlerini otomatik olarak hallederek geliştiricinin hızını çok ciddi oranda arttırır. Ayrıca web, masaüstü veya mobil gibi tamamen farklı alanlar için aynı temel bilgi birikimiyle yazılım geliştirilebilmesine imkan verir.
+ 
+---
 
  <h3>Tarihçesi</h3>
- <ul>
-   <li>Tarihsel gelişimine baktığımızda, Microsoft tarafından 2002 yılında sadece Windows işletim sistemine özel kapalı bir ekosistem olarak piyasaya sürülmüştür.             İlerleyen yıllarda yazılım dünyasındaki açık kaynak ve platform bağımsızlığı trendlerine ayak uydurmak için büyük bir evrim geçirmiş,2016 yılında baştan aşağı              yenilenerek tamamen açık kaynaklı hale gelmiş ve Linux ile Apple sistemlerinde de çalışabilir duruma gelmiştir. Günümüzde ise eski sürümlerindeki isim karmaşaları          giderilerek tek ve modern bir çatı altında birleştirilmiş, modern yazılım dünyasının en güçlü standartlarından biri haline gelmiştir.</li>
- </ul>
+ 
+ -Tarihsel gelişimine baktığımızda, Microsoft tarafından 2002 yılında sadece Windows işletim sistemine özel kapalı bir ekosistem olarak piyasaya sürülmüştür.İlerleyen yıllarda yazılım dünyasındaki açık kaynak ve platform bağımsızlığı trendlerine ayak uydurmak için büyük bir evrim geçirmiş,2016 yılında baştan aşağı yenilenerek tamamen açık kaynaklı hale gelmiş ve Linux ile Apple sistemlerinde de çalışabilir duruma gelmiştir. Günümüzde ise eski sürümlerindeki isim karmaşaları giderilerek tek ve modern bir çatı altında birleştirilmiş, modern yazılım dünyasının en güçlü standartlarından biri haline gelmiştir.
+
+ ---
  
 </details>
 
 
 <details>
  <summary><b>.NET Framework, .NET Core ve .NET 7/8+ farkları</b></summary>
- <br>
+
+---
  
  <h3>.NET Framework</h3>
- <ul>
-   <li>Microsoft tarafından 2002 yılında piyasaya sürülen ve sadece Windows işletim sistemlerinde çalışan kapalı kaynaklı ilk versiyondur.
-   Bu yapı tamamen Windows tabanlı donanım ve sunuculara bağımlıydı. Zamanla kod tabanı çok büyüdü ve hantallaştı. Bulut sistemlerinin yaygınlaşması ve farklı işletim         sistemlerine olan ihtiyacın artmasıyla birlikte sadece windows işletim sisteminde çalışıyor olması modern web ihtiyaçlarına yanıt vermekte zorlanmaya başladı.</li>
- </ul>
- <br>
+ 
+ -Microsoft tarafından 2002 yılında piyasaya sürülen ve sadece Windows işletim sistemlerinde çalışan kapalı kaynaklı ilk versiyondur.
+  Bu yapı tamamen Windows tabanlı donanım ve sunuculara bağımlıydı. Zamanla kod tabanı çok büyüdü ve hantallaştı. Bulut sistemlerinin          yaygınlaşması ve farklı işletim sistemlerine olan ihtiyacın artmasıyla birlikte sadece windows işletim sisteminde çalışıyor olması modern    web ihtiyaçlarına yanıt vermekte zorlanmaya başladı.
+
+---
  
  <h3>.NET Core</h3>
- <ul>
-   <li>2016 yılında piyasaya sürülen bu sürüm, Microsoft'un kapalı kutu mantığını yıktığı devrim niteliğinde bir adımdır.Framework sürümünün aksine baştan aşağı yeniden       yazılmış, açık kaynak kodlu ve tamamen platform bağımsız bir hale getirilmiştir. Node.js gibi teknolojilerin sunduğu çevikliği ve farklı işletim sistemlerinde çalışma      mantığını benimsemiştir. Artık yazılan bir kod Windows, Linux ve macOS üzerinde sorunsuz çalışabilir hale gelmiştir. Özellikle mikroservis mimarileri ve yüksek             performanslı bulut uygulamaları için optimize edilmiştir.</li>
- </ul>
 
+ -2016 yılında piyasaya sürülen bu sürüm, Microsoft'un kapalı kutu mantığını yıktığı devrim niteliğinde bir adımdır.Framework sürümünün aksine baştan aşağı yeniden yazılmış, açık kaynak kodlu ve tamamen platform bağımsız bir hale getirilmiştir. Node.js gibi teknolojilerin sunduğu çevikliği ve farklı işletim sistemlerinde çalışma mantığını benimsemiştir. Artık yazılan bir kod Windows, Linux ve macOS üzerinde sorunsuz çalışabilir hale gelmiştir. Özellikle mikroservis mimarileri ve yüksek performanslı bulut uygulamaları için optimize edilmiştir.
+
+ ---
+ 
  <h3> .NET 7/8+ farkları</h3>
- <ul>
-   <li>.NET 7 standart destek sürümü olduğu için on sekiz aylık ömrünü tamamlamıştır ancak .NET 8 ve sonrası uzun vadeli destek sunarak özellikle B2B SaaS platformları        gibi kesintisiz çalışması gereken mimariler için güvenilir bir temel oluşturur. .NET 8 ile birlikte gelen gelişmiş performans iyileştirmeleri ve önceden derleme            yetenekleri sayesinde bulut tabanlı uygulamalar çok daha hızlı ayağa kalkar ve daha az sunucu kaynağı tüketir. Ayrıca veritabanı tarafında Entity Framework Core            üzerinden MySQL gibi ilişkisel sistemlerle kurulan bağlantılarda sorgu hızları artırılmış, büyük projelerin arka plan yönetimi çok daha pürüzsüz hale getirilmiştir.</li>
- </ul>
+
+ -.NET 7 standart destek sürümü olduğu için on sekiz aylık ömrünü tamamlamıştır ancak .NET 8 ve sonrası uzun vadeli destek sunarak özellikle B2B SaaS platformları gibi kesintisiz çalışması gereken mimariler için güvenilir bir temel oluşturur. .NET 8 ile birlikte gelen gelişmiş performans iyileştirmeleri ve önceden derleme yetenekleri sayesinde bulut tabanlı uygulamalar çok daha hızlı ayağa kalkar ve daha az sunucu kaynağı tüketir. Ayrıca veritabanı tarafında Entity Framework Core üzerinden MySQL gibi ilişkisel sistemlerle kurulan bağlantılarda sorgu hızları artırılmış, büyük projelerin arka plan yönetimi çok daha pürüzsüz hale getirilmiştir.
+
+ ---
  
 </details>
 
 
 <details>
  <summary><b>Platformlar arası çalışabilir mi? (Windows, Linux, macOS)</b></summary>
- <br>
- Evet, kesinlikle çalışabilir.Yukarıda da belirttiğimiz gibi Modern .NET bütün platformlarda çalışır.Microsoftun .NET Core'u çıkarmasının en temel amacı sadece windows      üzerinde çalışan .NET Frameworkun bu eksikliğini giderip .NET ekosistemini bütün işletim sistemlerinde çalışacak bir yapı haline getirmekti.
+
+ ---
+ 
+ -Evet, kesinlikle çalışabilir.Yukarıda da belirttiğimiz gibi Modern .NET bütün platformlarda çalışır.Microsoftun .NET Core'u çıkarmasının en temel amacı sadece windows üzerinde çalışan .NET Frameworkun bu eksikliğini giderip .NET ekosistemini bütün işletim sistemlerinde çalışacak bir yapı haline getirmekti.
+
+ ---
+ 
 </details>
 
 
@@ -267,8 +288,10 @@ steps:
  
  ---
 
- -Backend yazılım sistemlerinde kullanıcının görmediği, sunucu tarafında çalışan ve sistemin bütün mantığını, verilerini ve güvenliğini yöneten kısmıdır.Frontend ise        yazılım sistemlerinde kullanıcıların gördüğü, tıkladığı ve doğrudan etkileşim kurduğu kısımdır.Renkler, yazılar, resimler, butonlar ve menüler frontend kısmında yer        alır.Yazılım sistemlerini bir bina gibi düşünecek olursak,binanın dışarıdan görünen yüzü frontend kısmıdır; su, elektrik ve taşıyıcı kolonları backend kısmıdır             diyebiliriz.
- ***
+ -Backend yazılım sistemlerinde kullanıcının görmediği, sunucu tarafında çalışan ve sistemin bütün mantığını, verilerini ve güvenliğini yöneten kısmıdır.Frontend ise yazılım sistemlerinde kullanıcıların gördüğü, tıkladığı ve doğrudan etkileşim kurduğu kısımdır.Renkler, yazılar, resimler, butonlar ve menüler frontend kısmında yer alır.Yazılım sistemlerini bir bina gibi düşünecek olursak,binanın dışarıdan görünen yüzü frontend kısmıdır; su, elektrik ve taşıyıcı kolonları backend kısmıdır diyebiliriz.
+
+ ---
+ 
  </details>
 
 
