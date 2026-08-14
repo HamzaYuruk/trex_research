@@ -353,16 +353,14 @@ steps:
 
 
 <details>
- 
  <summary>HTTP Nedir? HTTP Metodları Nelerdir</summary>
- <br>
 
- ***
- 
+---
+
  <h3>HTTP Nedir?</h3>
  -HTTP,web tarayıcılarının,yani istemcilerin,ile web sunucuları arasında verilerin nasıl taşınacağını ve iletileceğini belirleyen temel kurallardır.En basit tanımıyla        HTTP, web sitelerinin sayfalarını, görsellerini, videolarını vs. web sunucusundan bilgisayarımıza veya telefonumuza getiren iletişim dilidir.
  
- ***
+ ---
  
  <h3>Nasıl Çalışır?</h3>
  <b>İstek:</b>Tarayıcınıza bir adres yazıp Enter tuşuna bastığınızda, tarayıcınız internet üzerinden ilgili web sitesinin sunucusuna bir HTTP İsteği gönderir.    ("Bana     ana sayfa verilerini gönder" der.)
@@ -591,12 +589,19 @@ Görüldüğü üzere JSON,  XML'e kıyasla sade ve anahtar-değer yapısıyla d
   ---
 
   <h3>Nasıl Çalışır?</h3>
-  <ul>
-    <il>1.Kullanıcı arayüzünde bir işlem yapar,örneğin bir butona tıklar,ve tarayıcı sunucuya bir HTTP İsteği gönderir.</il>
-    <il>2.Sunucuya gelen bu istek,sunucuya girmeden en dış katmanındaki middleware pipeline'a girer.</il>
-    <il>3.İstek middleware süzgeçlerinden geçer, gerekli kontroller yapılır.</il>
-    <il>4.Süzgeçlerden onay alan istek,sunucuya ulaşır ve işlenip kullanıcıya geri döner.Eğer onay almazsa, sunucuya ulaşamadan  geri             çevrilir.</il>
-  </ul>
+  
+  ### 1.ADIM
+  Kullanıcı arayüzünde bir işlem yapar,örneğin bir butona tıklar,ve tarayıcı sunucuya bir HTTP İsteği gönderir.
+  
+  ### 2.ADIM
+  Sunucuya gelen bu istek,sunucuya girmeden en dış katmanındaki middleware pipeline'a girer.
+  
+  ### 3.ADIM
+  İstek middleware süzgeçlerinden geçer, gerekli kontroller yapılır.
+  
+  ### 4.ADIM
+  Süzgeçlerden onay alan istek,sunucuya ulaşır ve işlenip kullanıcıya geri döner.Eğer onay almazsa, sunucuya ulaşamadan  geri çevrilir.
+
 
   ---
 
@@ -735,14 +740,12 @@ public class Araba
 
 <h3>Temel SQL Sorguları</h3>
 
-<br>
 
-<ul>
- <il><b><code>SELECT</code></b>:
- Veritabanındaki tablolardan veri çekmek, listelemek istediğimizde kullanırız.Bütün tabloyu da çekebiliriz, belli bir koşula uyanları da filtreleyebiliriz.
-    </il>
+### <code>SELECT</code>:
+-Veritabanındaki tablolardan veri çekmek, listelemek istediğimizde kullanırız.Bütün tabloyu da çekebiliriz, belli bir koşula uyanları da filtreleyebiliriz.
+
     
-     ```SQL 
+    ```SQL 
     
     -- Tablodaki bütün ürünleri listeleriz:
       SELECT * FROM Products;
@@ -751,12 +754,12 @@ public class Araba
     SELECT Name, Price FROM Products WHERE Price > 1000;
      ```
    
-  </ul>
  
-   <ul>
- <il><b><code>INSERT</code></b>:
- Veritabanına yeni bir kayıt, yeni bir satır eklemek istediğimizde bunu kullanırız.Tablonun istediğimiz sütunlarına yeni değerleri ekleriz.
-    </il>
+ 
+   
+### <code>INSERT</code>
+-Veritabanına yeni bir kayıt, yeni bir satır eklemek istediğimizde bunu kullanırız.Tablonun istediğimiz sütunlarına yeni değerleri ekleriz.
+   
       
      ```SQL 
     
@@ -765,12 +768,9 @@ public class Araba
       VALUES ('Laptop', 25000);
      ```
    
-  </ul>
-
-   <ul>
-  <il><b><code>UPDATE</code></b>:
-  Veritabanında önceden var olan bir kaydın verisini değiştirmek istediğimizde kullanırız.
-    </il>
+ ### <code>UPDATE</code>
+ -Veritabanında önceden var olan bir kaydın verisini değiştirmek istediğimizde kullanırız.
+    
     
     ```SQL 
     
@@ -780,12 +780,9 @@ public class Araba
     WHERE Id = 5;
     ```
    
-  </ul>
-
-   <ul>
-  <il><b><code>DELETE</code></b>:
-  Veritabanındaki bir kaydı tamamen ortadan kaldırmak istediğimizde kullanırız.
-    </il>
+ ### <code>DELETE</code>
+  -Veritabanındaki bir kaydı tamamen ortadan kaldırmak istediğimizde kullanırız.
+    
     ,
      
     ```SQL 
